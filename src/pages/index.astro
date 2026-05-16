@@ -13,7 +13,6 @@ const totalHours = Math.round(totalMinutes / 60);
 const lecturesByYear = groupLecturesByYear(offlineLectures);
 const lectStats = lectureStats(offlineLectures);
 
-// 강의 정렬: 무료 → 입문 → 시각화 → 자동화
 const orderedCourses = [
   courses.find((c) => c.id === 'free-election'),
   courses.find((c) => c.id === 'starter'),
@@ -30,41 +29,39 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
 <BaseLayout sideBarActiveItemID="about">
   <!-- ───────── HERO ───────── -->
-  <section id="top" class="pb-16 pt-8 scroll-mt-12 animate-fade-up">
-    <p class="font-mono text-sm text-primary tracking-wider mb-4">
-      HELLO, WELCOME.
-    </p>
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-5 leading-tight">
+  <section id="top" class="pb-20 pt-10 scroll-mt-12 animate-fade-up">
+    <p class="type-eyebrow text-primary mb-6">HELLO, WELCOME.</p>
+
+    <h1 class="type-display-xl mb-6 leading-[0.95]">
       <span class="font-serif">up</span><span class="text-primary font-serif">wise.</span>
     </h1>
-    <h2 class="text-2xl md:text-3xl text-base-content/80 font-light mb-6 leading-relaxed">
-      누적 <span class="font-bold text-primary">{instructorStats.totalStudents.toLocaleString()}</span>명이 선택한<br/>
-      <span class="text-primary font-medium">QGIS 전문 강사</span>입니다.
-    </h2>
-    <p class="text-base text-base-content/70 leading-relaxed max-w-2xl mb-8">
+
+    <p class="type-headline text-base-content/90 mb-8 max-w-2xl">
+      누적 <span class="text-primary" style="font-weight:700;">{instructorStats.totalStudents.toLocaleString()}</span>명이 선택한<br/>
+      <span class="text-primary">QGIS 전문 강사</span>입니다.
+    </p>
+
+    <p class="type-body text-base-content/70 max-w-2xl mb-10">
       서울대학교 환경대학원 출신, QGIS·Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다.
       입문자도 끝까지 따라올 수 있는 설명과 실전 예제로,
       배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.
     </p>
 
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-3 py-4 px-5 rounded-lg bg-base-200/60 border border-base-300/60 mb-8">
-      <div class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f7931e" stroke="#f7931e" stroke-width="1.5">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.averageRating}</span><span class="text-base-content/60">/5.0 평점</span></span>
-      </div>
-      <span class="text-base-content/30 hidden md:inline">·</span>
-      <div class="flex items-center gap-2">
-        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.totalStudents.toLocaleString()}</span><span class="text-base-content/60">명 수강</span></span>
-      </div>
-      <span class="text-base-content/30 hidden md:inline">·</span>
-      <div class="flex items-center gap-2">
-        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.totalReviews}</span><span class="text-base-content/60">개 수강평</span></span>
-      </div>
-      <span class="text-base-content/30 hidden md:inline">·</span>
-      <div class="flex items-center gap-2">
-        <span class="font-mono text-sm"><span class="font-bold text-base-content">{lectStats.uniqueOrgs}</span><span class="text-base-content/60">개 기관 출강</span></span>
+    <!-- Social proof — soft orange color block -->
+    <div class="color-block color-block-orange-soft mb-10" style="padding:20px 24px;">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f7931e" stroke="#f7931e" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span class="type-body-sm"><strong>{instructorStats.averageRating}</strong><span class="text-base-content/60">/5.0 평점</span></span>
+        </div>
+        <span class="text-base-content/30 hidden md:inline">·</span>
+        <span class="type-body-sm"><strong>{instructorStats.totalStudents.toLocaleString()}</strong><span class="text-base-content/60">명 수강</span></span>
+        <span class="text-base-content/30 hidden md:inline">·</span>
+        <span class="type-body-sm"><strong>{instructorStats.totalReviews}</strong><span class="text-base-content/60">개 수강평</span></span>
+        <span class="text-base-content/30 hidden md:inline">·</span>
+        <span class="type-body-sm"><strong>{lectStats.uniqueOrgs}</strong><span class="text-base-content/60">개 기관 출강</span></span>
       </div>
     </div>
 
@@ -80,82 +77,82 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
   </section>
 
   <!-- ───────── ABOUT ───────── -->
-  <section id="about" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">01. ABOUT</p>
-    <h3 class="text-3xl md:text-4xl font-bold mb-8">소개</h3>
-    <div class="text-base-content/80 leading-relaxed space-y-4 max-w-2xl">
-      <p>
+  <section id="about" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+    <p class="type-caption text-primary mb-4">01 — ABOUT</p>
+    <h3 class="type-display-lg mb-10">소개</h3>
+    <div class="space-y-5 max-w-2xl">
+      <p class="type-body-lg text-base-content/85">
         지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고,
         그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.
       </p>
-      <p>
+      <p class="type-body text-base-content/75">
         서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며,
         공간자료를 활용한 연구와 강의를 병행하고 있습니다.
       </p>
-      <p>
+      <p class="type-body text-base-content/75">
         주요 강의 분야는
-        <span class="text-primary font-medium">QGIS 기초·심화</span>,
-        <span class="text-primary font-medium">지도 시각화</span>,
-        <span class="text-primary font-medium">QGIS × Python 자동화</span>입니다.
+        <span class="text-primary" style="font-weight:480;">QGIS 기초·심화</span>,
+        <span class="text-primary" style="font-weight:480;">지도 시각화</span>,
+        <span class="text-primary" style="font-weight:480;">QGIS × Python 자동화</span>입니다.
       </p>
     </div>
   </section>
 
-  <!-- ───────── COURSES (online + offline) ───────── -->
-  <section id="courses" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">02. COURSES</p>
-    <h3 class="text-3xl md:text-4xl font-bold mb-3">강의 안내</h3>
-    <p class="text-base-content/70 leading-relaxed max-w-2xl mb-10">
-      온라인 강의는 <strong>입문 → 시각화 → 자동화</strong> 순으로 구성. 오프라인에서는 기관·기업·대학을 대상으로 워크숍·특강·정규 강의를 진행합니다.
+  <!-- ───────── COURSES ───────── -->
+  <section id="courses" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+    <p class="type-caption text-primary mb-4">02 — COURSES</p>
+    <h3 class="type-display-lg mb-4">강의 안내</h3>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">
+      온라인 강의는 <strong style="font-weight:540;">입문 → 시각화 → 자동화</strong> 순으로 구성. 오프라인에서는 기관·기업·대학을 대상으로 워크숍·특강·정규 강의를 진행합니다.
     </p>
 
     <!-- Roadmap chips -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-14">
       {(['입문', '시각화', '자동화'] as const).map((cat, idx) => (
-        <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-xl">{categoryMeta[cat].icon}</span>
-            <p class="font-mono text-[10px] text-primary tracking-wider">STEP {idx + 1}</p>
+        <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">{categoryMeta[cat].icon}</span>
+            <p class="type-caption text-primary">STEP {idx + 1}</p>
           </div>
-          <h4 class="font-bold text-base mb-1">{cat}</h4>
-          <p class="text-xs text-base-content/60 leading-relaxed">
+          <h4 class="type-card-title mb-1">{cat}</h4>
+          <p class="type-body-sm text-base-content/65 leading-relaxed">
             {categoryMeta[cat].description}
           </p>
         </div>
       ))}
     </div>
 
-    <!-- Online courses: 2x2 grid -->
-    <h4 class="font-mono text-sm text-primary tracking-wider mb-4">ONLINE · 인프런</h4>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+    <!-- Online courses -->
+    <p class="type-eyebrow text-primary mb-5">ONLINE · 인프런</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
       {orderedCourses.map((course) => <CourseCard course={course} />)}
     </div>
 
-    <!-- Offline lectures: timeline by year -->
-    <h4 class="font-mono text-sm text-primary tracking-wider mb-2">OFFLINE · 출강 이력</h4>
-    <p class="text-sm text-base-content/60 mb-5">
-      누적 <span class="text-base-content font-semibold">{lectStats.totalCount}건 이상</span>의 출강
-      · <span class="text-base-content font-semibold">{lectStats.uniqueOrgs}개 기관·기업</span>
-      · 총 <span class="text-base-content font-semibold">{lectStats.totalHours}시간 이상</span>
+    <!-- Offline timeline -->
+    <p class="type-eyebrow text-primary mb-2">OFFLINE · 출강 이력</p>
+    <p class="type-body-sm text-base-content/60 mb-6">
+      누적 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalCount}건 이상</strong>의 출강
+      · <strong class="text-base-content" style="font-weight:540;">{lectStats.uniqueOrgs}개 기관·기업</strong>
+      · 총 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalHours}시간 이상</strong>
     </p>
 
-    <div class="space-y-8 pl-4 border-l-2 border-base-300/40">
+    <div class="space-y-10 pl-4 border-l-2 border-base-300/40">
       {lecturesByYear.map(({ year, items }) => (
         <div class="relative">
-          <div class="absolute -left-[1.4rem] top-0 flex items-center">
+          <div class="absolute -left-[1.45rem] top-1.5 flex items-center">
             <span class="w-3 h-3 rounded-full bg-primary ring-4 ring-base-100"></span>
           </div>
-          <h5 class="font-serif text-2xl font-bold text-primary mb-3">{year}</h5>
-          <div class="space-y-2">
+          <h5 class="font-serif text-3xl text-primary mb-4" style="font-weight:700;letter-spacing:-0.5px;">{year}</h5>
+          <div class="space-y-1.5">
             {items.map((l) => (
-              <div class="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 py-2 hover:bg-base-200/40 -mx-2 px-2 rounded transition-colors">
-                <span class="shrink-0 font-mono text-xs px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 w-fit">
+              <div class="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 py-2.5 hover:bg-base-200/40 -mx-2 px-2 rounded-md transition-colors">
+                <span class="shrink-0 type-caption px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 w-fit">
                   {l.organization}
                 </span>
-                <span class="flex-1 text-base-content font-medium">
+                <span class="flex-1 type-body text-base-content" style="font-weight:480;">
                   {l.title}
                 </span>
-                <span class="text-xs text-base-content/60 font-mono whitespace-nowrap">
+                <span class="type-caption text-base-content/55 whitespace-nowrap">
                   {l.format}{l.hours ? ` · ${l.hours}h` : ''}{l.topic ? ` · ${l.topic}` : ''}
                 </span>
               </div>
@@ -165,33 +162,34 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       ))}
     </div>
 
-    <div class="mt-12 p-6 rounded-lg bg-base-200/60 border border-base-300/60">
-      <h4 class="text-xl font-bold mb-3">맞춤 강의 · 멘토링 요청</h4>
-      <p class="text-base-content/70 leading-relaxed mb-5">
+    <!-- Custom request box -->
+    <div class="mt-14 color-block color-block-orange-soft">
+      <h4 class="type-headline mb-3">맞춤 강의 · 멘토링 요청</h4>
+      <p class="type-body text-base-content/75 mb-6 max-w-xl">
         기관·기업·대학의 GIS 교육 의뢰, 1:1 온라인 멘토링, 공간분석 컨설팅 등 다양한 형태로 함께 일할 수 있습니다.
       </p>
-      <a href="#contact" class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+      <a href="#contact" class="inline-flex items-center gap-1 type-link text-primary hover:underline">
         문의하러 가기 →
       </a>
     </div>
   </section>
 
   <!-- ───────── PARTNERS ───────── -->
-  <section id="partners" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">03. PARTNERS</p>
-    <h3 class="text-3xl md:text-4xl font-bold mb-3">협업 기관</h3>
-    <p class="text-base-content/70 leading-relaxed max-w-2xl mb-10">
+  <section id="partners" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+    <p class="type-caption text-primary mb-4">03 — PARTNERS</p>
+    <h3 class="type-display-lg mb-4">협업 기관</h3>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">
       대학·공공기관·기업 등 다양한 조직과 함께 GIS 교육·워크숍·컨설팅을 진행해왔습니다.
     </p>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {collaborations.map((c) => (
-        <div class="group relative flex flex-col items-center justify-center text-center p-4 min-h-[88px] rounded-lg bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
-          <p class="font-bold text-sm md:text-base text-base-content group-hover:text-primary transition-colors leading-tight">
+        <div class="group relative flex flex-col items-center justify-center text-center p-5 min-h-[96px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
+          <p class="type-body-sm text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:600;">
             {c.name}
           </p>
           {c.nameEn && (
-            <p class="font-mono text-[10px] text-base-content/50 mt-1 tracking-wider">
+            <p class="type-caption text-base-content/45 mt-1">
               {c.nameEn}
             </p>
           )}
@@ -201,31 +199,32 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
   </section>
 
   <!-- ───────── CV ───────── -->
-  <section id="cv" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">04. CV</p>
-    <h3 class="text-3xl md:text-4xl font-bold mb-8">강사 이력</h3>
+  <section id="cv" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+    <p class="type-caption text-primary mb-4">04 — CV</p>
+    <h3 class="type-display-lg mb-10">강사 이력</h3>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-      <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
-        <p class="font-mono text-xs text-base-content/60 mb-1">누적 수강생</p>
-        <p class="text-xl md:text-2xl font-bold text-primary">{instructorStats.totalStudents.toLocaleString()}<span class="text-sm font-normal text-base-content/60 ml-1">명</span></p>
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">누적 수강생</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents.toLocaleString()}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
       </div>
-      <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
-        <p class="font-mono text-xs text-base-content/60 mb-1">평균 평점</p>
-        <p class="text-xl md:text-2xl font-bold text-primary">{instructorStats.averageRating}<span class="text-sm font-normal text-base-content/60 ml-1">/5.0</span></p>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">평균 평점</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.averageRating}<span class="text-sm font-normal text-base-content/55 ml-1">/5.0</span></p>
       </div>
-      <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
-        <p class="font-mono text-xs text-base-content/60 mb-1">총 온라인 강의</p>
-        <p class="text-xl md:text-2xl font-bold text-primary">{totalHours}<span class="text-sm font-normal text-base-content/60 ml-1">h · {totalLectures}강</span></p>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">총 온라인 강의</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{totalHours}<span class="text-sm font-normal text-base-content/55 ml-1">h · {totalLectures}강</span></p>
       </div>
-      <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
-        <p class="font-mono text-xs text-base-content/60 mb-1">출강 기관</p>
-        <p class="text-xl md:text-2xl font-bold text-primary">{lectStats.uniqueOrgs}<span class="text-sm font-normal text-base-content/60 ml-1">곳</span></p>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">출강 기관</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{lectStats.uniqueOrgs}<span class="text-sm font-normal text-base-content/55 ml-1">곳</span></p>
       </div>
     </div>
 
-    <h4 class="font-mono text-sm text-primary tracking-wider mb-4">EDUCATION</h4>
-    <div class="time-line-container grid gap-4 mb-10">
+    <p class="type-eyebrow text-primary mb-5">EDUCATION</p>
+    <div class="time-line-container grid gap-4 mb-12">
       <TimeLineElement
         title="박사 과정 수료"
         subtitle="서울대학교 환경대학원 · GIS / Remote Sensing 전공"
@@ -236,8 +235,8 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       />
     </div>
 
-    <h4 class="font-mono text-sm text-primary tracking-wider mb-4">EXPERTISE</h4>
-    <div class="time-line-container mb-10">
+    <p class="type-eyebrow text-primary mb-5">EXPERTISE</p>
+    <div class="time-line-container mb-12">
       <TimeLineElement
         title="GIS · 공간정보 분석"
         subtitle="QGIS · ArcGIS · 공간자료 분석 및 시각화"
@@ -258,27 +257,27 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       </TimeLineElement>
     </div>
 
-    <h4 class="font-mono text-sm text-primary tracking-wider mb-4">SKILLS</h4>
+    <p class="type-eyebrow text-primary mb-5">SKILLS</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <p class="text-sm font-bold mb-2">GIS Software</p>
-        <ul class="space-y-1 text-base-content/80 text-sm">
+        <p class="type-body-sm mb-2" style="font-weight:600;">GIS Software</p>
+        <ul class="space-y-1 text-base-content/80 type-body-sm">
           <li>QGIS</li>
           <li>ArcGIS Pro</li>
           <li>PostGIS</li>
         </ul>
       </div>
       <div>
-        <p class="text-sm font-bold mb-2">Programming</p>
-        <ul class="space-y-1 text-base-content/80 text-sm">
+        <p class="type-body-sm mb-2" style="font-weight:600;">Programming</p>
+        <ul class="space-y-1 text-base-content/80 type-body-sm">
           <li>Python (GeoPandas, Rasterio, PyQGIS)</li>
           <li>R (sf, terra)</li>
           <li>SQL · JavaScript</li>
         </ul>
       </div>
       <div>
-        <p class="text-sm font-bold mb-2">Visualization</p>
-        <ul class="space-y-1 text-base-content/80 text-sm">
+        <p class="type-body-sm mb-2" style="font-weight:600;">Visualization</p>
+        <ul class="space-y-1 text-base-content/80 type-body-sm">
           <li>QGIS Layout</li>
           <li>Leaflet · MapLibre</li>
           <li>Matplotlib · Plotly</li>
@@ -287,88 +286,88 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     </div>
   </section>
 
-  <!-- ───────── CONTACT ───────── -->
-  <section id="contact" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">05. GET IN TOUCH</p>
-    <h3 class="text-3xl md:text-4xl font-bold mb-4">함께 일하고 싶으신가요?</h3>
-    <p class="text-base-content/70 leading-relaxed mb-10 max-w-xl">
-      강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요.
-      카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.
-    </p>
+  <!-- ───────── CONTACT — navy color block (Figma signature 'ship products' pattern) ───────── -->
+  <section id="contact" class="scroll-section pt-16 pb-12 scroll-mt-12">
+    <div class="color-block color-block-navy">
+      <p class="type-caption mb-4">05 — GET IN TOUCH</p>
+      <h3 class="type-display-lg mb-5">함께 일하고 싶으신가요?</h3>
+      <p class="type-body-lg mb-10 max-w-xl" style="color:#cbd5e1;">
+        강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요.
+        카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.
+      </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- Kakao (Primary) -->
-      <a
-        href="https://open.kakao.com/me/upwise"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-4 p-5 rounded-xl bg-base-200/60 border border-base-300/60 hover:border-primary/60 hover:bg-base-200 transition-all"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-          <span class="kakao-icon-md" aria-hidden="true"></span>
-        </div>
-        <div class="min-w-0">
-          <p class="font-mono text-[10px] text-primary tracking-wider mb-0.5">FASTEST REPLY</p>
-          <p class="font-bold text-base text-base-content group-hover:text-primary transition-colors">카카오 오픈프로필</p>
-          <p class="text-xs text-base-content/60 truncate">open.kakao.com/me/upwise</p>
-        </div>
-      </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <!-- Kakao -->
+        <a
+          href="https://open.kakao.com/me/upwise"
+          target="_blank" rel="noopener noreferrer"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+        >
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="kakao-icon-md" aria-hidden="true"></span>
+          </div>
+          <div class="min-w-0">
+            <p class="type-caption text-primary mb-1">FASTEST REPLY</p>
+            <p class="type-body group-hover:text-primary transition-colors" style="font-weight:600;color:#e2e8f0;">카카오 오픈프로필</p>
+            <p class="type-caption text-white/45 truncate normal-case tracking-normal" style="font-family:'Inter',sans-serif;">open.kakao.com/me/upwise</p>
+          </div>
+        </a>
 
-      <!-- Email -->
-      <a
-        href="mailto:upwise0506@gmail.com"
-        class="group flex items-center gap-4 p-5 rounded-xl bg-base-200/60 border border-base-300/60 hover:border-primary/60 hover:bg-base-200 transition-all"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="font-mono text-[10px] text-primary tracking-wider mb-0.5">EMAIL</p>
-          <p class="font-bold text-base text-base-content group-hover:text-primary transition-colors">이메일</p>
-          <p class="text-xs text-base-content/60 truncate">upwise0506@gmail.com</p>
-        </div>
-      </a>
+        <!-- Email -->
+        <a
+          href="mailto:upwise0506@gmail.com"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+        >
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <p class="type-caption text-primary mb-1">EMAIL</p>
+            <p class="type-body group-hover:text-primary transition-colors" style="font-weight:600;color:#e2e8f0;">이메일</p>
+            <p class="type-caption text-white/45 truncate normal-case tracking-normal" style="font-family:'Inter',sans-serif;">upwise0506@gmail.com</p>
+          </div>
+        </a>
 
-      <!-- Phone -->
-      <a
-        href="tel:+82-10-8455-5598"
-        class="group flex items-center gap-4 p-5 rounded-xl bg-base-200/60 border border-base-300/60 hover:border-primary/60 hover:bg-base-200 transition-all"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="font-mono text-[10px] text-primary tracking-wider mb-0.5">PHONE</p>
-          <p class="font-bold text-base text-base-content group-hover:text-primary transition-colors">전화</p>
-          <p class="text-xs text-base-content/60 truncate">010-8455-5598</p>
-        </div>
-      </a>
+        <!-- Phone -->
+        <a
+          href="tel:+82-10-8455-5598"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+        >
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <p class="type-caption text-primary mb-1">PHONE</p>
+            <p class="type-body group-hover:text-primary transition-colors" style="font-weight:600;color:#e2e8f0;">전화</p>
+            <p class="type-caption text-white/45 truncate normal-case tracking-normal" style="font-family:'Inter',sans-serif;">010-8455-5598</p>
+          </div>
+        </a>
 
-      <!-- Inflearn -->
-      <a
-        href="https://www.inflearn.com/users/212773/@upwise"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-4 p-5 rounded-xl bg-base-200/60 border border-base-300/60 hover:border-primary/60 hover:bg-base-200 transition-all"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-lg bg-[#00C471]/10 flex items-center justify-center group-hover:bg-[#00C471]/20 transition-colors">
-          <img src="/inflearn_logo-01.svg" alt="Inflearn" width="28" height="28" />
-        </div>
-        <div class="min-w-0">
-          <p class="font-mono text-[10px] text-[#00C471] tracking-wider mb-0.5">INFLEARN</p>
-          <p class="font-bold text-base text-base-content group-hover:text-primary transition-colors">인프런 강사 페이지</p>
-          <p class="text-xs text-base-content/60 truncate">강의 · 1:1 멘토링 신청</p>
-        </div>
-      </a>
+        <!-- Inflearn -->
+        <a
+          href="https://www.inflearn.com/users/212773/@upwise"
+          target="_blank" rel="noopener noreferrer"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00C471]/60 hover:bg-white/10 transition-all"
+        >
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-[#00C471]/15 flex items-center justify-center group-hover:bg-[#00C471]/30 transition-colors">
+            <img src="/inflearn_logo-01.svg" alt="" width="28" height="28" />
+          </div>
+          <div class="min-w-0">
+            <p class="type-caption mb-1" style="color:#00C471;">INFLEARN</p>
+            <p class="type-body transition-colors" style="font-weight:600;color:#e2e8f0;">인프런 강사 페이지</p>
+            <p class="type-caption text-white/45 truncate normal-case tracking-normal" style="font-family:'Inter',sans-serif;">강의 · 1:1 멘토링 신청</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ───────── Scroll-spy (scroll-position based) ───────── -->
+  <!-- ───────── Scroll-spy ───────── -->
   <script is:inline>
     (function () {
       function init() {
@@ -376,7 +375,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
         const navLinks = document.querySelectorAll('.nav-item');
         if (!allSections.length || !navLinks.length) return;
 
-        // Map href → nav link
         const linkById = new Map();
         navLinks.forEach((l) => {
           const href = l.getAttribute('href') || '';
@@ -386,7 +384,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
           if (id) linkById.set(id, l);
         });
 
-        // Only track sections that have a matching nav item
         const tracked = allSections.filter((s) => linkById.has(s.id));
         if (!tracked.length) return;
 
@@ -397,8 +394,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
         }
 
         function update() {
-          // Trigger point: 30% from top of viewport.
-          // Find the last section whose top has crossed this line.
           const trigger = window.scrollY + window.innerHeight * 0.30;
           let current = tracked[0];
           for (const s of tracked) {
@@ -415,23 +410,17 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
         let ticking = false;
         function onScroll() {
           if (!ticking) {
-            requestAnimationFrame(() => {
-              update();
-              ticking = false;
-            });
+            requestAnimationFrame(() => { update(); ticking = false; });
             ticking = true;
           }
         }
 
         window.addEventListener('scroll', onScroll, { passive: true });
         window.addEventListener('resize', update);
-        // Re-run on Astro view transitions (when applicable)
         document.addEventListener('astro:after-swap', update);
-
         update();
       }
 
-      // Wait until DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
       } else {

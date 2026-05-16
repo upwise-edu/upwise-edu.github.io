@@ -3,63 +3,63 @@
 >
 </div>
 
-<div class="social-icons px-3 pb-5 pt-1 flex flex-wrap self-center justify-center sticky bottom-0 bg-base-200 gap-1">
-    <!-- Kakao open profile (primary contact) — official Kakao logo via CSS mask -->
+<div class="social-icons px-3 pb-5 pt-1 flex flex-wrap items-center self-center justify-center sticky bottom-0 bg-base-200 gap-1">
+    <!-- Kakao open profile -->
     <a
         href="https://open.kakao.com/me/upwise"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
+        class="icon-btn"
         aria-label="카카오 오픈프로필"
         title="카카오 오픈프로필"
     >
         <span class="kakao-icon-sm" aria-hidden="true"></span>
     </a>
 
-    <!-- Inflearn instructor page (official Inflearn logo) -->
+    <!-- Inflearn instructor page (official logo) -->
     <a
         href="https://www.inflearn.com/users/212773/@upwise"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-md hover:bg-[#00C471]/10 transition-all flex items-center justify-center"
+        class="icon-btn hover:bg-[#00C471]/10"
         aria-label="인프런 강사 페이지"
         title="인프런 강사 페이지"
     >
-        <img src="/inflearn_logo-01.svg" alt="Inflearn" width="20" height="20" />
+        <img src="/inflearn_logo-01.svg" alt="" width="20" height="20" class="block" />
     </a>
 
     <!-- Email -->
     <a
         href="mailto:upwise0506@gmail.com"
-        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
+        class="icon-btn"
         aria-label="Email"
         title="Email"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
     </a>
 
-    <!-- Phone — TODO: replace tel:+82-10-XXXX-XXXX with actual number -->
+    <!-- Phone -->
     <a
         href="tel:+82-10-8455-5598"
-        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
+        class="icon-btn"
         aria-label="전화"
         title="전화"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
     </a>
 
     <!-- Divider -->
-    <span class="w-px bg-base-300 mx-1 my-2"></span>
+    <span class="w-px h-5 bg-base-300 mx-1"></span>
 
     <!-- Theme toggle -->
     <button
         id="theme-toggle"
-        class="p-2 rounded-md text-base-content/70 hover:text-primary hover:bg-base-300 transition-all"
+        class="icon-btn theme-toggle-btn"
         aria-label="Toggle theme"
         title="라이트/다크 모드 전환"
     >
@@ -105,6 +105,29 @@
 </script>
 
 <style>
+  /* Unified circular icon button — all icons render at 36px square, content centered */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    color: #f7931e;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .icon-btn:hover {
+    background-color: rgba(247, 147, 30, 0.1);
+  }
+  .theme-toggle-btn {
+    color: hsl(var(--bc) / 0.7);
+  }
+  .theme-toggle-btn:hover {
+    color: #f7931e;
+    background-color: hsl(var(--b3));
+  }
+
+  /* Kakao logo via CSS mask — picks up currentColor */
   .kakao-icon-sm {
     display: inline-block;
     width: 22px;
