@@ -9,7 +9,7 @@
         href="https://open.kakao.com/me/upwise"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-md hover:text-primary hover:bg-base-300 transition-all"
+        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
         aria-label="카카오 오픈프로필"
         title="카카오 오픈프로필"
     >
@@ -18,25 +18,25 @@
         </svg>
     </a>
 
-    <!-- Inflearn instructor page (Inflearn-style green badge with "in") -->
+    <!-- Inflearn instructor page (leaf icon in Inflearn green) -->
     <a
         href="https://www.inflearn.com/users/212773/@upwise"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-md hover:bg-base-300 transition-all flex items-center justify-center"
+        class="p-2 rounded-md hover:bg-primary/10 transition-all"
         aria-label="인프런 강사 페이지"
         title="인프런 강사 페이지"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-            <rect width="24" height="24" rx="5" fill="#1DC078"/>
-            <text x="12" y="17" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="12" fill="white" letter-spacing="-0.5">in</text>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C471" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.8.4c.34 1.51.41 4.51-3.34 8.27-6 6-9 9-9.4 12.27a1 1 0 0 1-1.04.96"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
         </svg>
     </a>
 
     <!-- Email -->
     <a
         href="mailto:hello@upwise.kr"
-        class="p-2 rounded-md hover:text-primary hover:bg-base-300 transition-all"
+        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
         aria-label="Email"
         title="Email"
     >
@@ -46,13 +46,25 @@
         </svg>
     </a>
 
+    <!-- Phone — TODO: replace tel:+82-10-XXXX-XXXX with actual number -->
+    <a
+        href="tel:+82-10-0000-0000"
+        class="p-2 rounded-md text-primary hover:bg-primary/10 transition-all"
+        aria-label="전화"
+        title="전화"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </a>
+
     <!-- Divider -->
     <span class="w-px bg-base-300 mx-1 my-2"></span>
 
     <!-- Theme toggle -->
     <button
         id="theme-toggle"
-        class="p-2 rounded-md hover:text-primary hover:bg-base-300 transition-all"
+        class="p-2 rounded-md text-base-content/70 hover:text-primary hover:bg-base-300 transition-all"
         aria-label="Toggle theme"
         title="라이트/다크 모드 전환"
     >
