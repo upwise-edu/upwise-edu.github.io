@@ -308,6 +308,15 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   mask: url("/KakaoTalk_logo.svg") no-repeat center / contain;
 }
 
+.inflearn-icon-md {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-color: currentColor;
+  -webkit-mask: url("/inflearn_logo-01.svg") no-repeat center / contain;
+  mask: url("/inflearn_logo-01.svg") no-repeat center / contain;
+}
+
 /* ─────────────────────────────────────────────────────────
    COLOR BLOCK SECTIONS (Figma pattern, upwise palette)
    ───────────────────────────────────────────────────────── */
