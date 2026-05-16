@@ -1,16 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CourseCard from "../components/CourseCard.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
 import { courses, instructorStats } from "../data/courses";
 import { offlineLectures, groupLecturesByYear, lectureStats } from "../data/lectures";
 import { collaborations } from "../data/collaborations";
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const last_posts = posts.slice(0, 3);
 
 const totalLectures = courses.reduce((s, c) => s + c.lectures, 0);
 const totalMinutes = courses.reduce((s, c) => s + c.durationMinutes, 0);
@@ -19,7 +13,7 @@ const totalHours = Math.round(totalMinutes / 60);
 const lecturesByYear = groupLecturesByYear(offlineLectures);
 const lectStats = lectureStats(offlineLectures);
 
-// 강의 정렬: 무료 → 입문 → 시각화 → 자동화 (자연스러운 진입 흐름)
+// 강의 정렬: 무료 → 입문 → 시각화 → 자동화
 const orderedCourses = [
   courses.find((c) => c.id === 'free-election'),
   courses.find((c) => c.id === 'starter'),
@@ -148,7 +142,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     <div class="space-y-8 pl-4 border-l-2 border-base-300/40">
       {lecturesByYear.map(({ year, items }) => (
         <div class="relative">
-          <!-- Year marker -->
           <div class="absolute -left-[1.4rem] top-0 flex items-center">
             <span class="w-3 h-3 rounded-full bg-primary ring-4 ring-base-100"></span>
           </div>
@@ -172,7 +165,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       ))}
     </div>
 
-    <!-- Custom -->
     <div class="mt-12 p-6 rounded-lg bg-base-200/60 border border-base-300/60">
       <h4 class="text-xl font-bold mb-3">맞춤 강의 · 멘토링 요청</h4>
       <p class="text-base-content/70 leading-relaxed mb-5">
@@ -213,7 +205,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     <p class="font-mono text-sm text-primary tracking-wider mb-3">04. CV</p>
     <h3 class="text-3xl md:text-4xl font-bold mb-8">강사 이력</h3>
 
-    <!-- Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
       <div class="p-4 rounded-lg bg-base-200/60 border border-base-300/60">
         <p class="font-mono text-xs text-base-content/60 mb-1">누적 수강생</p>
@@ -233,7 +224,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       </div>
     </div>
 
-    <!-- Education -->
     <h4 class="font-mono text-sm text-primary tracking-wider mb-4">EDUCATION</h4>
     <div class="time-line-container grid gap-4 mb-10">
       <TimeLineElement
@@ -246,7 +236,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       />
     </div>
 
-    <!-- Expertise -->
     <h4 class="font-mono text-sm text-primary tracking-wider mb-4">EXPERTISE</h4>
     <div class="time-line-container mb-10">
       <TimeLineElement
@@ -269,7 +258,6 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       </TimeLineElement>
     </div>
 
-    <!-- Skills -->
     <h4 class="font-mono text-sm text-primary tracking-wider mb-4">SKILLS</h4>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
@@ -299,34 +287,9 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     </div>
   </section>
 
-  <!-- ───────── BLOG preview (no scroll-spy mapping) ───────── -->
-  <section id="notes" class="pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">05. NOTES</p>
-    <div class="flex items-end justify-between mb-8">
-      <h3 class="text-3xl md:text-4xl font-bold">최근 글</h3>
-      <a href="/blog" class="text-sm text-primary hover:underline whitespace-nowrap">전체 보기 →</a>
-    </div>
-
-    {
-      last_posts.map((post) => (
-        <>
-          <HorizontalCard
-            title={post.data.title}
-            img={post.data.heroImage}
-            desc={post.data.description}
-            url={"/blog/" + createSlug(post.data.title, post.slug)}
-            target="_self"
-            badge={post.data.badge}
-          />
-          <div class="divider my-0" />
-        </>
-      ))
-    }
-  </section>
-
   <!-- ───────── CONTACT ───────── -->
   <section id="contact" class="scroll-section pb-20 border-t border-base-300 pt-14 scroll-mt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">06. GET IN TOUCH</p>
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">05. GET IN TOUCH</p>
     <h3 class="text-3xl md:text-4xl font-bold mb-4">함께 일하고 싶으신가요?</h3>
     <p class="text-base-content/70 leading-relaxed mb-8 max-w-xl">
       강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요.
@@ -342,48 +305,75 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     </div>
   </section>
 
-  <!-- ───────── Scroll-spy script ───────── -->
+  <!-- ───────── Scroll-spy (scroll-position based) ───────── -->
   <script is:inline>
     (function () {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-item');
+      function init() {
+        const allSections = Array.from(document.querySelectorAll('section[id]'));
+        const navLinks = document.querySelectorAll('.nav-item');
+        if (!allSections.length || !navLinks.length) return;
 
-      if (!sections.length || !navLinks.length) return;
+        // Map href → nav link
+        const linkById = new Map();
+        navLinks.forEach((l) => {
+          const href = l.getAttribute('href') || '';
+          const id = href.startsWith('#') ? href.slice(1)
+                   : href.startsWith('/#') ? href.slice(2)
+                   : null;
+          if (id) linkById.set(id, l);
+        });
 
-      const linkById = new Map();
-      navLinks.forEach((l) => {
-        const href = l.getAttribute('href') || '';
-        const id = href.startsWith('#') ? href.slice(1)
-                 : href.startsWith('/#') ? href.slice(2)
-                 : null;
-        if (id) linkById.set(id, l);
-      });
+        // Only track sections that have a matching nav item
+        const tracked = allSections.filter((s) => linkById.has(s.id));
+        if (!tracked.length) return;
 
-      function setActive(id) {
-        navLinks.forEach((l) => l.classList.remove('active-nav-item'));
-        const link = linkById.get(id);
-        if (link) link.classList.add('active-nav-item');
+        function setActive(id) {
+          navLinks.forEach((l) => l.classList.remove('active-nav-item'));
+          const link = linkById.get(id);
+          if (link) link.classList.add('active-nav-item');
+        }
+
+        function update() {
+          // Trigger point: 30% from top of viewport.
+          // Find the last section whose top has crossed this line.
+          const trigger = window.scrollY + window.innerHeight * 0.30;
+          let current = tracked[0];
+          for (const s of tracked) {
+            const top = s.getBoundingClientRect().top + window.scrollY;
+            if (top <= trigger) {
+              current = s;
+            } else {
+              break;
+            }
+          }
+          if (current) setActive(current.id);
+        }
+
+        let ticking = false;
+        function onScroll() {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              update();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', update);
+        // Re-run on Astro view transitions (when applicable)
+        document.addEventListener('astro:after-swap', update);
+
+        update();
       }
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const visible = entries.filter((e) => e.isIntersecting).map((e) => e.target);
-          if (visible.length === 0) return;
-          visible.sort((a, b) =>
-            Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top)
-          );
-          setActive(visible[0].id);
-        },
-        { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
-      );
-
-      sections.forEach((s) => observer.observe(s));
-
-      const initial = Array.from(sections).find((s) => {
-        const r = s.getBoundingClientRect();
-        return r.top < window.innerHeight * 0.5 && r.bottom > window.innerHeight * 0.2;
-      });
-      if (initial) setActive(initial.id);
+      // Wait until DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
     })();
   </script>
 </BaseLayout>
