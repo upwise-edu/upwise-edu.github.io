@@ -1,0 +1,155 @@
+/* === upwise. global styles === */
+
+/* Base typography */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Selection */
+::selection {
+  background: #f7931e;
+  color: #ffffff;
+}
+
+/* === Theme-aware background gradients === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(247, 147, 30, 0.05), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(255, 107, 53, 0.04), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="upwise-light"] body::before {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(247, 147, 30, 0.06), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(30, 58, 95, 0.04), transparent 50%);
+}
+
+/* === Cursor spotlight (Brittany Chiang inspired) === */
+@media (min-width: 1024px) and (pointer: fine) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      600px circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
+      rgba(247, 147, 30, 0.06),
+      transparent 40%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s;
+  }
+
+  [data-theme="upwise-dark"] body::after {
+    background: radial-gradient(
+      600px circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
+      rgba(247, 147, 30, 0.09),
+      transparent 40%
+    );
+  }
+}
+
+/* Layered z-index so content sits above bg layers */
+.drawer, .drawer-content, .drawer-side {
+  position: relative;
+  z-index: 2;
+}
+
+/* === Scrollbar (theme aware) === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+[data-theme="upwise-light"] ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+[data-theme="upwise-light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+[data-theme="upwise-light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+[data-theme="upwise-dark"] ::-webkit-scrollbar-track {
+  background: #0a1929;
+}
+[data-theme="upwise-dark"] ::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+[data-theme="upwise-dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #2c4870;
+}
+
+/* === Smooth transitions on theme switch === */
+body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Card hover transitions */
+.card, .horizontal-card-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Existing TimeLine fix */
+.time-line-container > div:last-child .education__time > .education__line {
+    display: none;
+}
+
+/* === Links === */
+.prose a,
+article a {
+  color: #f7931e;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 147, 30, 0.3);
+  transition: border-color 0.2s ease;
+}
+.prose a:hover,
+article a:hover {
+  border-bottom-color: #f7931e;
+}
+
+/* === Buttons === */
+.btn-primary {
+  background: linear-gradient(135deg, #f7931e, #ff6b35);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(247, 147, 30, 0.25);
+}
+.btn-outline.btn-primary {
+  background: transparent;
+  color: #f7931e;
+  border: 1px solid rgba(247, 147, 30, 0.5);
+}
+.btn-outline.btn-primary:hover {
+  background: rgba(247, 147, 30, 0.1);
+  color: #f7931e;
+  transform: translateY(-1px);
+}
+
+/* === Divider (theme aware via base-300) === */
+.divider:before,
+.divider:after {
+  background-color: hsl(var(--b3) / 0.6) !important;
+}

@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <!-- Hero Section -->
+  <section class="pb-16 pt-8 animate-fade-up">
+    <p class="font-mono text-sm text-primary tracking-wider mb-4">
+      HELLO, WELCOME.
+    </p>
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4 leading-tight">
+      <span class="font-serif">up</span><span class="text-primary font-serif">wise.</span>
+    </h1>
+    <h2 class="text-2xl md:text-3xl text-base-content/80 font-light mb-8 leading-relaxed">
+      현장과 강의실을 잇는<br/>
+      <span class="text-primary font-medium">GIS 전문 강사</span>입니다.
+    </h2>
+    <p class="text-base text-base-content/70 leading-relaxed max-w-2xl mb-10">
+      QGIS, ArcGIS, Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다.
+      공공기관·대학·기업의 GIS 교육 과정을 설계하고 진행해왔으며,
+      배운 즉시 현장에서 쓸 수 있는 실무형 강의를 지향합니다.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-8">
+      <a class="btn btn-primary gap-2" href="/services">
+        강의 안내 보기
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="mailto:hello@upwise.kr" class="btn btn-outline btn-primary gap-2">
+        문의하기
+      </a>
+    </div>
+  </section>
+
+  <!-- About snippet -->
+  <section class="pb-16 border-t border-base-300 pt-12">
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">01. ABOUT</p>
+    <h3 class="text-3xl font-bold mb-6">소개</h3>
+    <div class="text-base-content/80 leading-relaxed space-y-4">
+      <p>
+        지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고,
+        그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.
+      </p>
+      <p>
+        주요 강의 분야는 <span class="text-primary font-medium">QGIS 기초·심화</span>,
+        <span class="text-primary font-medium">ArcGIS Pro 실무</span>,
+        <span class="text-primary font-medium">Python 공간분석</span>,
+        <span class="text-primary font-medium">Web GIS / 인터랙티브 지도 제작</span>입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Portfolio -->
+  <section class="pb-16 border-t border-base-300 pt-12">
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">02. SELECTED WORK</p>
+    <h3 class="text-3xl font-bold mb-8">대표 강의·프로젝트</h3>
+
+    <HorizontalCard
+      title="QGIS 기초 워크숍"
+      img="/post_img.webp"
+      desc="공공기관 실무자 대상 2일 집중 워크숍. 데이터 수집부터 시각화까지 핸즈온 실습으로 진행."
+      url="#"
+      badge="WORKSHOP"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Python 공간분석 8주 과정"
+      img="/post_img.webp"
+      desc="GeoPandas, Rasterio, Folium을 활용한 공간 데이터 전처리·분석·시각화 풀스택 과정."
+      url="#"
+      badge="COURSE"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Web GIS 인터랙티브 지도 제작"
+      img="/post_img.webp"
+      desc="Leaflet · MapLibre 기반의 웹 지도 제작. 비개발자도 따라할 수 있는 단계별 커리큘럼."
+      url="#"
+      badge="LECTURE"
+    />
+  </section>
+
+  <!-- Latest Blog -->
+  <section class="pb-16 border-t border-base-300 pt-12">
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">03. NOTES</p>
+    <h3 class="text-3xl font-bold mb-8">최근 글</h3>
+
+    {
+      last_posts.map((post) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            target="_self"
+            badge={post.data.badge}
+          />
+          <div class="divider my-0" />
+        </>
+      ))
+    }
+  </section>
+</BaseLayout>
