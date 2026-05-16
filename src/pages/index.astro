@@ -1,12 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CourseCard from "../components/CourseCard.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
+import { courses, instructorStats } from "../data/courses";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 const last_posts = posts.slice(0, 3);
+
+const featuredCourses = courses;
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -15,26 +18,48 @@ const last_posts = posts.slice(0, 3);
     <p class="font-mono text-sm text-primary tracking-wider mb-4">
       HELLO, WELCOME.
     </p>
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4 leading-tight">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-5 leading-tight">
       <span class="font-serif">up</span><span class="text-primary font-serif">wise.</span>
     </h1>
-    <h2 class="text-2xl md:text-3xl text-base-content/80 font-light mb-8 leading-relaxed">
-      현장과 강의실을 잇는<br/>
-      <span class="text-primary font-medium">GIS 전문 강사</span>입니다.
+    <h2 class="text-2xl md:text-3xl text-base-content/80 font-light mb-6 leading-relaxed">
+      누적 <span class="font-bold text-primary">{instructorStats.totalStudents.toLocaleString()}</span>명이 선택한<br/>
+      <span class="text-primary font-medium">QGIS 전문 강사</span>입니다.
     </h2>
-    <p class="text-base text-base-content/70 leading-relaxed max-w-2xl mb-10">
-      QGIS, ArcGIS, Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다.
-      공공기관·대학·기업의 GIS 교육 과정을 설계하고 진행해왔으며,
-      배운 즉시 현장에서 쓸 수 있는 실무형 강의를 지향합니다.
+    <p class="text-base text-base-content/70 leading-relaxed max-w-2xl mb-8">
+      서울대학교 환경대학원 출신, QGIS·Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다.
+      입문자도 끝까지 따라올 수 있는 설명과 실전 예제로,
+      배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.
     </p>
 
-    <div class="flex flex-wrap gap-3 mt-8">
+    <!-- Social proof stats -->
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-3 py-4 px-5 rounded-lg bg-base-200/60 border border-base-300/60 mb-8">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f7931e" stroke="#f7931e" stroke-width="1.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.averageRating}</span><span class="text-base-content/60">/5.0 평점</span></span>
+      </div>
+      <span class="text-base-content/30 hidden md:inline">·</span>
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.totalStudents.toLocaleString()}</span><span class="text-base-content/60">명 수강</span></span>
+      </div>
+      <span class="text-base-content/30 hidden md:inline">·</span>
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.totalReviews}</span><span class="text-base-content/60">개 수강평</span></span>
+      </div>
+      <span class="text-base-content/30 hidden md:inline">·</span>
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-sm"><span class="font-bold text-base-content">{instructorStats.totalCourses}</span><span class="text-base-content/60">개 강의 운영</span></span>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mt-6">
       <a class="btn btn-primary gap-2" href="/services">
-        강의 안내 보기
+        강의 보러가기
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
-      <a href="mailto:hello@upwise.kr" class="btn btn-outline btn-primary gap-2">
-        문의하기
+      <a href="https://open.kakao.com/me/upwise" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2">
+        멘토링 문의
       </a>
     </div>
   </section>
@@ -49,42 +74,32 @@ const last_posts = posts.slice(0, 3);
         그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.
       </p>
       <p>
-        주요 강의 분야는 <span class="text-primary font-medium">QGIS 기초·심화</span>,
-        <span class="text-primary font-medium">ArcGIS Pro 실무</span>,
-        <span class="text-primary font-medium">Python 공간분석</span>,
-        <span class="text-primary font-medium">Web GIS / 인터랙티브 지도 제작</span>입니다.
+        서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며,
+        공간자료를 활용한 연구와 분석, 강의를 병행하고 있습니다.
+      </p>
+      <p>
+        주요 강의 분야는
+        <span class="text-primary font-medium">QGIS 기초·심화</span>,
+        <span class="text-primary font-medium">지도 시각화</span>,
+        <span class="text-primary font-medium">QGIS × Python 자동화</span>입니다.
       </p>
     </div>
+    <a href="/cv" class="inline-flex items-center gap-1 mt-6 text-sm text-primary hover:underline">
+      이력 자세히 보기 →
+    </a>
   </section>
 
-  <!-- Featured Portfolio -->
+  <!-- Featured Courses -->
   <section class="pb-16 border-t border-base-300 pt-12">
-    <p class="font-mono text-sm text-primary tracking-wider mb-3">02. SELECTED WORK</p>
-    <h3 class="text-3xl font-bold mb-8">대표 강의·프로젝트</h3>
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">02. COURSES</p>
+    <div class="flex items-end justify-between mb-6">
+      <h3 class="text-3xl font-bold">운영 중인 강의</h3>
+      <a href="/services" class="text-sm text-primary hover:underline whitespace-nowrap">전체 보기 →</a>
+    </div>
 
-    <HorizontalCard
-      title="QGIS 기초 워크숍"
-      img="/post_img.webp"
-      desc="공공기관 실무자 대상 2일 집중 워크숍. 데이터 수집부터 시각화까지 핸즈온 실습으로 진행."
-      url="#"
-      badge="WORKSHOP"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-      title="Python 공간분석 8주 과정"
-      img="/post_img.webp"
-      desc="GeoPandas, Rasterio, Folium을 활용한 공간 데이터 전처리·분석·시각화 풀스택 과정."
-      url="#"
-      badge="COURSE"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-      title="Web GIS 인터랙티브 지도 제작"
-      img="/post_img.webp"
-      desc="Leaflet · MapLibre 기반의 웹 지도 제작. 비개발자도 따라할 수 있는 단계별 커리큘럼."
-      url="#"
-      badge="LECTURE"
-    />
+    <div class="divide-y divide-base-300/40">
+      {featuredCourses.map((course) => <CourseCard course={course} />)}
+    </div>
   </section>
 
   <!-- Latest Blog -->
@@ -107,5 +122,23 @@ const last_posts = posts.slice(0, 3);
         </>
       ))
     }
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-16 border-t border-base-300 pt-12">
+    <p class="font-mono text-sm text-primary tracking-wider mb-3">04. GET IN TOUCH</p>
+    <h3 class="text-3xl font-bold mb-4">함께 일하고 싶으신가요?</h3>
+    <p class="text-base-content/70 leading-relaxed mb-6 max-w-xl">
+      강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요.
+      카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="https://open.kakao.com/me/upwise" target="_blank" rel="noopener noreferrer" class="btn btn-primary gap-2">
+        카카오 오픈프로필
+      </a>
+      <a href="https://www.inflearn.com/users/212773/@upwise" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2">
+        인프런 강사 페이지
+      </a>
+    </div>
   </section>
 </BaseLayout>
