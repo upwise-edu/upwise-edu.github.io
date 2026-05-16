@@ -18,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   position: relative;
+  overflow-x: hidden; /* prevent unexpected horizontal scroll on mobile */
 }
 
 /* Selection */
@@ -207,7 +208,11 @@ body::before {
   }
 }
 
-.drawer, .drawer-content, .drawer-side {
+/* Z-index stacking: keep drawer container above the fixed bg gradients.
+   IMPORTANT: do NOT override position on .drawer-side — DaisyUI uses sticky+transform
+   to slide it off-screen on mobile. Overriding to relative reserves its grid space
+   on mobile, pushing the main content to the right. */
+.drawer, .drawer-content {
   position: relative;
   z-index: 2;
 }
