@@ -4,19 +4,14 @@ const activeClass = "active-nav-item";
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto gap-1 px-0">
-    <li><a class="py-3 text-base nav-item" id="home" href="/"><span class="nav-bar"></span>Home</a></li>
-    <li><a class="py-3 text-base nav-item" id="projects" href="/projects"><span class="nav-bar"></span>Portfolio</a></li>
-    <li><a class="py-3 text-base nav-item" id="services" href="/services"><span class="nav-bar"></span>강의 안내</a></li>
-    <li><a class="py-3 text-base nav-item" id="cv" href="/cv"><span class="nav-bar"></span>강사 이력</a></li>
+    <li><a class="py-3 text-base nav-item" id="about" href="/#about"><span class="nav-bar"></span>About</a></li>
+    <li><a class="py-3 text-base nav-item" id="courses" href="/#courses"><span class="nav-bar"></span>강의 안내</a></li>
+    <li><a class="py-3 text-base nav-item" id="cv" href="/#cv"><span class="nav-bar"></span>강사 이력</a></li>
     <li><a class="py-3 text-base nav-item" id="blog" href="/blog/"><span class="nav-bar"></span>Blog</a></li>
     <li>
-        <a
-            class="py-3 text-base nav-item"
-            id="contact"
-            href="https://open.kakao.com/me/upwise"
-            target="_blank"
-            rel="noopener noreferrer"><span class="nav-bar"></span>Contact</a
-        >
+        <a class="py-3 text-base nav-item"
+           id="contact"
+           href="/#contact"><span class="nav-bar"></span>Contact</a>
     </li>
 </ul>
 
@@ -48,6 +43,7 @@ const activeClass = "active-nav-item";
   :global(.active-nav-item) {
     color: #ff6b35 !important;
     background: transparent !important;
+    font-weight: 600;
   }
   :global(.active-nav-item .nav-bar) {
     height: 1.5rem !important;
@@ -55,6 +51,8 @@ const activeClass = "active-nav-item";
 </style>
 
 <script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
+// Server-rendered default active (used on non-home pages e.g. /blog).
+// The home page's IntersectionObserver will override this dynamically on scroll.
 const activeItemElem = document.getElementById(sideBarActiveItemID);
 activeItemElem && activeItemElem.classList.add(activeClass);
 </script>
