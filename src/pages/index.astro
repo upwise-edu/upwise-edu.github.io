@@ -184,14 +184,32 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {collaborations.map((c) => (
-        <div class="group relative flex flex-col items-center justify-center text-center p-5 min-h-[96px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
-          <p class="type-body-sm text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:600;">
-            {c.name}
-          </p>
-          {c.nameEn && (
-            <p class="type-caption text-base-content/45 mt-1">
-              {c.nameEn}
-            </p>
+        <div class="group relative flex flex-col items-center justify-center text-center p-4 min-h-[110px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
+          {c.logo ? (
+            <>
+              <div class="flex-1 flex items-center justify-center w-full mb-2 min-h-[44px]">
+                <img
+                  src={c.logo}
+                  alt={c.name}
+                  class="max-h-12 max-w-full object-contain transition-all duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <p class="type-caption text-base-content/55 group-hover:text-primary transition-colors text-center leading-tight">
+                {c.name}
+              </p>
+            </>
+          ) : (
+            <>
+              <p class="type-body-sm text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:600;">
+                {c.name}
+              </p>
+              {c.nameEn && (
+                <p class="type-caption text-base-content/45 mt-1">
+                  {c.nameEn}
+                </p>
+              )}
+            </>
           )}
         </div>
       ))}
