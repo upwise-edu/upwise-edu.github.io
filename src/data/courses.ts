@@ -14,6 +14,8 @@ export type Course = {
   durationMinutes: number;
   lectures: number;
   highlights: string[];
+  /** 강의 썸네일 (public/courses/ 하위 경로). 없으면 카테고리별 그라데이션 표시 */
+  image?: string | null;
 };
 
 export const courses: Course[] = [
