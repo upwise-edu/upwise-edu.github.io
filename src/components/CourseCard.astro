@@ -21,10 +21,11 @@ const iconByCategory: Record<Course['category'], string> = {
 };
 
 // 카테고리별 강조 색상 (컬러 하이라이트 칩 — 컨텐츠 영역 위쪽)
+// 라이트/다크 모드 모두에서 분명히 보이도록 채도 높은 색 사용
 const categoryStyle: Record<Course['category'], string> = {
   '입문':   'bg-emerald-500 text-white',  // 성장의 녹색
   '시각화': 'bg-[#f7931e] text-white',     // 브랜드 오렌지
-  '자동화': 'bg-[#1e3a5f] text-white',     // 짙은 네이비
+  '자동화': 'bg-indigo-500 text-white',    // 일렉트릭 인디고 (⚡ 매칭)
 };
 ---
 
