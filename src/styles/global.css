@@ -29,131 +29,131 @@ body {
 
 .type-display-xl {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 48px;
-  font-weight: 340;
-  line-height: 1.00;
-  letter-spacing: -0.96px;
+  font-size: 38px;
+  font-weight: 380;
+  line-height: 1.02;
+  letter-spacing: -0.76px;
 }
 @media (min-width: 768px) {
-  .type-display-xl { font-size: 72px; letter-spacing: -1.44px; }
+  .type-display-xl { font-size: 52px; letter-spacing: -1.04px; }
 }
 @media (min-width: 1024px) {
-  .type-display-xl { font-size: 86px; letter-spacing: -1.72px; }
+  .type-display-xl { font-size: 60px; letter-spacing: -1.20px; }
 }
 
 .type-display-lg {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 36px;
-  font-weight: 340;
-  line-height: 1.10;
-  letter-spacing: -0.54px;
+  font-size: 28px;
+  font-weight: 380;
+  line-height: 1.15;
+  letter-spacing: -0.42px;
 }
 @media (min-width: 768px) {
-  .type-display-lg { font-size: 56px; letter-spacing: -0.84px; }
+  .type-display-lg { font-size: 36px; letter-spacing: -0.54px; }
 }
 @media (min-width: 1024px) {
-  .type-display-lg { font-size: 64px; letter-spacing: -0.96px; }
+  .type-display-lg { font-size: 42px; letter-spacing: -0.63px; }
 }
 
 .type-headline {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 540;
   line-height: 1.35;
-  letter-spacing: -0.22px;
+  letter-spacing: -0.19px;
 }
 @media (min-width: 768px) {
-  .type-headline { font-size: 26px; letter-spacing: -0.26px; }
+  .type-headline { font-size: 22px; letter-spacing: -0.22px; }
 }
 
 .type-subhead {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 340;
-  line-height: 1.35;
-  letter-spacing: -0.20px;
+  font-size: 18px;
+  font-weight: 380;
+  line-height: 1.40;
+  letter-spacing: -0.18px;
 }
 @media (min-width: 768px) {
-  .type-subhead { font-size: 26px; letter-spacing: -0.26px; }
+  .type-subhead { font-size: 22px; letter-spacing: -0.22px; }
 }
 
 .type-card-title {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
   line-height: 1.40;
-  letter-spacing: -0.20px;
+  letter-spacing: -0.17px;
 }
 @media (min-width: 768px) {
-  .type-card-title { font-size: 24px; }
+  .type-card-title { font-size: 19px; }
 }
 
 .type-body-lg {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 18px;
-  font-weight: 330;
-  line-height: 1.45;
-  letter-spacing: -0.14px;
+  font-size: 16px;
+  font-weight: 380;
+  line-height: 1.55;
+  letter-spacing: -0.13px;
 }
 @media (min-width: 768px) {
-  .type-body-lg { font-size: 20px; }
+  .type-body-lg { font-size: 17px; }
 }
 
 .type-body {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 320;
-  line-height: 1.55;
-  letter-spacing: -0.20px;
+  font-size: 15px;
+  font-weight: 380;
+  line-height: 1.60;
+  letter-spacing: -0.15px;
 }
 @media (min-width: 768px) {
-  .type-body { font-size: 18px; line-height: 1.60; letter-spacing: -0.26px; }
+  .type-body { font-size: 16px; line-height: 1.62; }
 }
 
 .type-body-sm {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 330;
-  line-height: 1.50;
-  letter-spacing: -0.14px;
+  font-size: 13px;
+  font-weight: 380;
+  line-height: 1.55;
+  letter-spacing: -0.10px;
 }
 @media (min-width: 768px) {
-  .type-body-sm { font-size: 16px; }
+  .type-body-sm { font-size: 14px; }
 }
 
 .type-link {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 18px;
-  font-weight: 480;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.40;
-  letter-spacing: -0.10px;
+  letter-spacing: -0.08px;
 }
 @media (min-width: 768px) {
-  .type-link { font-size: 20px; }
+  .type-link { font-size: 16px; }
 }
 
 .type-eyebrow {
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.30;
-  letter-spacing: 0.40px;
+  letter-spacing: 0.36px;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  .type-eyebrow { font-size: 15px; letter-spacing: 0.54px; }
+  .type-eyebrow { font-size: 12px; letter-spacing: 0.48px; }
 }
 
 .type-caption {
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   line-height: 1.10;
-  letter-spacing: 0.50px;
+  letter-spacing: 0.40px;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  .type-caption { font-size: 12px; letter-spacing: 0.60px; }
+  .type-caption { font-size: 11px; letter-spacing: 0.50px; }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -248,18 +248,19 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
 .btn {
   border-radius: 9999px !important;
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 480;
-  letter-spacing: -0.10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.08px;
   text-transform: none;
-  padding: 10px 22px;
-  min-height: 44px;
+  padding: 9px 20px;
+  min-height: 40px;
   height: auto;
 }
 @media (min-width: 768px) {
   .btn {
-    font-size: 18px;
-    padding: 12px 26px;
+    font-size: 15px;
+    padding: 10px 22px;
+    min-height: 42px;
   }
 }
 
