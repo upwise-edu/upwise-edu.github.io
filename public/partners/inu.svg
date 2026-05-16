@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg5" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 200.99 112.33">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fcaf16;
+      }
+
+      .st1 {
+        fill: #01499a;
+      }
+    </style>
+  </defs>
+  <sodipodi:namedview id="namedview7" bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" inkscape:current-layer="g15" inkscape:cx="153.96155" inkscape:cy="115.47116" inkscape:document-units="mm" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="991" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="2391" inkscape:window-y="-9" inkscape:zoom="0.71446409" pagecolor="#ffffff" showgrid="false"/>
+  <g id="g17">
+    <path id="path19" class="st0" d="M66.43,112.33l14.33-14.34h-40.56v-40.56l-14.34,14.34v40.56h40.56Z"/>
+  </g>
+  <g id="g21">
+    <path id="path23" class="st0" d="M97.63,0l-14.33,14.33h40.56v40.56l14.34-14.34V0h-40.56Z"/>
+  </g>
+  <g id="g27">
+    <g id="g33">
+      <path id="path35" class="st1" d="M22.32,21.31H0v.84s0,0,.01.01H0c2.02,2.6,3.24,5.07,3.3,9.34v56.22c.03.53.17.86.64,1.08.61.29,1.08,0,1.92-.83l13.17-13.17V31.38c.08-4.2,1.29-6.65,3.3-9.22h-.01s0,0,.01-.01v-.84Z"/>
+    </g>
+    <g id="g37">
+      <path id="path39" class="st1" d="M200.99,21.31h-22.33v.84s0,0,.01.01h0c1.96,2.51,3.16,4.89,3.29,8.91v33.7c0,6.77-5.48,12.25-12.25,12.25s-12.25-5.49-12.25-12.25V24.75c0-.79-.03-1.59-.65-1.81-.63-.23-.97-.04-1.81.8h0s-13.28,13.27-13.28,13.27v26.65c0,15.45,12.53,27.97,27.98,27.97s27.98-12.52,27.98-27.97v-31.96c.02-4.4,1.25-6.9,3.3-9.54h-.01s0,0,.01-.01v-.84Z"/>
+    </g>
+    <g id="g41">
+      <path id="path43" class="st1" d="M113.55,21.31h-22.33v.84s.01,0,.01.01h-.01c2.06,2.64,3.29,5.14,3.3,9.54v29.05l-22.09-35.55-18.14,18.14v36.73h0c0,4.46-1.23,6.97-3.3,9.63v.84h22.33v-.84s0,0-.01,0c-1.99-2.56-3.2-4.99-3.29-9.14v-29.44l22.09,35.55,18.14-18.14V31.53c.05-4.29,1.27-6.77,3.3-9.37h0s0,0,.01-.01v-.84Z"/>
+    </g>
+  </g>
+</svg>
