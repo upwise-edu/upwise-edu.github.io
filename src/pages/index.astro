@@ -394,6 +394,14 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
         }
 
         function update() {
+          // Edge case: scrolled to the very bottom — force-activate the last tracked section.
+          // Without this, short bottom sections (like Contact) never reach the 30% trigger line.
+          const nearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+          if (nearBottom) {
+            setActive(tracked[tracked.length - 1].id);
+            return;
+          }
+
           const trigger = window.scrollY + window.innerHeight * 0.30;
           let current = tracked[0];
           for (const s of tracked) {
