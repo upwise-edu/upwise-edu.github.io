@@ -153,3 +153,13 @@ article a:hover {
 .divider:after {
   background-color: hsl(var(--b3) / 0.6) !important;
 }
+
+/* === Kakao icon (mask-based, picks up currentColor) === */
+.kakao-icon-md {
+  display: inline-block;
+  width: 26px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask: url("/KakaoTalk_logo.svg") no-repeat center / contain;
+  mask: url("/KakaoTalk_logo.svg") no-repeat center / contain;
+}
