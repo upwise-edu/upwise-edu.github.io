@@ -33,6 +33,7 @@ export const courses: Course[] = [
     durationMinutes: 641,
     lectures: 62,
     highlights: ['GIS 기초 이론', '벡터/래스터 분석', '실전 예제 4종'],
+    image: '/courses/starter.jpg',
   },
   {
     id: 'viz',
@@ -48,6 +49,7 @@ export const courses: Course[] = [
     durationMinutes: 402,
     lectures: 40,
     highlights: ['벡터 시각화 심화', '레이아웃 조판', '7가지 주제도 실습'],
+    image: '/courses/viz.jpg',
   },
   {
     id: 'free-election',
@@ -63,6 +65,7 @@ export const courses: Course[] = [
     durationMinutes: 98,
     lectures: 8,
     highlights: ['무료', '뉴스 같은 시각화', '입문자 친화적'],
+    image: '/courses/free-election.jpg',
   },
   {
     id: 'automation',
@@ -78,6 +81,7 @@ export const courses: Course[] = [
     durationMinutes: 592,
     lectures: 69,
     highlights: ['Python 기초', 'QGIS 자동화', '실무 적용'],
+    image: '/courses/automation.jpg',
   },
 ];
 
