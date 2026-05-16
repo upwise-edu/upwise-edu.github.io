@@ -98,12 +98,12 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
     </div>
   </section>
 
-  <!-- ───────── COURSES ───────── -->
+  <!-- ───────── ONLINE COURSES ───────── -->
   <section id="courses" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">02 — COURSES</p>
-    <h3 class="type-display-lg mb-4">강의 안내</h3>
+    <p class="type-caption text-primary mb-4">02 — ONLINE COURSES</p>
+    <h3 class="type-display-lg mb-4">온라인 강의</h3>
     <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">
-      온라인 강의는 <strong style="font-weight:540;">입문 → 시각화 → 자동화</strong> 순으로 구성. 오프라인에서는 기관·기업·대학을 대상으로 워크숍·특강·정규 강의를 진행합니다.
+      인프런에서 운영 중인 QGIS 강의. <strong style="font-weight:540;">입문 → 시각화 → 자동화</strong> 순으로 구성되어 단계별 학습이 가능합니다.
     </p>
 
     <!-- Roadmap chips -->
@@ -122,15 +122,20 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
       ))}
     </div>
 
-    <!-- Online courses -->
-    <p class="type-eyebrow text-primary mb-5">ONLINE · 인프런</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+    <!-- Online course cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {orderedCourses.map((course) => <CourseCard course={course} />)}
     </div>
+  </section>
 
-    <!-- Offline timeline -->
-    <p class="type-eyebrow text-primary mb-2">OFFLINE · 출강 이력</p>
-    <p class="type-body-sm text-base-content/60 mb-6">
+  <!-- ───────── OFFLINE LECTURES ───────── -->
+  <section id="lectures" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+    <p class="type-caption text-primary mb-4">03 — OFFLINE LECTURES</p>
+    <h3 class="type-display-lg mb-4">강의 경력</h3>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-6">
+      기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다.
+    </p>
+    <p class="type-body-sm text-base-content/60 mb-10">
       누적 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalCount}건 이상</strong>의 출강
       · <strong class="text-base-content" style="font-weight:540;">{lectStats.uniqueOrgs}개 기관·기업</strong>
       · 총 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalHours}시간 이상</strong>
@@ -176,7 +181,7 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
   <!-- ───────── PARTNERS ───────── -->
   <section id="partners" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">03 — PARTNERS</p>
+    <p class="type-caption text-primary mb-4">04 — PARTNERS</p>
     <h3 class="type-display-lg mb-4">협업 기관</h3>
     <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">
       대학·공공기관·기업 등 다양한 조직과 함께 GIS 교육·워크숍·컨설팅을 진행해왔습니다.
@@ -184,32 +189,32 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {collaborations.map((c) => (
-        <div class="group relative flex flex-col items-center justify-center text-center p-4 min-h-[110px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
+        <div class="group relative flex flex-col p-3 rounded-2xl bg-gradient-to-br from-[#0f1e35] to-[#1e3a5f] border border-[#2c4870] hover:border-primary/60 hover:shadow-xl hover:shadow-primary/10 transition-all">
           {c.logo ? (
             <>
-              <div class="flex-1 flex items-center justify-center w-full mb-2 min-h-[44px]">
+              <div class="bg-white rounded-xl p-3 mb-3 h-20 flex items-center justify-center">
                 <img
                   src={c.logo}
                   alt={c.name}
-                  class="max-h-12 max-w-full object-contain transition-all duration-300"
+                  class="max-h-full max-w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p class="type-caption text-base-content/55 group-hover:text-primary transition-colors text-center leading-tight">
+              <p class="text-white text-sm md:text-base font-semibold text-center leading-tight group-hover:text-primary transition-colors px-1">
                 {c.name}
               </p>
             </>
           ) : (
-            <>
-              <p class="type-body-sm text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:600;">
+            <div class="flex flex-col items-center justify-center text-center min-h-[110px]">
+              <p class="text-white text-sm md:text-base font-bold leading-tight group-hover:text-primary transition-colors">
                 {c.name}
               </p>
               {c.nameEn && (
-                <p class="type-caption text-base-content/45 mt-1">
+                <p class="type-caption text-white/55 mt-1">
                   {c.nameEn}
                 </p>
               )}
-            </>
+            </div>
           )}
         </div>
       ))}
@@ -218,7 +223,7 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
   <!-- ───────── CV ───────── -->
   <section id="cv" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">04 — CV</p>
+    <p class="type-caption text-primary mb-4">05 — CV</p>
     <h3 class="type-display-lg mb-10">강사 이력</h3>
 
     <!-- Stats -->
@@ -307,7 +312,7 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
   <!-- ───────── CONTACT — navy color block (Figma signature 'ship products' pattern) ───────── -->
   <section id="contact" class="scroll-section pt-16 pb-12 scroll-mt-12">
     <div class="color-block color-block-navy">
-      <p class="type-caption mb-4">05 — GET IN TOUCH</p>
+      <p class="type-caption mb-4">06 — GET IN TOUCH</p>
       <h3 class="type-display-lg mb-5">함께 일하고 싶으신가요?</h3>
       <p class="type-body-lg mb-10 max-w-xl" style="color:#cbd5e1;">
         강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요.
