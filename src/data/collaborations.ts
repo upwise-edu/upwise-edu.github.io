@@ -14,6 +14,7 @@ export const collaborations: Collaboration[] = [
   { name: '서울대학교',            nameEn: 'SNU',           category: 'academic',  logo: '/partners/snu.svg' },
   { name: '서울대학교 환경대학원', nameEn: 'GSES, SNU',     category: 'academic',  logo: '/partners/gses.svg' },
   { name: '인천대학교',            nameEn: 'INU',           category: 'academic',  logo: '/partners/inu.svg' },
+  { name: '한양사이버대학교',      nameEn: 'HYCU',          category: 'academic',  logo: '/partners/hanyang_cyber.svg' },
 
   // Public sector
   { name: '한국수자원공사',        nameEn: 'K-water',       category: 'public',    logo: '/partners/k-water.svg' },
@@ -28,5 +29,5 @@ export const collaborations: Collaboration[] = [
   { name: '현대NGV',               nameEn: 'Hyundai NGV',   category: 'corporate', logo: '/partners/hyundai_ngv.svg' },
 
   // Training
-  { name: 'SeSAC',                 nameEn: '서울 SW아카데미', category: 'training',  logo: '/partners/sesac.svg' },
+  { name: 'SeSAC',                 nameEn: '서울 SW아카데미', category: 'training',  logo: '/partners/sesac.png' },
 ];
