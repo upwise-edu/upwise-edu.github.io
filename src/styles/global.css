@@ -189,7 +189,7 @@ body {
 }
 
 .type-eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--size-eyebrow-mobile);
   font-weight: 500;
   line-height: 1.30;
@@ -201,7 +201,7 @@ body {
 }
 
 .type-caption {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--size-caption-mobile);
   font-weight: 500;
   line-height: 1.10;
