@@ -2,8 +2,8 @@
   "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다. 줄바꿈은 문자열 안에 \\n 으로 표시하세요 (예: \"첫 줄\\n두 번째 줄\").",
 
   "site": {
-    "title": "upwise. | GIS 전문 강사",
-    "description": "upwise — QGIS·ArcGIS·Python을 기반으로 한 실무 중심 GIS 강의. 공공기관·대학·기업 강의 및 워크숍 진행."
+    "title": "UPWISE. | GIS 전문 강사",
+    "description": "UPWISE — QGIS·ArcGIS·Python을 기반으로 한 실무 중심 GIS 강의. 공공기관·대학·기업 강의 및 워크숍 진행."
   },
 
   "hero": {
