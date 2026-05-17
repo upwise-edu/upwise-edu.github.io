@@ -179,15 +179,14 @@ const {
             my += (targetMy - my) * 0.06;
 
             // Direct scroll-to-z integration (no smoothing → instant feedback).
-            // Each scroll pixel contributes to z. Per-frame contribution is capped
-            // at idleStep × 3 so total motion stays within the 4x cap (idle + 3 = 4).
+            // Scroll always advances z FORWARD regardless of direction (no rewind on scroll-up).
+            // Per-frame contribution capped at idleStep × 4 → total motion within 5x cap.
             const curScrollY = window.scrollY;
-            const scrollDelta = curScrollY - lastScrollY;
+            const scrollDelta = Math.abs(curScrollY - lastScrollY);
             lastScrollY = curScrollY;
 
             const idleStep   = IDLE_VEL * dt;
-            const scrollStep = Math.sign(scrollDelta) *
-              Math.min(Math.abs(scrollDelta) * 0.00012, idleStep * 3);
+            const scrollStep = Math.min(scrollDelta * 0.00016, idleStep * 4);
 
             zCurrent += idleStep + scrollStep;
 
