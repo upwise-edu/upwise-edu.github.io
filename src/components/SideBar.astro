@@ -8,23 +8,16 @@ const { sideBarActiveItemID } = Astro.props;
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="px-4 pt-6 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col border-r border-base-300">
     <!-- Logo + Brand -->
-    <a href="/" class="group block mb-2">
-      <div class="flex items-center gap-3 transition-transform duration-300 group-hover:translate-x-1">
+    <a href="/" class="group block mb-4">
+      <div class="flex flex-col items-start gap-2 transition-transform duration-300 group-hover:translate-x-1">
         <img
-          src="/upwise_logo.png"
+          src="/upwise_text.png"
           alt="UPWISE logo"
-          width="60"
-          height="60"
-          class="rounded-lg shadow-lg"
+          class="w-full max-w-[230px] h-auto"
         />
-        <div class="flex flex-col">
-          <span class="text-3xl font-bold tracking-tight text-base-content">
-            UP<span class="text-primary">WISE</span><span class="text-primary">.</span>
-          </span>
-          <span class="text-xs text-base-content/60 tracking-widest uppercase mt-0.5">
-            GIS Instructor
-          </span>
-        </div>
+        <span class="text-xs text-base-content/60 tracking-widest uppercase">
+          UPWISE · GIS Instructor
+        </span>
       </div>
     </a>
 
