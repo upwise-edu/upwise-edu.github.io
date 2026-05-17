@@ -454,11 +454,12 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   border: 1px solid rgba(247, 147, 30, 0.18);
 }
 
+/* Only headings inherit the section color — p tags use their own utility classes
+   so theme-specific Tailwind hover variants can override correctly. */
 .color-block-navy h1,
 .color-block-navy h2,
 .color-block-navy h3,
-.color-block-navy h4,
-.color-block-navy p {
+.color-block-navy h4 {
   color: inherit;
 }
 [data-theme="upwise-dark"] .color-block-navy .type-eyebrow,
