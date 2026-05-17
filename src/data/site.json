@@ -7,12 +7,12 @@
   },
 
   "hero": {
-    "eyebrow": "HELLO, WELCOME.",
+    "eyebrow": "안녕하세요. GIS 전문 강사 UPWISE 이승현입니다.",
     "taglineBefore": "누적",
-    "taglineAfter": "명이 선택한",
+    "taglineAfter": "명 이상의 수강생이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
-    "description": "서울대학교 환경대학원 출신, QGIS·Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다. 입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
+    "description": "서울대학교 환경대학원 출신, QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다. 입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
     "ctaPrimary": "강의 보러가기",
     "ctaSecondary": "멘토링 문의"
   },
