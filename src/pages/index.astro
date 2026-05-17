@@ -22,7 +22,7 @@ const orderedCourses = [
   courses.find((c) => c.id === 'automation'),
 ].filter(Boolean) as typeof courses;
 
-const categoryMeta = site.categoryMeta as Record<string, { label: string; description: string; icon: string }>;
+const categoryMeta = site.courses.categoryMeta as Record<string, { label: string; description: string; icon: string }>;
 ---
 
 <BaseLayout sideBarActiveItemID="about">
