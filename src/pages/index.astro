@@ -128,14 +128,13 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
     <!-- Expertise (detailed) -->
     <p class="type-eyebrow text-primary mb-5">EXPERTISE</p>
-    <div class="time-line-container mb-12">
+    <div class="time-line-container">
       {site.about.expertise.map((e) => (
         <TimeLineElement title={e.title} subtitle={e.subtitle}>
           {e.body}
         </TimeLineElement>
       ))}
     </div>
-
   </section>
 
   <!-- ───────── ONLINE COURSES ───────── -->
