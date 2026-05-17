@@ -84,7 +84,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     <!-- Intro narrative -->
     <div class="space-y-5 max-w-2xl mb-12">
       {site.about.paragraphs.map((p, i) => (
-        <p class={i === 0 ? "type-body-lg text-base-content/85" : "type-body text-base-content/75"}>
+        <p class={(i === 0 ? "type-body-lg text-base-content/85" : "type-body text-base-content/75") + " whitespace-pre-line"}>
           {p}
         </p>
       ))}
@@ -154,7 +154,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
   <section id="courses" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
     <p class="type-caption text-primary mb-4">{site.courses.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.courses.title}</h3>
-    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">{site.courses.intro}</p>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12 whitespace-pre-line">{site.courses.intro}</p>
 
     <!-- Roadmap chips -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-14">
@@ -182,7 +182,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
   <section id="lectures" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
     <p class="type-caption text-primary mb-4">{site.lectures.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.lectures.title}</h3>
-    <p class="type-body-lg text-base-content/75 max-w-2xl mb-6">{site.lectures.intro}</p>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-6 whitespace-pre-line">{site.lectures.intro}</p>
     <p class="type-body-sm text-base-content/60 mb-10">
       누적 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalCount}건 이상</strong>의 출강
       · <strong class="text-base-content" style="font-weight:540;">{lectStats.uniqueOrgs}개 기관·기업</strong>
@@ -218,7 +218,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     <!-- Custom request box -->
     <div class="mt-14 color-block color-block-orange-soft">
       <h4 class="type-headline mb-3">{site.customRequest.title}</h4>
-      <p class="type-body text-base-content/75 mb-6 max-w-xl">{site.customRequest.description}</p>
+      <p class="type-body text-base-content/75 mb-6 max-w-xl whitespace-pre-line">{site.customRequest.description}</p>
       <a href="#contact" class="inline-flex items-center gap-1 type-link text-primary hover:underline">
         {site.customRequest.ctaText}
       </a>
@@ -229,7 +229,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
   <section id="partners" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
     <p class="type-caption text-primary mb-4">{site.partners.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.partners.title}</h3>
-    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">{site.partners.intro}</p>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12 whitespace-pre-line">{site.partners.intro}</p>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {collaborations.map((c) => (
@@ -270,7 +270,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     <div class="color-block color-block-navy">
       <p class="type-caption mb-4">{site.contact.eyebrow}</p>
       <h3 class="type-display-lg mb-5">{site.contact.title}</h3>
-      <p class="type-body-lg mb-10 max-w-xl text-base-content/75 dark:text-slate-300">{site.contact.description}</p>
+      <p class="type-body-lg mb-10 max-w-xl text-base-content/75 dark:text-slate-300 whitespace-pre-line">{site.contact.description}</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <!-- Kakao -->
