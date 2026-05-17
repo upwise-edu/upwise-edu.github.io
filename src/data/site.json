@@ -47,11 +47,6 @@
         "subtitle": "GeoPandas · Rasterio · PyQGIS",
         "body": "파이썬 기반 공간데이터 처리 자동화. 반복 작업을 코드로 효율화하는 워크플로우 구축."
       }
-    ],
-    "skills": [
-      { "label": "GIS Software",  "items": ["QGIS", "ArcGIS Pro", "PostGIS"] },
-      { "label": "Programming",   "items": ["Python (GeoPandas, Rasterio, PyQGIS)", "R (sf, terra)", "SQL · JavaScript"] },
-      { "label": "Visualization", "items": ["QGIS Layout", "Leaflet · MapLibre", "Matplotlib · Plotly"] }
     ]
   },
 
