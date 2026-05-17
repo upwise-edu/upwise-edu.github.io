@@ -180,14 +180,14 @@ const {
 
             // Direct scroll-to-z integration (no smoothing → instant feedback).
             // Each scroll pixel contributes to z. Per-frame contribution is capped
-            // at idleStep so total motion stays within the 2x cap requested.
+            // at idleStep × 3 so total motion stays within the 4x cap (idle + 3 = 4).
             const curScrollY = window.scrollY;
             const scrollDelta = curScrollY - lastScrollY;
             lastScrollY = curScrollY;
 
             const idleStep   = IDLE_VEL * dt;
             const scrollStep = Math.sign(scrollDelta) *
-              Math.min(Math.abs(scrollDelta) * 0.00006, idleStep);
+              Math.min(Math.abs(scrollDelta) * 0.00012, idleStep * 3);
 
             zCurrent += idleStep + scrollStep;
 
