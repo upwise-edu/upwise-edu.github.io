@@ -1,0 +1,104 @@
+{
+  "_help": "이 파일을 수정하면 사이트의 텍스트가 바뀝니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요.",
+
+  "site": {
+    "title": "upwise. | GIS 전문 강사",
+    "description": "upwise — QGIS·ArcGIS·Python을 기반으로 한 실무 중심 GIS 강의. 공공기관·대학·기업 강의 및 워크숍 진행."
+  },
+
+  "hero": {
+    "eyebrow": "HELLO, WELCOME.",
+    "taglineBefore": "누적",
+    "taglineAfter": "명이 선택한",
+    "taglineHighlight": "QGIS 전문 강사",
+    "taglineSuffix": "입니다.",
+    "description": "서울대학교 환경대학원 출신, QGIS·Python을 활용한 공간 데이터 분석과 시각화를 가르칩니다. 입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
+    "ctaPrimary": "강의 보러가기",
+    "ctaSecondary": "멘토링 문의"
+  },
+
+  "about": {
+    "title": "소개",
+    "paragraphs": [
+      "지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
+      "서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며, 공간자료를 활용한 연구와 강의를 병행하고 있습니다."
+    ],
+    "expertiseLine": "주요 강의 분야는 ",
+    "expertiseAreas": ["QGIS 기초·심화", "지도 시각화", "QGIS × Python 자동화"],
+    "expertiseLineSuffix": "입니다."
+  },
+
+  "courses": {
+    "title": "온라인 강의",
+    "intro": "인프런에서 운영 중인 QGIS 강의. 입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다."
+  },
+
+  "categoryMeta": {
+    "입문":   { "label": "BEGINNER",      "description": "QGIS를 처음 만나는 분께.",                    "icon": "🌱" },
+    "시각화": { "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
+    "자동화": { "label": "AUTOMATION",    "description": "반복 GIS 작업을 코드로 효율화하고 싶은 분께.", "icon": "⚡" }
+  },
+
+  "lectures": {
+    "title": "강의 경력",
+    "intro": "기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다."
+  },
+
+  "customRequest": {
+    "title": "맞춤 강의 · 멘토링 요청",
+    "description": "기관·기업·대학의 GIS 교육 의뢰, 1:1 온라인 멘토링, 공간분석 컨설팅 등 다양한 형태로 함께 일할 수 있습니다.",
+    "ctaText": "문의하러 가기 →"
+  },
+
+  "partners": {
+    "title": "협업 기관",
+    "intro": "대학·공공기관·기업 등 다양한 조직과 함께 GIS 교육·워크숍·컨설팅을 진행해왔습니다."
+  },
+
+  "cv": {
+    "title": "강사 이력",
+    "education": [
+      { "title": "박사 과정 수료", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
+      { "title": "석사 졸업",      "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" }
+    ],
+    "expertise": [
+      {
+        "title": "GIS · 공간정보 분석",
+        "subtitle": "QGIS · ArcGIS · 공간자료 분석 및 시각화",
+        "body": "벡터/래스터 자료의 수집·전처리·분석·시각화 전 과정. 공공데이터·위성영상·현장조사 자료의 통합 활용."
+      },
+      {
+        "title": "원격탐사 (Remote Sensing)",
+        "subtitle": "위성영상 분석 · 식생/토지피복 모니터링",
+        "body": "Landsat·Sentinel·MODIS 등 위성영상을 활용한 환경 모니터링 연구 경험."
+      },
+      {
+        "title": "Python × GIS 융합",
+        "subtitle": "GeoPandas · Rasterio · PyQGIS",
+        "body": "파이썬 기반 공간데이터 처리 자동화. 반복 작업을 코드로 효율화하는 워크플로우 구축."
+      }
+    ],
+    "skills": [
+      { "label": "GIS Software",  "items": ["QGIS", "ArcGIS Pro", "PostGIS"] },
+      { "label": "Programming",   "items": ["Python (GeoPandas, Rasterio, PyQGIS)", "R (sf, terra)", "SQL · JavaScript"] },
+      { "label": "Visualization", "items": ["QGIS Layout", "Leaflet · MapLibre", "Matplotlib · Plotly"] }
+    ]
+  },
+
+  "contact": {
+    "title": "함께 일하고 싶으신가요?",
+    "description": "강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요. 카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.",
+    "kakaoLabel": "FASTEST REPLY",
+    "kakaoName": "카카오 오픈프로필",
+    "kakaoUrl": "https://open.kakao.com/me/upwise",
+    "kakaoDisplay": "open.kakao.com/me/upwise",
+    "emailName": "이메일",
+    "email": "upwise0506@gmail.com",
+    "phoneName": "전화",
+    "phone": "010-8455-5598",
+    "phoneTelLink": "+82-10-8455-5598",
+    "inflearnName": "인프런 강사 페이지",
+    "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
+    "inflearnDescription": "강의 · 1:1 멘토링 신청"
+  }
+}
