@@ -36,7 +36,11 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
     <p class="type-headline text-base-content/90 mb-8 max-w-2xl">
       {site.hero.taglineBefore} <span class="text-primary" style="font-weight:700;">{instructorStats.totalStudents}</span>{site.hero.taglineAfter}<br/>
-      <span class="text-primary">{site.hero.taglineHighlight}</span>{site.hero.taglineSuffix}
+      {site.hero.taglineHighlight.split(/(GIS)/).map((part) => (
+        part === 'GIS'
+          ? <span style="color:#00C471;">{part}</span>
+          : <span class="text-primary">{part}</span>
+      ))}{site.hero.taglineSuffix}
     </p>
 
     <p class="type-body text-base-content/70 max-w-2xl mb-10 whitespace-pre-line">
