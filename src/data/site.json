@@ -1,5 +1,5 @@
 {
-  "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다.",
+  "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다. 줄바꿈은 문자열 안에 \\n 으로 표시하세요 (예: \"첫 줄\\n두 번째 줄\").",
 
   "site": {
     "title": "upwise. | GIS 전문 강사",
@@ -12,12 +12,13 @@
     "taglineAfter": "명 이상의 수강생이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
-    "description": "서울대학교 환경대학원 출신, QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다. 입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
-    "ctaPrimary": "강의 보러가기",
+    "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
+    "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"
   },
 
   "about": {
+    "eyebrow": "01 — ABOUT",
     "title": "소개",
     "paragraphs": [
       "지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
@@ -29,15 +30,16 @@
   },
 
   "instructorStats": {
-    "_help": "인프런 프로필 페이지에서 확인 후 주기적으로 업데이트하세요.",
-    "totalStudents": 1016,
+    "_help": "인프런 프로필 페이지에서 확인 후 주기적으로 업데이트하세요. 숫자에 +나 콤마를 넣고 싶으면 따옴표로 감싸 문자열로 작성 (예: \"1,500+\"). 따옴표 없으면 순수 숫자만 가능.",
+    "totalStudents": "1500+",
     "averageRating": 4.9,
-    "totalReviews": 100,
+    "totalReviews": "100+",
     "mentoringSessions": 3,
     "mentoringRating": 5.0
   },
 
   "courses": {
+    "eyebrow": "02 — ONLINE COURSES",
     "title": "온라인 강의",
     "intro": "인프런에서 운영 중인 QGIS 강의. 입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
     "categoryMeta": {
@@ -111,6 +113,7 @@
 
   "lectures": {
     "_help": "신규 출강은 items 배열 맨 위에 추가. format은 '워크숍'|'특강'|'정규 강의'|'세미나'|'컨퍼런스'|'멘토링' 중 선택. month는 모르면 0.",
+    "eyebrow": "03 — OFFLINE LECTURES",
     "title": "강의 경력",
     "intro": "기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다.",
     "items": [
@@ -137,6 +140,7 @@
 
   "partners": {
     "_help": "category 는 'academic' | 'public' | 'corporate' | 'training' 중 선택. logo 는 public/ 기준 경로.",
+    "eyebrow": "04 — PARTNERS",
     "title": "협업 기관",
     "intro": "대학·공공기관·기업 등 다양한 조직과 함께 GIS 교육·워크숍·컨설팅을 진행해왔습니다.",
     "items": [
@@ -160,6 +164,7 @@
   },
 
   "cv": {
+    "eyebrow": "05 — CV",
     "title": "강사 이력",
     "education": [
       { "title": "박사 과정 수료", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
@@ -190,7 +195,8 @@
   },
 
   "contact": {
-    "title": "함께 일하고 싶으신가요?",
+    "eyebrow": "06 — GET IN TOUCH",
+    "title": "언제든 편하게 연락주세요.",
     "description": "강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요. 카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.",
     "kakaoLabel": "FASTEST REPLY",
     "kakaoName": "카카오 오픈프로필",
