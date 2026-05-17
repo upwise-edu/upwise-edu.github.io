@@ -23,6 +23,11 @@ const orderedCourses = [
 ].filter(Boolean) as typeof courses;
 
 const categoryMeta = site.courses.categoryMeta as Record<string, { label: string; description: string; icon: string }>;
+
+// 전화번호 봇 회피용 인코딩 — 평문 대신 char code 배열로 HTML에 삽입.
+// 일반 봇은 이를 전화번호로 인식 못 함. JS가 hover/click 시점에 복원.
+const phoneChars = [...site.contact.phone].map((c) => c.charCodeAt(0));
+const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
 ---
 
 <BaseLayout sideBarActiveItemID="about">
@@ -31,7 +36,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     <p class="type-eyebrow text-primary mb-6">{site.hero.eyebrow}</p>
 
     <h1 class="type-display-xl mb-6 leading-[0.95]">
-      <span>UP</span><span class="text-primary">WISE.</span>
+      <span class="text-primary">UP</span><span class="text-base-content">WISE</span><span class="text-primary">.</span>
     </h1>
 
     <p class="type-headline text-base-content/90 mb-8 max-w-2xl">
@@ -294,9 +299,10 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           </div>
         </a>
 
-        <!-- Phone -->
+        <!-- Phone — 봇 보호: HTML에 번호 없음, hover/click 시 JS가 복원 -->
         <a
-          href={`tel:${site.contact.phoneTelLink}`}
+          id="phone-card"
+          href="#"
           class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
         >
           <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
@@ -307,7 +313,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           <div class="min-w-0">
             <p class="type-caption text-primary mb-1">PHONE</p>
             <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.phoneName}</p>
-            <p class="text-xs text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate transition-colors" style="font-family:var(--font-sans);">{site.contact.phone}</p>
+            <p id="phone-display" class="text-xs text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate transition-colors" style="font-family:var(--font-sans);">마우스를 올리거나 탭하여 보기</p>
           </div>
         </a>
 
@@ -329,6 +335,34 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
       </div>
     </div>
   </section>
+
+  <!-- ───────── Phone reveal on hover/touch (bot protection) ───────── -->
+  <script is:inline define:vars={{ phoneChars, telChars }}>
+    (function () {
+      const card = document.getElementById('phone-card');
+      const disp = document.getElementById('phone-display');
+      if (!card || !disp) return;
+      let revealed = false;
+      function reveal() {
+        if (revealed) return;
+        revealed = true;
+        const phone = String.fromCharCode.apply(null, phoneChars);
+        const tel   = String.fromCharCode.apply(null, telChars);
+        disp.textContent = phone;
+        card.setAttribute('href', 'tel:' + tel);
+      }
+      card.addEventListener('mouseenter', reveal);
+      card.addEventListener('focus', reveal);
+      card.addEventListener('touchstart', reveal, { passive: true });
+      // Block accidental click before reveal — show number first, then user can tap again
+      card.addEventListener('click', function (e) {
+        if (!revealed) {
+          e.preventDefault();
+          reveal();
+        }
+      });
+    })();
+  </script>
 
   <!-- ───────── Scroll-spy ───────── -->
   <script is:inline>
