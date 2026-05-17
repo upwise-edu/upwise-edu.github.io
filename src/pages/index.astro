@@ -336,29 +336,44 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
     </div>
   </section>
 
-  <!-- ───────── Phone reveal on hover/touch (bot protection) ───────── -->
+  <!-- ───────── Phone reveal — only while hovered/focused (bot protection) ───────── -->
   <script is:inline define:vars={{ phoneChars, telChars }}>
     (function () {
       const card = document.getElementById('phone-card');
       const disp = document.getElementById('phone-display');
       if (!card || !disp) return;
-      let revealed = false;
-      function reveal() {
-        if (revealed) return;
-        revealed = true;
-        const phone = String.fromCharCode.apply(null, phoneChars);
-        const tel   = String.fromCharCode.apply(null, telChars);
-        disp.textContent = phone;
-        card.setAttribute('href', 'tel:' + tel);
+      const placeholder = disp.textContent;
+      let hideTimer = null;
+
+      function show() {
+        disp.textContent = String.fromCharCode.apply(null, phoneChars);
+        card.setAttribute('href', 'tel:' + String.fromCharCode.apply(null, telChars));
       }
-      card.addEventListener('mouseenter', reveal);
-      card.addEventListener('focus', reveal);
-      card.addEventListener('touchstart', reveal, { passive: true });
-      // Block accidental click before reveal — show number first, then user can tap again
+      function hide() {
+        disp.textContent = placeholder;
+        card.setAttribute('href', '#');
+      }
+
+      // Desktop: show while hovered/focused, hide when leaving
+      card.addEventListener('mouseenter', show);
+      card.addEventListener('mouseleave', hide);
+      card.addEventListener('focus', show);
+      card.addEventListener('blur', hide);
+
+      // Mobile: tap reveals temporarily (5s) then hides
+      card.addEventListener('touchstart', function () {
+        show();
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hide, 5000);
+      }, { passive: true });
+
+      // First click on hidden state shows it (not navigating). Once visible, click navigates.
       card.addEventListener('click', function (e) {
-        if (!revealed) {
+        if (disp.textContent === placeholder) {
           e.preventDefault();
-          reveal();
+          show();
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(hide, 5000);
         }
       });
     })();
