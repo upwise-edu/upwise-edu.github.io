@@ -438,21 +438,36 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   border-color: rgba(247, 147, 30, 0.25);
 }
 
+/* Color block — Contact section. Theme-aware:
+   - dark mode: deep navy gradient (immersive)
+   - light mode: soft warm-orange tint (brand-aligned, not heavy) */
 .color-block-navy {
-  background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
-  color: #e2e8f0;
   border: none;
 }
+[data-theme="upwise-dark"] .color-block-navy {
+  background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+  color: #e2e8f0;
+}
+[data-theme="upwise-light"] .color-block-navy {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe7c4 100%);
+  color: #1e3a5f;
+  border: 1px solid rgba(247, 147, 30, 0.18);
+}
+
 .color-block-navy h1,
 .color-block-navy h2,
 .color-block-navy h3,
 .color-block-navy h4,
 .color-block-navy p {
-  color: #e2e8f0;
+  color: inherit;
 }
-.color-block-navy .type-eyebrow,
-.color-block-navy .type-caption {
+[data-theme="upwise-dark"] .color-block-navy .type-eyebrow,
+[data-theme="upwise-dark"] .color-block-navy .type-caption {
   color: #ffa756;
+}
+[data-theme="upwise-light"] .color-block-navy .type-eyebrow,
+[data-theme="upwise-light"] .color-block-navy .type-caption {
+  color: #f7931e;
 }
 
 /* Section rhythm: 96px section gap on desktop, 64px on mobile */

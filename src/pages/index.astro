@@ -270,29 +270,29 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     <div class="color-block color-block-navy">
       <p class="type-caption mb-4">{site.contact.eyebrow}</p>
       <h3 class="type-display-lg mb-5">{site.contact.title}</h3>
-      <p class="type-body-lg mb-10 max-w-xl" style="color:#cbd5e1;">{site.contact.description}</p>
+      <p class="type-body-lg mb-10 max-w-xl text-base-content/75 dark:text-slate-300">{site.contact.description}</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <!-- Kakao -->
         <a
           href={site.contact.kakaoUrl}
           target="_blank" rel="noopener noreferrer"
-          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
         >
           <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
             <span class="kakao-icon-md" aria-hidden="true"></span>
           </div>
           <div class="min-w-0">
             <p class="type-caption text-primary mb-1">{site.contact.kakaoLabel}</p>
-            <p class="type-body text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.kakaoName}</p>
-            <p class="type-caption text-white/45 group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.kakaoDisplay}</p>
+            <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.kakaoName}</p>
+            <p class="type-caption text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.kakaoDisplay}</p>
           </div>
         </a>
 
         <!-- Email -->
         <a
           href={`mailto:${site.contact.email}`}
-          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
         >
           <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -302,15 +302,15 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           </div>
           <div class="min-w-0">
             <p class="type-caption text-primary mb-1">EMAIL</p>
-            <p class="type-body text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.emailName}</p>
-            <p class="type-caption text-white/45 group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.email}</p>
+            <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.emailName}</p>
+            <p class="type-caption text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.email}</p>
           </div>
         </a>
 
         <!-- Phone -->
         <a
           href={`tel:${site.contact.phoneTelLink}`}
-          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
         >
           <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -319,8 +319,8 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           </div>
           <div class="min-w-0">
             <p class="type-caption text-primary mb-1">PHONE</p>
-            <p class="type-body text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.phoneName}</p>
-            <p class="type-caption text-white/45 group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.phone}</p>
+            <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{site.contact.phoneName}</p>
+            <p class="type-caption text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.phone}</p>
           </div>
         </a>
 
@@ -328,15 +328,15 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
         <a
           href={site.contact.inflearnUrl}
           target="_blank" rel="noopener noreferrer"
-          class="group flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/60 hover:bg-white/10 transition-all"
+          class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
         >
           <div class="shrink-0 w-12 h-12 rounded-xl bg-[#00C471]/15 text-[#00C471] flex items-center justify-center group-hover:bg-[#00C471] group-hover:text-white transition-colors">
             <span class="inflearn-icon-md" aria-hidden="true"></span>
           </div>
           <div class="min-w-0">
             <p class="type-caption mb-1" style="color:#00C471;">INFLEARN</p>
-            <p class="type-body text-slate-200 group-hover:text-[#00C471] transition-colors" style="font-weight:600;">{site.contact.inflearnName}</p>
-            <p class="type-caption text-white/45 group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.inflearnDescription}</p>
+            <p class="type-body text-base-content dark:text-slate-200 group-hover:text-[#00C471] transition-colors" style="font-weight:600;">{site.contact.inflearnName}</p>
+            <p class="type-caption text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate normal-case tracking-normal transition-colors" style="font-family:var(--font-sans);">{site.contact.inflearnDescription}</p>
           </div>
         </a>
       </div>
