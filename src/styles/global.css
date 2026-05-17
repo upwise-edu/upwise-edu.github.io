@@ -230,6 +230,22 @@ body::before {
     radial-gradient(circle at 80% 100%, rgba(30, 58, 95, 0.04), transparent 50%);
 }
 
+/* Topographic contour lines — GIS brand atmospheric layer.
+   Uses CSS mask so the line color is theme-aware via background-color. */
+.topo-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-color: rgba(30, 58, 95, 0.16);
+  -webkit-mask: url("/topo-bg.svg") center / cover no-repeat;
+          mask: url("/topo-bg.svg") center / cover no-repeat;
+  transition: background-color 0.4s ease;
+}
+[data-theme="upwise-dark"] .topo-bg {
+  background-color: rgba(247, 147, 30, 0.18);
+}
+
 /* Cursor spotlight (desktop only) */
 @media (min-width: 1024px) and (pointer: fine) {
   body::after {
