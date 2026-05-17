@@ -189,24 +189,24 @@ const categoryMeta: Record<string, { label: string; description: string; icon: s
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {collaborations.map((c) => (
-        <div class="group relative flex flex-col items-center justify-center text-center p-4 min-h-[110px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
+        <div class="group relative flex flex-col items-center justify-center text-center p-4 min-h-[120px] rounded-2xl bg-base-200/40 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
           {c.logo ? (
             <>
-              <div class="flex-1 flex items-center justify-center w-full mb-2 min-h-[44px]">
+              <div class="partner-logo-wrap flex-1 flex items-center justify-center w-full mb-3 min-h-[52px] rounded-md px-2">
                 <img
                   src={c.logo}
                   alt={c.name}
-                  class="max-h-12 max-w-full object-contain transition-all duration-300"
+                  class="max-h-12 max-w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p class="type-caption text-base-content/55 group-hover:text-primary transition-colors text-center leading-tight">
+              <p class="text-sm md:text-base text-base-content group-hover:text-primary transition-colors text-center leading-tight" style="font-weight:700;">
                 {c.name}
               </p>
             </>
           ) : (
             <>
-              <p class="type-body-sm text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:600;">
+              <p class="text-sm md:text-base text-base-content group-hover:text-primary transition-colors text-center" style="font-weight:700;">
                 {c.name}
               </p>
               {c.nameEn && (

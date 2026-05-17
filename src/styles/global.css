@@ -325,6 +325,13 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   mask: url("/inflearn_logo-01.svg") no-repeat center / contain;
 }
 
+/* Partner logo backdrop — keep transparent in light mode (card bg already light),
+   add light backdrop only in dark mode so colored/dark logo parts stay visible. */
+[data-theme="upwise-dark"] .partner-logo-wrap {
+  background-color: rgba(248, 250, 252, 0.95);
+  padding: 6px 10px;
+}
+
 /* ─────────────────────────────────────────────────────────
    COLOR BLOCK SECTIONS (Figma pattern, upwise palette)
    ───────────────────────────────────────────────────────── */
