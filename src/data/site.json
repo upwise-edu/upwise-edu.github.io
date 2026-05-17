@@ -12,40 +12,38 @@
     "taglineAfter": "명 이상의 수강생이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
-    "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 배운 즉시 현장에서 쓸 수 있는 강의를 만듭니다.",
+    "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 즉시 활용 가능한 강의를 만듭니다.",
     "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"
   },
 
   "about": {
     "eyebrow": "01 — ABOUT",
-    "title": "소개",
+    "title": "교육 이념",
     "paragraphs": [
       "지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
       "서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며, 공간자료를 활용한 연구와 강의를 병행하고 있습니다."
     ],
     "expertiseLine": "주요 강의 분야는 ",
-    "expertiseAreas": ["QGIS 기초·심화", "지도 시각화", "QGIS × Python 자동화"],
+    "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
     "expertiseLineSuffix": "입니다."
   },
 
   "instructorStats": {
     "_help": "인프런 프로필 페이지에서 확인 후 주기적으로 업데이트하세요. 숫자에 +나 콤마를 넣고 싶으면 따옴표로 감싸 문자열로 작성 (예: \"1,500+\"). 따옴표 없으면 순수 숫자만 가능.",
-    "totalStudents": "1500+",
+    "totalStudents": "1000+",
     "averageRating": 4.9,
-    "totalReviews": "100+",
-    "mentoringSessions": 3,
-    "mentoringRating": 5.0
+    "totalReviews": "100+"
   },
 
   "courses": {
     "eyebrow": "02 — ONLINE COURSES",
     "title": "온라인 강의",
-    "intro": "인프런에서 운영 중인 QGIS 강의. 입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
+    "intro": "인프런 내 제공 강의. 입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
     "categoryMeta": {
-      "입문":   { "label": "BEGINNER",      "description": "QGIS를 처음 만나는 분께.",                    "icon": "🌱" },
+      "입문":   { "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
       "시각화": { "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
-      "자동화": { "label": "AUTOMATION",    "description": "반복 GIS 작업을 코드로 효율화하고 싶은 분께.", "icon": "⚡" }
+      "자동화": { "label": "AUTOMATION",    "description": "반복 작업을 코드로 자동화하고 싶은 분께.", "icon": "⚡" }
     },
     "items": [
       {
@@ -55,12 +53,12 @@
         "category": "입문",
         "isFree": false,
         "url": "https://inf.run/tDaJz",
-        "description": "GIS 기본 개념부터 벡터·래스터 분석, 시각화, 실전 분석까지 한 번에 다루는 종합 입문 강의. 설명과 실습 병행으로 입문자도 끝까지 따라올 수 있도록 구성.",
+        "description": "GIS 기초 개념부터 실전 분석까지 한 번에 다루는 종합 입문 강의.\n이론과 실습 병행으로 입문자도 끝까지 따라올 수 있도록 구성.",
         "rating": 4.9,
         "students": 176,
         "durationMinutes": 641,
         "lectures": 62,
-        "highlights": ["GIS 기초 이론", "벡터/래스터 분석", "실전 예제 4종"],
+        "highlights": ["GIS 기초 이론", "고급 GIS 분석", "실전 예제 4종"],
         "image": "/courses/starter.jpg"
       },
       {
@@ -70,7 +68,7 @@
         "category": "시각화",
         "isFree": false,
         "url": "https://inf.run/ve1Ja",
-        "description": "QGIS의 시각화·레이아웃 기능을 실습하며 7가지 주제도를 직접 만드는 강의. 공공데이터를 활용해 발표·보고서에 그대로 쓸 수 있는 지도 제작 능력을 습득.",
+        "description": "QGIS 시각화·레이아웃 실습을 통해 7가지 주제도를 직접 만드는 강의.\n공공데이터를 활용해 발표·보고서에 그대로 쓸 수 있는 지도 제작 능력 습득.",
         "rating": 4.8,
         "students": 206,
         "durationMinutes": 402,
@@ -80,12 +78,12 @@
       },
       {
         "id": "free-election",
-        "title": "[무료] QGIS 트렌디 시각화 찍먹하기 (대선개표지도)",
+        "title": "QGIS 트렌디 시각화 찍먹하기 (대선개표지도)",
         "shortTitle": "QGIS 트렌디 시각화 (대선개표지도)",
         "category": "입문",
         "isFree": true,
         "url": "https://inf.run/aoePe",
-        "description": "20대 대통령선거 개표 결과를 시군구별로 시각화하는 1시간 30분짜리 무료 강의. QGIS를 가장 빠르게 체험해보고 싶은 분께 추천.",
+        "description": "20대 대통령선거 개표 결과를 시군구별로 시각화하는 무료 강의.\nQGIS를 가장 빠르게 체험해보고 싶은 분께 추천.",
         "rating": 5.0,
         "students": 295,
         "durationMinutes": 98,
