@@ -10,7 +10,7 @@ const { title, subtitle } = Astro.props;
   <div class="experience__data bd-grid px-5">
     <h3 class="text-primary mb-1" style="font-weight:700;font-size:1.05rem;">{title}</h3>
     <span class="font-light text-sm text-base-content/75">{subtitle}</span>
-    <p class="my-2 text-justify text-base-content/85">
+    <p class="my-2 text-justify text-base-content/85 whitespace-pre-line">
       <slot />
     </p>
   </div>
