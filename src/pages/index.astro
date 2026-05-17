@@ -35,11 +35,11 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     </h1>
 
     <p class="type-headline text-base-content/90 mb-8 max-w-2xl">
-      {site.hero.taglineBefore} <span class="text-primary" style="font-weight:700;">{instructorStats.totalStudents.toLocaleString()}</span>{site.hero.taglineAfter}<br/>
+      {site.hero.taglineBefore} <span class="text-primary" style="font-weight:700;">{instructorStats.totalStudents}</span>{site.hero.taglineAfter}<br/>
       <span class="text-primary">{site.hero.taglineHighlight}</span>{site.hero.taglineSuffix}
     </p>
 
-    <p class="type-body text-base-content/70 max-w-2xl mb-10">
+    <p class="type-body text-base-content/70 max-w-2xl mb-10 whitespace-pre-line">
       {site.hero.description}
     </p>
 
@@ -53,7 +53,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           <span class="type-body-sm"><strong>{instructorStats.averageRating}</strong><span class="text-base-content/60">/5.0 평점</span></span>
         </div>
         <span class="text-base-content/30 hidden md:inline">·</span>
-        <span class="type-body-sm"><strong>{instructorStats.totalStudents.toLocaleString()}</strong><span class="text-base-content/60">명 수강</span></span>
+        <span class="type-body-sm"><strong>{instructorStats.totalStudents}</strong><span class="text-base-content/60">명 수강</span></span>
         <span class="text-base-content/30 hidden md:inline">·</span>
         <span class="type-body-sm"><strong>{instructorStats.totalReviews}</strong><span class="text-base-content/60">개 수강평</span></span>
         <span class="text-base-content/30 hidden md:inline">·</span>
@@ -74,7 +74,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
   <!-- ───────── ABOUT ───────── -->
   <section id="about" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">01 — ABOUT</p>
+    <p class="type-caption text-primary mb-4">{site.about.eyebrow}</p>
     <h3 class="type-display-lg mb-10">{site.about.title}</h3>
     <div class="space-y-5 max-w-2xl">
       {site.about.paragraphs.map((p, i) => (
@@ -95,7 +95,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
   <!-- ───────── ONLINE COURSES ───────── -->
   <section id="courses" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">02 — ONLINE COURSES</p>
+    <p class="type-caption text-primary mb-4">{site.courses.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.courses.title}</h3>
     <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">{site.courses.intro}</p>
 
@@ -123,7 +123,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
   <!-- ───────── OFFLINE LECTURES ───────── -->
   <section id="lectures" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">03 — OFFLINE LECTURES</p>
+    <p class="type-caption text-primary mb-4">{site.lectures.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.lectures.title}</h3>
     <p class="type-body-lg text-base-content/75 max-w-2xl mb-6">{site.lectures.intro}</p>
     <p class="type-body-sm text-base-content/60 mb-10">
@@ -170,7 +170,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
   <!-- ───────── PARTNERS ───────── -->
   <section id="partners" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">04 — PARTNERS</p>
+    <p class="type-caption text-primary mb-4">{site.partners.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.partners.title}</h3>
     <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">{site.partners.intro}</p>
 
@@ -210,14 +210,14 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
 
   <!-- ───────── CV ───────── -->
   <section id="cv" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">05 — CV</p>
+    <p class="type-caption text-primary mb-4">{site.cv.eyebrow}</p>
     <h3 class="type-display-lg mb-10">{site.cv.title}</h3>
 
     <!-- Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
       <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
         <p class="type-caption text-base-content/55 mb-2">누적 수강생</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents.toLocaleString()}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
       </div>
       <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
         <p class="type-caption text-base-content/55 mb-2">평균 평점</p>
@@ -265,7 +265,7 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
   <!-- ───────── CONTACT — navy color block ───────── -->
   <section id="contact" class="scroll-section pt-16 pb-12 scroll-mt-12">
     <div class="color-block color-block-navy">
-      <p class="type-caption mb-4">06 — GET IN TOUCH</p>
+      <p class="type-caption mb-4">{site.contact.eyebrow}</p>
       <h3 class="type-display-lg mb-5">{site.contact.title}</h3>
       <p class="type-body-lg mb-10 max-w-xl" style="color:#cbd5e1;">{site.contact.description}</p>
 
