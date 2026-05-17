@@ -69,9 +69,9 @@ const {
           const ACCENT_A = 3;  // orange line index
           const ACCENT_B = 8;  // navy / soft-orange accent line index
 
-          // Touch: half opacity + thinner lines + frame rate cap (avoid lag, less prominence)
-          const opacityMult = isTouch ? 0.5 : 1;
-          const lineWidthMult = isTouch ? 0.5 : 1;  // thinner lines on mobile
+          // Touch: very subtle (low alpha + thin lines) + frame rate cap
+          const opacityMult = isTouch ? 0.1 : 1;     // lines very transparent on mobile
+          const lineWidthMult = isTouch ? 0.25 : 1;  // mobile lines = 1/4 desktop thickness (50% thinner than before)
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
