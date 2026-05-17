@@ -247,28 +247,28 @@ body::before {
   height: 100vh;
   filter: blur(0.3px);
   -webkit-mask: radial-gradient(ellipse 55% 65% at 58% 50%,
-    rgba(0, 0, 0, 0.30) 0%,
-    rgba(0, 0, 0, 0.30) 25%,
-    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.50) 0%,
+    rgba(0, 0, 0, 0.50) 30%,
+    rgba(0, 0, 0, 0.70) 65%,
     rgba(0, 0, 0, 0.95) 100%);
           mask: radial-gradient(ellipse 55% 65% at 58% 50%,
-    rgba(0, 0, 0, 0.30) 0%,
-    rgba(0, 0, 0, 0.30) 25%,
-    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.50) 0%,
+    rgba(0, 0, 0, 0.50) 30%,
+    rgba(0, 0, 0, 0.70) 65%,
     rgba(0, 0, 0, 0.95) 100%);
 }
 /* On mobile (no sidebar), recentre the fade ellipse */
 @media (max-width: 1023px) {
   #topo-canvas {
     -webkit-mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(0, 0, 0, 0.30) 0%,
-      rgba(0, 0, 0, 0.30) 25%,
-      rgba(0, 0, 0, 0.50) 60%,
+      rgba(0, 0, 0, 0.50) 0%,
+      rgba(0, 0, 0, 0.50) 30%,
+      rgba(0, 0, 0, 0.65) 65%,
       rgba(0, 0, 0, 0.95) 100%);
             mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(0, 0, 0, 0.30) 0%,
-      rgba(0, 0, 0, 0.30) 25%,
-      rgba(0, 0, 0, 0.50) 60%,
+      rgba(0, 0, 0, 0.50) 0%,
+      rgba(0, 0, 0, 0.50) 30%,
+      rgba(0, 0, 0, 0.65) 65%,
       rgba(0, 0, 0, 0.95) 100%);
   }
 }

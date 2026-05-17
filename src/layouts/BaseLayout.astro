@@ -69,15 +69,16 @@ const {
           const ACCENT_A = 3;  // orange line index
           const ACCENT_B = 8;  // navy / soft-orange accent line index
 
-          // Touch: half opacity + frame rate cap (avoid lag, less prominence)
+          // Touch: half opacity + thinner lines + frame rate cap (avoid lag, less prominence)
           const opacityMult = isTouch ? 0.5 : 1;
+          const lineWidthMult = isTouch ? 0.5 : 1;  // thinner lines on mobile
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
 
-          // Animation pacing
-          const IDLE_VEL = 0.0000080;        // base flow per ms (calm but visible)
-          const MAX_VEL  = IDLE_VEL * 4.5;   // cap when scrolling — clearly noticeable boost
+          // Animation pacing — noticeable idle flow, scroll boosts to max 2x
+          const IDLE_VEL = 0.000025;       // base flow per ms (visible movement)
+          const MAX_VEL  = IDLE_VEL * 2;   // when scrolling — max 2x idle (per user spec)
 
           let W = 0, H = 0, dpr = 1;
           function resize() {
@@ -218,13 +219,13 @@ const {
               const threshold = -0.7 + (1.4 / (LEVELS - 1)) * i;
               if (i === ACCENT_A) {
                 ctx!.strokeStyle = c.orange;
-                ctx!.lineWidth = 1.6 * dpr;
+                ctx!.lineWidth = 1.6 * dpr * lineWidthMult;
               } else if (i === ACCENT_B) {
                 ctx!.strokeStyle = c.accent2;
-                ctx!.lineWidth = 1.6 * dpr;
+                ctx!.lineWidth = 1.6 * dpr * lineWidthMult;
               } else {
                 ctx!.strokeStyle = c.base;
-                ctx!.lineWidth = 1 * dpr;
+                ctx!.lineWidth = 1 * dpr * lineWidthMult;
               }
               drawIsoline(grid, gw, gh, threshold, cellW, cellH);
             }
