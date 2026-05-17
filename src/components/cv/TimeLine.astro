@@ -8,9 +8,9 @@ const { title, subtitle } = Astro.props;
     <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">{title}</h3>
-    <span class="font-light text-sm">{subtitle}</span>
-    <p class="my-2 text-justify">
+    <h3 class="text-primary mb-1" style="font-weight:700;font-size:1.05rem;">{title}</h3>
+    <span class="font-light text-sm text-base-content/75">{subtitle}</span>
+    <p class="my-2 text-justify text-base-content/85">
       <slot />
     </p>
   </div>
