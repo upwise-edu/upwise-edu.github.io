@@ -63,8 +63,8 @@ const {
 
           // Smoother contours on desktop (higher grid), much lighter on touch (perf + visibility)
           const isTouch = window.matchMedia('(hover: none)').matches;
-          const COLS = isTouch ? 22 : 70;
-          const ROWS = isTouch ? 16 : 48;
+          const COLS = isTouch ? 22 : 90;
+          const ROWS = isTouch ? 16 : 60;
           const LEVELS = isTouch ? 6 : 12;
           const ACCENT_A = 3;  // orange line index
           const ACCENT_B = 8;  // navy / soft-orange accent line index
@@ -74,6 +74,10 @@ const {
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
+
+          // Animation pacing
+          const IDLE_VEL = 0.0000045;   // base flow per ms (very slow — 3x slower than before)
+          const MAX_VEL  = IDLE_VEL * 1.5;  // cap when scrolling fast
 
           let W = 0, H = 0, dpr = 1;
           function resize() {
@@ -163,25 +167,36 @@ const {
           }
 
           const start = performance.now();
+          let zCurrent = 0;
+          let prevNow = start;
           function frame(now: number) {
             // Frame-rate cap (lower FPS on touch to reduce lag)
             if (now - lastFrameTime < frameInterval) {
               requestAnimationFrame(frame);
               return;
             }
+            const dt = now - lastFrameTime || 16;
             lastFrameTime = now;
+            prevNow = now;
 
             // Ease cursor/scroll for smoother flow
             mx += (targetMx - mx) * 0.06;
             my += (targetMy - my) * 0.06;
             scrollPos += (targetScroll - scrollPos) * 0.08;
 
-            // Animation 3x slower (0.00012 → 0.00004) for a calmer flow
-            const t = (now - start) * 0.00004;
+            // Compute target z = idle drift + scroll contribution
+            const idleZ = (now - start) * IDLE_VEL;
+            const scrollOff = scrollPos * 0.0006;
+            const targetZ = idleZ + scrollOff;
+
+            // Move zCurrent toward targetZ, but cap per-frame velocity at MAX_VEL
+            const maxDelta = MAX_VEL * dt;
+            const requested = targetZ - zCurrent;
+            zCurrent += Math.sign(requested) * Math.min(Math.abs(requested), maxDelta);
+
             const cursorOffX = (mx - 0.5) * 0.5;
             const cursorOffY = (my - 0.5) * 0.5;
-            const scrollOff  = scrollPos * 0.0008;
-            const z = t + scrollOff;
+            const z = zCurrent;
 
             const gw = COLS + 1;
             const gh = ROWS + 1;
