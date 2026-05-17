@@ -61,6 +61,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   position: relative;
+  /* base background (theme-aware via DaisyUI --b1) — drawer wrappers are
+     transparent so the topo SVG layer above body bg shows through to content. */
+  background-color: hsl(var(--b1));
   /* prevent unexpected horizontal scroll on mobile.
      IMPORTANT: use `clip`, NOT `hidden` — `hidden` creates a scroll container
      which breaks `position: sticky` on the desktop sidebar. */
@@ -236,14 +239,14 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
-  background-color: rgba(30, 58, 95, 0.16);
+  z-index: 1;
+  background-color: rgba(30, 58, 95, 0.28);
   -webkit-mask: url("/topo-bg.svg") center / cover no-repeat;
           mask: url("/topo-bg.svg") center / cover no-repeat;
   transition: background-color 0.4s ease;
 }
 [data-theme="upwise-dark"] .topo-bg {
-  background-color: rgba(247, 147, 30, 0.18);
+  background-color: rgba(247, 147, 30, 0.28);
 }
 
 /* Cursor spotlight (desktop only) */
