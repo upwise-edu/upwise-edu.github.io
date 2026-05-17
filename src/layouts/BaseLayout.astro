@@ -76,9 +76,8 @@ const {
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
 
-          // Animation pacing — noticeable idle flow, scroll boosts to max 2x
-          // (Scroll acceleration is now applied via direct velocity in the frame loop)
-          const IDLE_VEL = 0.000025;       // base flow per ms (visible idle movement)
+          // Animation pacing — noticeable idle flow, scroll boosts directly to max 2x
+          const IDLE_VEL = 0.00005;       // base flow per ms — needs to be loud enough that 2x is visible
 
           let W = 0, H = 0, dpr = 1;
           function resize() {
@@ -93,10 +92,9 @@ const {
           window.addEventListener('resize', resize);
           resize();
 
-          // Cursor (smoothed) + scroll velocity (measured in frame loop, no easing)
+          // Cursor (smoothed) + scroll delta (read directly per frame, no smoothing)
           let targetMx = 0.5, targetMy = 0.5, mx = 0.5, my = 0.5;
           let lastScrollY = window.scrollY;
-          let scrollVel = 0;  // px/ms, low-pass smoothed
           window.addEventListener('mousemove', (e) => {
             targetMx = e.clientX / window.innerWidth;
             targetMy = e.clientY / window.innerHeight;
@@ -180,18 +178,18 @@ const {
             mx += (targetMx - mx) * 0.06;
             my += (targetMy - my) * 0.06;
 
-            // Measure scroll velocity directly (px/ms), smooth lightly to avoid jitter
+            // Direct scroll-to-z integration (no smoothing → instant feedback).
+            // Each scroll pixel contributes to z. Per-frame contribution is capped
+            // at idleStep so total motion stays within the 2x cap requested.
             const curScrollY = window.scrollY;
-            const instantSpeed = Math.abs(curScrollY - lastScrollY) / dt;
+            const scrollDelta = curScrollY - lastScrollY;
             lastScrollY = curScrollY;
-            scrollVel += (instantSpeed - scrollVel) * 0.22;
 
-            // 0..1 acceleration factor — saturates at ~1.0 px/ms (~60 px/sec)
-            const scrollFactor = Math.min(scrollVel / 1.0, 1);
+            const idleStep   = IDLE_VEL * dt;
+            const scrollStep = Math.sign(scrollDelta) *
+              Math.min(Math.abs(scrollDelta) * 0.00006, idleStep);
 
-            // z advances at idle speed, up to 2x when actively scrolling
-            const zVel = IDLE_VEL * (1 + scrollFactor);
-            zCurrent += zVel * dt;
+            zCurrent += idleStep + scrollStep;
 
             const cursorOffX = (mx - 0.5) * 0.5;
             const cursorOffY = (my - 0.5) * 0.5;
