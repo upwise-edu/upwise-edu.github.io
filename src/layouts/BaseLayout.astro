@@ -76,8 +76,8 @@ const {
           let lastFrameTime = 0;
 
           // Animation pacing
-          const IDLE_VEL = 0.0000045;   // base flow per ms (very slow — 3x slower than before)
-          const MAX_VEL  = IDLE_VEL * 1.5;  // cap when scrolling fast
+          const IDLE_VEL = 0.0000080;        // base flow per ms (calm but visible)
+          const MAX_VEL  = IDLE_VEL * 4.5;   // cap when scrolling — clearly noticeable boost
 
           let W = 0, H = 0, dpr = 1;
           function resize() {
