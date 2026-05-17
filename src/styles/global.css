@@ -234,9 +234,10 @@ body::before {
 }
 
 /* Animated topographic canvas — sits between body bg and content.
-   - filter blur: smooths the marching-squares polygonal feel
-   - mask gradient: fades topo to invisible behind the central content column
-     so on-page text stays clean and topo lives in the side margins / edges */
+   - subtle blur: softens marching-squares angularity without causing edge flicker
+   - mask gradient: NEVER fully transparent in center (avoids flickering as lines
+     pass through the alpha-gradient transition zone) — center stays at ~30%
+     visibility so topo is faintly perceptible behind content while still subdued */
 #topo-canvas {
   position: fixed;
   inset: 0;
@@ -244,27 +245,31 @@ body::before {
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  filter: blur(0.6px);
+  filter: blur(0.3px);
   -webkit-mask: radial-gradient(ellipse 55% 65% at 58% 50%,
-    transparent 22%,
-    rgba(0, 0, 0, 0.35) 55%,
-    black 85%);
+    rgba(0, 0, 0, 0.30) 0%,
+    rgba(0, 0, 0, 0.30) 25%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.95) 100%);
           mask: radial-gradient(ellipse 55% 65% at 58% 50%,
-    transparent 22%,
-    rgba(0, 0, 0, 0.35) 55%,
-    black 85%);
+    rgba(0, 0, 0, 0.30) 0%,
+    rgba(0, 0, 0, 0.30) 25%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.95) 100%);
 }
-/* On mobile (no sidebar), recentre the fade so topo doesn't dominate behind content */
+/* On mobile (no sidebar), recentre the fade ellipse */
 @media (max-width: 1023px) {
   #topo-canvas {
     -webkit-mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      transparent 25%,
-      rgba(0, 0, 0, 0.3) 55%,
-      black 85%);
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.30) 25%,
+      rgba(0, 0, 0, 0.50) 60%,
+      rgba(0, 0, 0, 0.95) 100%);
             mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      transparent 25%,
-      rgba(0, 0, 0, 0.3) 55%,
-      black 85%);
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.30) 25%,
+      rgba(0, 0, 0, 0.50) 60%,
+      rgba(0, 0, 0, 0.95) 100%);
   }
 }
 
