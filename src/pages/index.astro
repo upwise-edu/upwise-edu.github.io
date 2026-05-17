@@ -76,11 +76,13 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
     </div>
   </section>
 
-  <!-- ───────── ABOUT ───────── -->
+  <!-- ───────── ABOUT (강사 소개 — CV 통합) ───────── -->
   <section id="about" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
     <p class="type-caption text-primary mb-4">{site.about.eyebrow}</p>
     <h3 class="type-display-lg mb-10">{site.about.title}</h3>
-    <div class="space-y-5 max-w-2xl">
+
+    <!-- Intro narrative -->
+    <div class="space-y-5 max-w-2xl mb-12">
       {site.about.paragraphs.map((p, i) => (
         <p class={i === 0 ? "type-body-lg text-base-content/85" : "type-body text-base-content/75"}>
           {p}
@@ -94,6 +96,57 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
           </>
         ))}{site.about.expertiseLineSuffix}
       </p>
+    </div>
+
+    <!-- Stats at a glance -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">누적 수강생</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
+      </div>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">평균 평점</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.averageRating}<span class="text-sm font-normal text-base-content/55 ml-1">/5.0</span></p>
+      </div>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">총 온라인 강의</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{totalHours}<span class="text-sm font-normal text-base-content/55 ml-1">h · {totalLectures}강</span></p>
+      </div>
+      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+        <p class="type-caption text-base-content/55 mb-2">출강 기관</p>
+        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{lectStats.uniqueOrgs}<span class="text-sm font-normal text-base-content/55 ml-1">곳</span></p>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <p class="type-eyebrow text-primary mb-5">EDUCATION</p>
+    <div class="time-line-container grid gap-4 mb-12">
+      {site.about.education.map((e) => (
+        <TimeLineElement title={e.title} subtitle={e.subtitle} />
+      ))}
+    </div>
+
+    <!-- Expertise (detailed) -->
+    <p class="type-eyebrow text-primary mb-5">EXPERTISE</p>
+    <div class="time-line-container mb-12">
+      {site.about.expertise.map((e) => (
+        <TimeLineElement title={e.title} subtitle={e.subtitle}>
+          {e.body}
+        </TimeLineElement>
+      ))}
+    </div>
+
+    <!-- Skills -->
+    <p class="type-eyebrow text-primary mb-5">SKILLS</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {site.about.skills.map((cat) => (
+        <div>
+          <p class="type-body-sm mb-2" style="font-weight:600;">{cat.label}</p>
+          <ul class="space-y-1 text-base-content/80 type-body-sm">
+            {cat.items.map((it) => <li>{it}</li>)}
+          </ul>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -207,60 +260,6 @@ const categoryMeta = site.courses.categoryMeta as Record<string, { label: string
               )}
             </>
           )}
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- ───────── CV ───────── -->
-  <section id="cv" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
-    <p class="type-caption text-primary mb-4">{site.cv.eyebrow}</p>
-    <h3 class="type-display-lg mb-10">{site.cv.title}</h3>
-
-    <!-- Stats -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">누적 수강생</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">평균 평점</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.averageRating}<span class="text-sm font-normal text-base-content/55 ml-1">/5.0</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">총 온라인 강의</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{totalHours}<span class="text-sm font-normal text-base-content/55 ml-1">h · {totalLectures}강</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">출강 기관</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{lectStats.uniqueOrgs}<span class="text-sm font-normal text-base-content/55 ml-1">곳</span></p>
-      </div>
-    </div>
-
-    <p class="type-eyebrow text-primary mb-5">EDUCATION</p>
-    <div class="time-line-container grid gap-4 mb-12">
-      {site.cv.education.map((e) => (
-        <TimeLineElement title={e.title} subtitle={e.subtitle} />
-      ))}
-    </div>
-
-    <p class="type-eyebrow text-primary mb-5">EXPERTISE</p>
-    <div class="time-line-container mb-12">
-      {site.cv.expertise.map((e) => (
-        <TimeLineElement title={e.title} subtitle={e.subtitle}>
-          {e.body}
-        </TimeLineElement>
-      ))}
-    </div>
-
-    <p class="type-eyebrow text-primary mb-5">SKILLS</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {site.cv.skills.map((cat) => (
-        <div>
-          <p class="type-body-sm mb-2" style="font-weight:600;">{cat.label}</p>
-          <ul class="space-y-1 text-base-content/80 type-body-sm">
-            {cat.items.map((it) => <li>{it}</li>)}
-          </ul>
         </div>
       ))}
     </div>
