@@ -257,19 +257,19 @@ body::before {
     rgba(0, 0, 0, 0.55) 65%,
     rgba(0, 0, 0, 0.95) 100%);
 }
-/* On mobile (no sidebar), recentre the fade ellipse */
+/* On mobile (no sidebar), gentler vignette so contours stay visible */
 @media (max-width: 1023px) {
   #topo-canvas {
-    -webkit-mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.15) 30%,
-      rgba(0, 0, 0, 0.50) 65%,
-      rgba(0, 0, 0, 0.95) 100%);
-            mask: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.15) 30%,
-      rgba(0, 0, 0, 0.50) 65%,
-      rgba(0, 0, 0, 0.95) 100%);
+    -webkit-mask: radial-gradient(ellipse 80% 70% at 50% 50%,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.35) 30%,
+      rgba(0, 0, 0, 0.70) 65%,
+      rgba(0, 0, 0, 1.00) 100%);
+            mask: radial-gradient(ellipse 80% 70% at 50% 50%,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.35) 30%,
+      rgba(0, 0, 0, 0.70) 65%,
+      rgba(0, 0, 0, 1.00) 100%);
   }
 }
 
