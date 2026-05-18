@@ -7,12 +7,18 @@
   },
 
   "hero": {
-    "_help": "taglineLead 는 자유롭게 쓰세요. 숫자·기관 수·수강생 수 등 원하는 텍스트를 그대로 입력하면 됩니다. taglineHighlight 는 오렌지(GIS는 녹색)로 강조됩니다.",
+    "_help": "taglineLead/Highlight/Suffix 는 자유롭게 편집하세요. taglineHighlight 는 오렌지(GIS는 녹색)로 강조됩니다. stats 는 hero 하단 social proof 박스에 표시되는 4개 항목으로, 각 항목의 value(굵은 강조)와 suffix(보조 설명)를 자유롭게 수정 가능합니다. 첫 항목엔 별 아이콘이 자동 표시됩니다.",
     "eyebrow": "안녕하세요. GIS 전문 강사 UPWISE 이승현입니다.",
-    "taglineLead": "10+ 기관 출강, 누적 1000+ 명이 선택한",
+    "taglineLead": "누적 1000+ 명이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
     "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 즉시 활용 가능한 강의를 만듭니다.",
+    "stats": [
+      { "value": "4.9", "suffix": "/5.0 평점" },
+      { "value": "1000+", "suffix": "명 수강" },
+      { "value": "100+", "suffix": "개 수강평" },
+      { "value": "12+", "suffix": "개 기관 출강" }
+    ],
     "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"
   },
