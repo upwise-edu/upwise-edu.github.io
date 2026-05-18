@@ -39,8 +39,8 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
       <span class="text-primary">UP</span><span class="text-base-content">WISE</span><span class="text-primary">.</span>
     </h1>
 
-    <p class="type-headline text-base-content/90 mb-8 max-w-2xl">
-      {site.hero.taglineBefore} <span class="text-primary" style="font-weight:700;">{instructorStats.totalStudents}</span>{site.hero.taglineAfter}<br/>
+    <p class="type-headline text-base-content/90 mb-8 max-w-2xl whitespace-pre-line">
+      {site.hero.taglineLead}<br/>
       {site.hero.taglineHighlight.split(/(GIS)/).map((part) => (
         part === 'GIS'
           ? <span style="color:#00C471;font-weight:900;">{part}</span>
