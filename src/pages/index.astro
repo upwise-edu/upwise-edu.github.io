@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CourseCard from "../components/CourseCard.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 import site, {
-  courses, instructorStats,
+  courses,
   offlineLectures, groupLecturesByYear, lectureStats,
   collaborations,
 } from "../data";
@@ -104,24 +104,14 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
       </p>
     </div>
 
-    <!-- Stats at a glance -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">누적 수강생</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.totalStudents}<span class="text-sm font-normal text-base-content/55 ml-1">명</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">평균 평점</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{instructorStats.averageRating}<span class="text-sm font-normal text-base-content/55 ml-1">/5.0</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">총 온라인 강의</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{totalHours}<span class="text-sm font-normal text-base-content/55 ml-1">h · {totalLectures}강</span></p>
-      </div>
-      <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
-        <p class="type-caption text-base-content/55 mb-2">출강 기관</p>
-        <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{lectStats.uniqueOrgs}<span class="text-sm font-normal text-base-content/55 ml-1">곳</span></p>
-      </div>
+    <!-- Stats at a glance (2x3 on desktop, 2x3 on mobile) -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
+      {site.about.stats.map((stat) => (
+        <div class="p-5 rounded-2xl bg-base-200/60 border border-base-300/60">
+          <p class="type-caption text-base-content/55 mb-2">{stat.label}</p>
+          <p class="type-display-lg text-primary" style="font-size:32px;line-height:1;">{stat.value}<span class="text-sm font-normal text-base-content/55 ml-1">{stat.unit}</span></p>
+        </div>
+      ))}
     </div>
 
     <!-- Education -->
