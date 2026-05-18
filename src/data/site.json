@@ -7,9 +7,9 @@
   },
 
   "hero": {
+    "_help": "taglineLead 는 자유롭게 쓰세요. 숫자·기관 수·수강생 수 등 원하는 텍스트를 그대로 입력하면 됩니다. taglineHighlight 는 오렌지(GIS는 녹색)로 강조됩니다.",
     "eyebrow": "안녕하세요. GIS 전문 강사 UPWISE 이승현입니다.",
-    "taglineBefore": "누적",
-    "taglineAfter": "명 이상의 수강생이 선택한",
+    "taglineLead": "10+ 기관 출강, 누적 1000+ 명이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
     "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 즉시 활용 가능한 강의를 만듭니다.",
@@ -34,17 +34,17 @@
     "expertise": [
       {
         "title": "GIS · 공간정보 분석",
-        "subtitle": "QGIS · ArcGIS · 공간자료 분석 및 시각화",
+        "subtitle": "QGIS · 공간자료 분석 및 시각화",
         "body": "벡터/래스터 자료의 수집·전처리·분석·시각화 전 과정. 공공데이터·위성영상·현장조사 자료의 통합 활용."
       },
       {
         "title": "원격탐사 (Remote Sensing)",
-        "subtitle": "위성영상 분석 · 식생/토지피복 모니터링",
-        "body": "Landsat·Sentinel·MODIS 등 위성영상을 활용한 환경 모니터링 연구 경험."
+        "subtitle": "위성영상 분석 · 항공기/드론 촬영자료 분석",
+        "body": "Landsat·Sentinel·MODIS 등 위성영상과 항공기/드론을 통해 촬영된 원격탐사 자료 연구 전문."
       },
       {
         "title": "Python × GIS 융합",
-        "subtitle": "GeoPandas · Rasterio · PyQGIS",
+        "subtitle": "PyQGIS를 통한 QGIS 코드화·자동화",
         "body": "파이썬 기반 공간데이터 처리 자동화. 반복 작업을 코드로 효율화하는 워크플로우 구축."
       }
     ]
@@ -60,7 +60,7 @@
   "courses": {
     "eyebrow": "02 — ONLINE COURSES",
     "title": "온라인 강의",
-    "intro": "인프런 내 제공 강의. 입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
+    "intro": "인프런에서 제공되는 온라인 강의입니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
     "categoryMeta": {
       "입문":   { "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
       "시각화": { "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
@@ -76,7 +76,7 @@
         "url": "https://inf.run/tDaJz",
         "description": "GIS 기초 개념부터 실전 분석까지 한 번에 다루는 종합 입문 강의.\n이론과 실습 병행으로 입문자도 끝까지 따라올 수 있도록 구성.",
         "rating": 4.9,
-        "students": 176,
+        "students": 170+,
         "durationMinutes": 641,
         "lectures": 62,
         "highlights": ["GIS 기초 이론", "고급 GIS 분석", "실전 예제 4종"],
@@ -89,9 +89,9 @@
         "category": "시각화",
         "isFree": false,
         "url": "https://inf.run/ve1Ja",
-        "description": "QGIS 시각화·레이아웃 실습을 통해 7가지 주제도를 직접 제작.\n공공데이터를 활용해 발표·보고서에 그대로 쓸 수 있는 지도 제작 능력 습득.",
+        "description": "QGIS 시각화·레이아웃 실습을 통해 7가지 주제도를 직접 제작.\n공공데이터로 발표·보고서에 그대로 쓰는 지도 제작 능력 습득.",
         "rating": 4.8,
-        "students": 206,
+        "students": 200+,
         "durationMinutes": 402,
         "lectures": 40,
         "highlights": ["벡터 시각화 심화", "레이아웃 조판", "7가지 주제도 실습"],
@@ -106,7 +106,7 @@
         "url": "https://inf.run/aoePe",
         "description": "20대 대통령선거 개표 결과를 시군구별로 시각화하는 무료 강의.\nQGIS를 가장 빠르게 체험해보고 싶은 분께 추천.",
         "rating": 5.0,
-        "students": 295,
+        "students": 290+,
         "durationMinutes": 98,
         "lectures": 8,
         "highlights": ["무료", "뉴스 같은 시각화", "입문자 친화적"],
@@ -119,9 +119,9 @@
         "category": "자동화",
         "isFree": false,
         "url": "https://inf.run/v28dc",
-        "description": "QGIS 내장 파이썬 콘솔로 반복적인 GIS 작업을 자동화하는 실속형 강의. 파이썬 기초부터 자동화 실전까지, 두 마리 토끼를 한 번에 잡습니다.",
+        "description": "pyQGIS 코드로 반복적인 GIS 작업을 자동화하는 실속형 강의.\n파이썬 기초부터 자동화까지, 두 마리 토끼를 한 번에 잡습니다.",
         "rating": 4.8,
-        "students": 339,
+        "students": 330+,
         "durationMinutes": 592,
         "lectures": 69,
         "highlights": ["Python 기초", "QGIS 자동화", "실무 적용"],
@@ -153,7 +153,7 @@
 
   "customRequest": {
     "title": "맞춤 강의 · 멘토링 요청",
-    "description": "기관·기업·대학의 GIS 교육 의뢰, 1:1 온라인 멘토링, 공간분석 컨설팅 등 다양한 형태로 함께 일할 수 있습니다.",
+    "description": "기관·기업·대학의 GIS 교육 의뢰, 1:1 온라인 멘토링,\n공간분석 컨설팅 등 다양한 형태로 함께 일할 수 있습니다.",
     "ctaText": "문의하러 가기 →"
   },
 
@@ -183,20 +183,20 @@
   },
 
   "contact": {
-    "eyebrow": "05 — GET IN TOUCH",
+    "eyebrow": "05 — CONTACT",
     "title": "언제든 편하게 연락주세요.",
-    "description": "강의 의뢰, 1:1 멘토링, GIS 컨설팅 등 어떤 형태든 편하게 문의주세요. 카카오톡 오픈프로필이 가장 빠른 응답 채널입니다.",
+    "description": "강의 의뢰, 1:1 멘토링, GIS 컨설팅, 연구 협업 등 모든 연락을 기다립니다.\n카카오톡 오픈프로필이 가장 빠른 응답 채널입니다. 편하게 문의 바랍니다.",
     "kakaoLabel": "FASTEST REPLY",
     "kakaoName": "카카오 오픈프로필",
     "kakaoUrl": "https://open.kakao.com/me/upwise",
-    "kakaoDisplay": "open.kakao.com/me/upwise",
+    "kakaoDisplay": "UPWISE",
     "emailName": "이메일",
-    "email": "upwise0506@gmail.com",
+    "email": "contact@upwise.co.kr",
     "phoneName": "전화",
     "phone": "010-8455-5598",
     "phoneTelLink": "+82-10-8455-5598",
     "inflearnName": "인프런 강사 페이지",
     "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
-    "inflearnDescription": "강의 · 1:1 멘토링 신청"
+    "inflearnDescription": "온라인 강의 수강"
   }
 }
