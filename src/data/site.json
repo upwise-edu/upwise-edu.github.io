@@ -30,6 +30,14 @@
       "지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
       "서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며, 공간자료를 활용한 연구와 강의를 병행하고 있습니다."
     ],
+    "stats": [
+      { "label": "누적 수강생 (온라인)", "value": "1000+", "unit": "명" },
+      { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
+      { "label": "평균 평점",            "value": "4.9",   "unit": "/5.0" },
+      { "label": "누적 수강생 (오프라인)", "value": "n+",    "unit": "명" },
+      { "label": "총 출강 횟수",         "value": "12+",   "unit": "강" },
+      { "label": "협업 기관",            "value": "13+",   "unit": "곳" }
+    ],
     "expertiseLine": "주요 강의 분야는 ",
     "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
     "expertiseLineSuffix": "입니다.",
@@ -56,14 +64,7 @@
     ]
   },
 
-  "instructorStats": {
-    "_help": "인프런 프로필 페이지에서 확인 후 주기적으로 업데이트하세요. 숫자에 +나 콤마를 넣고 싶으면 따옴표로 감싸 문자열로 작성 (예: \"1,500+\"). 따옴표 없으면 순수 숫자만 가능.",
-    "totalStudents": "1000+",
-    "averageRating": 4.9,
-    "totalReviews": "100+"
-  },
-
-  "courses": {
+"courses": {
     "eyebrow": "02 — ONLINE COURSES",
     "title": "온라인 강의",
     "intro": "인프런에서 제공되는 온라인 강의입니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",

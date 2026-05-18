@@ -45,7 +45,6 @@ export type Collaboration = {
 export const courses = site.courses.items as Course[];
 export const offlineLectures = site.lectures.items as OfflineLecture[];
 export const collaborations = site.partners.items as Collaboration[];
-export const instructorStats = site.instructorStats;
 
 // ───────── Helpers ─────────
 
