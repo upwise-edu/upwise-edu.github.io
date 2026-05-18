@@ -69,15 +69,15 @@ const {
             window.matchMedia('(pointer: coarse)').matches ||
             window.innerWidth < 1024;
 
-          const COLS = isTouch ? 55 : 90;   // mobile: denser grid for smoother contours (less angular)
-          const ROWS = isTouch ? 38 : 60;
+          const COLS = isTouch ? 65 : 90;   // mobile: denser grid for smoother contours (less angular)
+          const ROWS = isTouch ? 45 : 60;
           const LEVELS = isTouch ? 6 : 12;
           const ACCENT_A = 3;  // orange line index
           const ACCENT_B = 8;  // navy / soft-orange accent line index
 
           // Touch: extremely subtle (very low alpha + hair-thin lines) + frame rate cap
           const opacityMult = isTouch ? 0.8 : 1;      // mobile lines = 80% of desktop alpha (CSS mask attenuates further)
-          const lineWidthMult = isTouch ? 0.6 : 1;    // mobile lines = 0.6x desktop thickness
+          const lineWidthMult = isTouch ? 0.4 : 1;    // mobile lines = 0.4x desktop thickness
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
