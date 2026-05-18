@@ -257,9 +257,10 @@ body::before {
     rgba(0, 0, 0, 0.55) 65%,
     rgba(0, 0, 0, 0.95) 100%);
 }
-/* On mobile (no sidebar), gentler vignette so contours stay visible */
+/* On mobile (no sidebar), gentler vignette so contours stay visible + a touch more blur to smooth angular segments */
 @media (max-width: 1023px) {
   #topo-canvas {
+    filter: blur(0.6px);
     -webkit-mask: radial-gradient(ellipse 80% 70% at 50% 50%,
       rgba(0, 0, 0, 0.35) 0%,
       rgba(0, 0, 0, 0.35) 30%,
