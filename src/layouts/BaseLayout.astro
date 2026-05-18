@@ -77,7 +77,7 @@ const {
 
           // Touch: extremely subtle (very low alpha + hair-thin lines) + frame rate cap
           const opacityMult = isTouch ? 0.8 : 1;      // mobile lines = 80% of desktop alpha (CSS mask attenuates further)
-          const lineWidthMult = isTouch ? 1.1 : 1;    // mobile lines = 1.1x desktop thickness
+          const lineWidthMult = isTouch ? 0.8 : 1;    // mobile lines = 0.8x desktop thickness
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
