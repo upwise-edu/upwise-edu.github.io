@@ -15,7 +15,7 @@ export type Course = {
   url: string;
   description: string;
   rating: number;
-  students: number;
+  students: string;
   durationMinutes: number;
   lectures: number;
   highlights: string[];
