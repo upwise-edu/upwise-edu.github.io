@@ -83,8 +83,8 @@ const {
           const ACCENT_B = 8;  // navy / soft-orange accent line index
 
           // Touch: extremely subtle (very low alpha + hair-thin lines) + frame rate cap
-          const opacityMult = isTouch ? 0.4 : 1;      // mobile lines = 40% of desktop alpha (CSS mask attenuates further)
-          const lineWidthMult = isTouch ? 0.4 : 1;    // mobile lines = 40% of desktop thickness
+          const opacityMult = isTouch ? 0.8 : 1;      // mobile lines = 80% of desktop alpha (CSS mask attenuates further)
+          const lineWidthMult = isTouch ? 0.8 : 1;    // mobile lines = 80% of desktop thickness
           const targetFPS = isTouch ? 24 : 60;
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
@@ -116,17 +116,6 @@ const {
           function themeColors() {
             const dark = document.documentElement.getAttribute('data-theme') === 'upwise-dark';
             const m = opacityMult;
-            if (isTouch) {
-              // Mobile: accent lines = 1.5x base (was ~3x on desktop) to reduce visual prominence
-              const baseL = 0.22, baseD = 0.18;
-              const accentL = baseL * 1.5; // 0.33
-              const accentD = baseD * 1.5; // 0.27
-              return {
-                base:   dark ? `rgba(226, 232, 240, ${baseD * m})`   : `rgba(30, 58, 95, ${baseL * m})`,
-                orange: dark ? `rgba(247, 147, 30, ${accentD * m})`  : `rgba(247, 147, 30, ${accentL * m})`,
-                accent2:dark ? `rgba(255, 167, 86, ${accentD * m})`  : `rgba(30, 58, 95, ${accentL * m})`,
-              };
-            }
             return {
               base:   dark ? `rgba(226, 232, 240, ${0.18 * m})` : `rgba(30, 58, 95, ${0.22 * m})`,
               orange: dark ? `rgba(247, 147, 30, ${0.75 * m})`  : `rgba(247, 147, 30, ${0.65 * m})`,
