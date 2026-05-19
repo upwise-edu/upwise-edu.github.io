@@ -1,0 +1,40 @@
+---
+import site from "../data/site.json";
+
+// QR 코드 리다이렉트 페이지.
+// 목적지는 site.json 의 qrTarget.url 에서 관리됩니다.
+const destination = site.qrTarget.url;
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>UPWISE — Redirecting…</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta http-equiv="refresh" content={`0; url=${destination}`} />
+  <link rel="canonical" href={destination} />
+  <script is:inline define:vars={{ destination }}>
+    window.location.replace(destination);
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard Variable", sans-serif;
+      background: #0a1929;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    a { color: #f7931e; }
+  </style>
+</head>
+<body>
+  <div>
+    <p>UPWISE 페이지로 이동 중…</p>
+    <p><a href={destination}>{destination}</a></p>
+  </div>
+</body>
+</html>
