@@ -199,9 +199,7 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
                   {l.title}
                 </span>
                 <span class="type-caption text-base-content/55 whitespace-nowrap">
-                  {l.audience}
-                  {l.attendees > 0 ? ` · ${l.attendees}명` : ''}
-                  {l.hours ? ` · ${l.hours}h` : ''}
+                  {l.audience} · {l.attendees}명{l.hours ? ` · ${l.hours}h` : ''}
                 </span>
               </div>
             ))}
