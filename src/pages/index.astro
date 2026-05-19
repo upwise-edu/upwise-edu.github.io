@@ -334,23 +334,6 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
           </div>
         </a>
       </div>
-
-      <!-- QR Share widget -->
-      <div class="mt-3 flex flex-col sm:flex-row items-start sm:items-center gap-5 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 shadow-sm dark:shadow-none">
-        <div class="shrink-0 bg-white p-2 rounded-lg border border-base-300/40">
-          <img src="/qr/upwise_qr.png" alt="UPWISE QR" class="w-24 h-24 block" loading="lazy" />
-        </div>
-        <div class="min-w-0 flex-1">
-          <p class="type-caption text-primary mb-1">{site.qrShare.label}</p>
-          <p class="type-body text-base-content dark:text-slate-200 mb-1" style="font-weight:600;">{site.qrShare.title}</p>
-          <p class="text-xs text-base-content/55 dark:text-white/45 mb-3 whitespace-pre-line" style="font-family:var(--font-sans);">{site.qrShare.description}</p>
-          <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs">
-            <a href="/qr/upwise_qr.png" download class="text-primary hover:underline">{site.qrShare.downloadPngLabel}</a>
-            <span class="text-base-content/30 dark:text-white/30">·</span>
-            <a href="/qr/upwise_qr.svg" download class="text-primary hover:underline">{site.qrShare.downloadSvgLabel}</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
