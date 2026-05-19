@@ -11,6 +11,15 @@
     "url": "https://upwise.co.kr/"
   },
 
+  "qrShare": {
+    "_help": "Contact 섹션 하단의 QR 공유 위젯 텍스트. QR 이미지는 public/qr/upwise_qr.png / .svg 에서 가져옵니다.",
+    "label": "SHARE",
+    "title": "QR 코드로 공유",
+    "description": "스캔하면 이 사이트로 바로 이동합니다.\n명함·강의 자료에 자유롭게 활용하세요.",
+    "downloadPngLabel": "PNG 다운로드",
+    "downloadSvgLabel": "SVG (인쇄용)"
+  },
+
   "hero": {
     "_help": "taglineLead/Highlight/Suffix 는 자유롭게 편집하세요. taglineHighlight 는 오렌지(GIS는 녹색)로 강조됩니다. stats 는 hero 하단 social proof 박스에 표시되는 4개 항목으로, 각 항목의 value(굵은 강조)와 suffix(보조 설명)를 자유롭게 수정 가능합니다. 첫 항목엔 별 아이콘이 자동 표시됩니다.",
     "eyebrow": "안녕하세요. GIS 전문 강사 UPWISE 이승현입니다.",
