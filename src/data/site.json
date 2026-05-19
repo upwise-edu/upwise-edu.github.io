@@ -195,7 +195,8 @@
       { "name": "현대모비스",            "nameEn": "Hyundai Mobis",  "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
       { "name": "현대NGV",               "nameEn": "Hyundai NGV",    "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
 
-      { "name": "SeSAC",                 "nameEn": "서울 SW아카데미", "category": "training",  "logo": "/partners/sesac.png" }
+      { "name": "SeSAC",                 "nameEn": "서울 SW아카데미", "category": "training",  "logo": "/partners/sesac.png" },
+      { "name": "인프런",                "nameEn": "Inflearn",        "category": "training",  "logo": "/partners/inflearn.svg" }
     ]
   },
 
