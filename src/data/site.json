@@ -146,10 +146,10 @@
     "_help": "각 항목 필수: date(YYYY-MM-DD), organization, title, audience(강의 대상), attendees(수강생 수, 미정이면 0). 선택: dateEnd(범위인 경우 종료일, 없으면 null), hours(진행 시간, 없으면 필드 자체 생략). 신규 출강은 items 배열 맨 위에 추가합니다.",
     "eyebrow": "03 — OFFLINE LECTURES",
     "title": "강의 경력",
-    "intro": "기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다.",
+    "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
     "items": [
-      { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (심화)",                "audience": "현대오토에버 재직자",      "attendees": 20 },
-      { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (기초)",                "audience": "현대오토에버 재직자",      "attendees": 20 },
+      { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS와 DBMS를 통한 공간 분석 및 데이터 시각화 (심화)",                          "audience": "현대오토에버 재직자",      "attendees": 20 },
+      { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "현대NGV",                              "title": "GIS와 DBMS를 통한 공간 분석 및 데이터 시각화 (기초)",                          "audience": "현대오토에버 재직자",      "attendees": 25 },
       { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "수자원공사",                            "title": "2025년 물기업 재직자 인재양성 과정 Q-GIS 실습",                               "audience": "수자원공사 및 물기업 재직자", "attendees": 30 },
       { "date": "2025-09-01", "dateEnd": "2025-12-31", "organization": "인천대학교",                            "title": "공간정보의 이해와 활용 (3학점)",                                             "audience": "도시건축학부 학부생",        "attendees": 25 },
       { "date": "2025-07-08", "dateEnd": "2025-07-16", "organization": "서울청년취업사관학교",                   "title": "SeSAC AI 빅데이터분석가 양성과정",                                           "audience": "SeSAC 교육생",              "attendees": 30 },
