@@ -32,9 +32,12 @@
     "eyebrow": "01 — ABOUT",
     "title": "강사 소개",
     "paragraphs": [
-      "지리정보시스템(GIS)을 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
-      "서울대학교 환경대학원에서 GIS와 원격탐사(Remote Sensing)를 전공했으며, 공간자료를 활용한 연구와 강의를 병행하고 있습니다."
+      "GIS를 통해 데이터에 공간적 맥락을 부여하고, 그 의미를 현장에서 활용 가능한 형태로 전달하는 것을 목표로 합니다.",
+      "서울대학교 환경대학원에서 GIS와 원격탐사를 전공했으며, 공간자료를 활용한 연구와 강의를 병행하고 있습니다."
     ],
+    "expertiseLine": "주요 강의 분야는 ",
+    "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
+    "expertiseLineSuffix": "입니다.",
     "stats": [
       { "label": "누적 수강생 (온라인)", "value": "1000+", "unit": "명" },
       { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
@@ -43,9 +46,6 @@
       { "label": "총 출강 횟수",         "value": "15+",   "unit": "강" },
       { "label": "협업 기관",            "value": "10+",   "unit": "곳" }
     ],
-    "expertiseLine": "주요 강의 분야는 ",
-    "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
-    "expertiseLineSuffix": "입니다.",
     "education": [
       { "title": "박사 과정 수료", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
       { "title": "석사 졸업",      "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" }
@@ -161,7 +161,7 @@
       { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (삼성고)",                                     "audience": "고등학생",                "attendees": 20 },
       { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (서문여고)",                                   "audience": "고등학생",                "attendees": 20 },
       { "date": "2024-05-11", "dateEnd": null,         "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (동북고)",                                     "audience": "고등학생",                "attendees": 20 },
-      { "date": "2024-02-23", "dateEnd": null,         "organization": "서울대 환경대학원&BK21 스마트시티 사업단", "title": "WISE-UP WORKSHOP 도시공간데이터분석",                                         "audience": "서울대학교 대학원생",      "attendees": 20 },
+      { "date": "2024-02-23", "dateEnd": null,         "organization": "서울대 환경대학원&BK21 스마트시티",       "title": "WISE-UP WORKSHOP 도시공간데이터분석",                                         "audience": "서울대학교 대학원생",      "attendees": 20 },
       { "date": "2023-10-07", "dateEnd": "2023-10-08", "organization": "강사 자체 주관",                        "title": "QGIS 기초특강",                                                              "audience": "GIS 현업 사용자",          "attendees": 30 },
       { "date": "2023-06-19", "dateEnd": "2023-06-20", "organization": "수자원공사",                            "title": "물기업 재직자 역량강화 교육 Q-GIS 실습(초급&중급)",                          "audience": "수자원공사 및 물기업 재직자", "attendees": 35 },
       { "date": "2022-12-07", "dateEnd": "2022-12-09", "organization": "경기도 인재개발원",                      "title": "보고서가 달라지는 데이터 시각화",                                             "audience": "경기도 공무원",            "attendees": 25 }
