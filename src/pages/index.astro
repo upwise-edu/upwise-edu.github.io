@@ -92,8 +92,8 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
     <p class="type-caption text-primary mb-4">{site.about.eyebrow}</p>
     <h3 class="type-display-lg text-base-content mb-10">{site.about.title}</h3>
 
-    <!-- Intro narrative -->
-    <div class="space-y-5 max-w-2xl mb-12">
+    <!-- Intro narrative — stats 그리드와 동일한 너비로 확장 -->
+    <div class="space-y-5 mb-12">
       {site.about.paragraphs.map((p, i) => (
         <p class={(i === 0 ? "type-body-lg text-base-content/85" : "type-body text-base-content/75") + " whitespace-pre-line"}>
           {p}

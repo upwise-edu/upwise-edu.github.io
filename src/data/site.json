@@ -22,7 +22,7 @@
       { "value": "4.9", "suffix": "/5.0 평점" },
       { "value": "1000+", "suffix": "명 수강" },
       { "value": "100+", "suffix": "개 수강평" },
-      { "value": "12+", "suffix": "개 기관 출강" }
+      { "value": "10+", "suffix": "개 기관 출강" }
     ],
     "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"
@@ -39,9 +39,9 @@
       { "label": "누적 수강생 (온라인)", "value": "1000+", "unit": "명" },
       { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
       { "label": "평균 평점",            "value": "4.9",   "unit": "/5.0" },
-      { "label": "누적 수강생 (오프라인)", "value": "n+",    "unit": "명" },
-      { "label": "총 출강 횟수",         "value": "12+",   "unit": "강" },
-      { "label": "협업 기관",            "value": "13+",   "unit": "곳" }
+      { "label": "누적 수강생 (오프라인)", "value": "400+",    "unit": "명" },
+      { "label": "총 출강 횟수",         "value": "15+",   "unit": "강" },
+      { "label": "협업 기관",            "value": "10+",   "unit": "곳" }
     ],
     "expertiseLine": "주요 강의 분야는 ",
     "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
@@ -148,22 +148,23 @@
     "title": "강의 경력",
     "intro": "기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다.",
     "items": [
-      { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (심화)",                "audience": "현대오토에버 재직자",      "attendees": 0 },
-      { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (기초)",                "audience": "현대오토에버 재직자",      "attendees": 0 },
-      { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "수자원공사",                            "title": "「2025년 물기업 재직자 역량강화」교육사업 디지털 물산업 인재양성 과정 Q-GIS 실습", "audience": "수자원공사 및 물기업 재직자", "attendees": 0 },
-      { "date": "2025-09-01", "dateEnd": "2025-12-31", "organization": "인천대학교",                            "title": "공간정보의 이해와 활용 (3학점)",                                              "audience": "인천대학교 대학생",        "attendees": 0 },
-      { "date": "2025-07-08", "dateEnd": "2025-07-16", "organization": "서울청년취업사관학교 (SeSAC)",          "title": "새싹 (SeSAC) AI 빅데이터분석가 양성과정",                                     "audience": "서울청년취업사관학교 교육생", "attendees": 0 },
-      { "date": "2025-04-23", "dateEnd": null,         "organization": "한국환경공단",                          "title": "데이터분석전문가양성과정",                                                    "audience": "한국환경공단 재직자",      "attendees": 0 },
-      { "date": "2024-10-25", "dateEnd": null,         "organization": "한국환경공단",                          "title": "데이터분석전문가양성과정",                                                    "audience": "한국환경공단 재직자",      "attendees": 0 },
-      { "date": "2024-10-16", "dateEnd": null,         "organization": "충남농업기술원",                        "title": "24년규제병해충종합평가회계획- QGIS를활용한과수화상병발생시각화",                "audience": "충남시 공무원",            "attendees": 0 },
-      { "date": "2024-10-02", "dateEnd": null,         "organization": "수자원공사",                            "title": "「2024년물기업재직자역량강화」교육- 디지털프로그램실습(기본) - Q-GIS 실습",      "audience": "수자원공사 및 물기업 재직자", "attendees": 0 },
-      { "date": "2024-09-01", "dateEnd": "2024-12-31", "organization": "인천대학교",                            "title": "공간정보의 이해와 활용 (3학점)",                                              "audience": "인천대학교 대학생",        "attendees": 0 },
-      { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "서울대학교 평생교육원 주관",            "title": "공공데이터를활용한우리학교지도만들기 (삼성고등학교, 서문여자고등학교)",          "audience": "고등학생",                "attendees": 0 },
-      { "date": "2024-05-11", "dateEnd": null,         "organization": "서울대학교 평생교육원 주관",            "title": "공공데이터를활용한우리학교지도만들기 (동북고등학교)",                          "audience": "고등학생",                "attendees": 0 },
-      { "date": "2024-02-23", "dateEnd": null,         "organization": "서울대 환경대학원-BK21 스마트시티 사업단 주관", "title": "WISE-UP WORKSHOP 도시공간데이터분석",                                "audience": "서울대학교 대학원생",      "attendees": 0 },
-      { "date": "2023-10-07", "dateEnd": "2023-10-08", "organization": "강사 자체 주관",                        "title": "QGIS 기초특강",                                                              "audience": "GIS 현업 사용자",          "attendees": 0 },
-      { "date": "2023-06-19", "dateEnd": "2023-06-20", "organization": "수자원공사 주관",                        "title": "물기업재직자역량강화교육-디지털프로그램실습(초급) & Q-GIS 실습(중급)",            "audience": "수자원공사 및 물기업 재직자", "attendees": 0 },
-      { "date": "2022-12-07", "dateEnd": "2022-12-09", "organization": "경기도 인재개발원 주관",                "title": "보고서가달라지는데이터시각화- 데이터활용역량강화교육(2기)",                      "audience": "경기도 공무원",            "attendees": 0 }
+      { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (심화)",                "audience": "현대오토에버 재직자",      "attendees": 20 },
+      { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "현대NGV",                              "title": "GIS 이해 및 DBMS를 통한 공간 분석 작업 및 데이터 시각화 (기초)",                "audience": "현대오토에버 재직자",      "attendees": 20 },
+      { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "수자원공사",                            "title": "2025년 물기업 재직자 인재양성 과정 Q-GIS 실습",                               "audience": "수자원공사 및 물기업 재직자", "attendees": 30 },
+      { "date": "2025-09-01", "dateEnd": "2025-12-31", "organization": "인천대학교",                            "title": "공간정보의 이해와 활용 (3학점)",                                             "audience": "도시건축학부 학부생",        "attendees": 25 },
+      { "date": "2025-07-08", "dateEnd": "2025-07-16", "organization": "서울청년취업사관학교",                   "title": "SeSAC AI 빅데이터분석가 양성과정",                                           "audience": "SeSAC 교육생",              "attendees": 30 },
+      { "date": "2025-04-23", "dateEnd": null,         "organization": "한국환경공단",                          "title": "데이터분석전문가양성과정",                                                    "audience": "한국환경공단 재직자",      "attendees": 20 },
+      { "date": "2024-10-25", "dateEnd": null,         "organization": "한국환경공단",                          "title": "데이터분석전문가양성과정",                                                    "audience": "한국환경공단 재직자",      "attendees": 20 },
+      { "date": "2024-10-16", "dateEnd": null,         "organization": "충남농업기술원",                        "title": "QGIS를 활용한 과수화상병 발생 시각화",                                         "audience": "충남시 공무원",            "attendees": 20 },
+      { "date": "2024-10-02", "dateEnd": null,         "organization": "수자원공사",                            "title": "2024년 물기업 재직자 역량강화 교육 Q-GIS 실습",                                "audience": "수자원공사 및 물기업 재직자", "attendees": 30 },
+      { "date": "2024-09-01", "dateEnd": "2024-12-31", "organization": "인천대학교",                            "title": "공간정보의 이해와 활용 (3학점)",                                              "audience": "도시건축학부 학부생",        "attendees": 30 },
+      { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (삼성고)",                                     "audience": "고등학생",                "attendees": 20 },
+      { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (서문여고)",                                   "audience": "고등학생",                "attendees": 20 },
+      { "date": "2024-05-11", "dateEnd": null,         "organization": "서울대 평생교육원",                      "title": "공공데이터를 활용한 우리학교 지도 만들기 (동북고)",                                     "audience": "고등학생",                "attendees": 20 },
+      { "date": "2024-02-23", "dateEnd": null,         "organization": "서울대 환경대학원&BK21 스마트시티 사업단", "title": "WISE-UP WORKSHOP 도시공간데이터분석",                                         "audience": "서울대학교 대학원생",      "attendees": 20 },
+      { "date": "2023-10-07", "dateEnd": "2023-10-08", "organization": "강사 자체 주관",                        "title": "QGIS 기초특강",                                                              "audience": "GIS 현업 사용자",          "attendees": 30 },
+      { "date": "2023-06-19", "dateEnd": "2023-06-20", "organization": "수자원공사",                            "title": "물기업 재직자 역량강화 교육 Q-GIS 실습(초급&중급)",                          "audience": "수자원공사 및 물기업 재직자", "attendees": 35 },
+      { "date": "2022-12-07", "dateEnd": "2022-12-09", "organization": "경기도 인재개발원",                      "title": "보고서가 달라지는 데이터 시각화",                                             "audience": "경기도 공무원",            "attendees": 25 }
     ]
   },
 
