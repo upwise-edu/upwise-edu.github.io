@@ -138,23 +138,23 @@
   },
 
   "lectures": {
-    "_help": "신규 출강은 items 배열 맨 위에 추가. format은 '워크숍'|'특강'|'정규 강의'|'세미나'|'컨퍼런스'|'멘토링' 중 선택. month는 모르면 0.",
+    "_help": "각 항목 필수: date(YYYY-MM-DD), organization, title, audience(강의 대상), attendees(수강생 수). 선택: dateEnd(범위인 경우 종료일, 없으면 null), hours(진행 시간). audience가 '(입력 필요)' 또는 attendees가 0인 항목은 본인 기록으로 교체하세요. 신규 출강은 items 배열 맨 위에 추가합니다.",
     "eyebrow": "03 — OFFLINE LECTURES",
     "title": "강의 경력",
     "intro": "기관·기업·대학을 대상으로 진행한 오프라인 워크숍·특강·정규 강의 이력입니다.",
     "items": [
-      { "year": 2025, "month": 0, "organization": "한국환경공단",     "title": "QGIS 실무 교육",                  "format": "워크숍",    "hours": 16, "topic": "QGIS · 공간분석" },
-      { "year": 2025, "month": 0, "organization": "현대NGV",          "title": "자동차 데이터 공간 시각화",        "format": "특강",      "hours": 8,  "topic": "시각화" },
-      { "year": 2024, "month": 0, "organization": "수자원공사",       "title": "QGIS 입문 워크숍",                "format": "워크숍",    "hours": 8,  "topic": "QGIS" },
-      { "year": 2024, "month": 0, "organization": "한국생산성본부",   "title": "GIS 데이터 분석",                 "format": "정규 강의", "hours": 24, "topic": "GIS · Python" },
-      { "year": 2024, "month": 0, "organization": "경기도 인재개발원", "title": "공공데이터 활용 GIS",             "format": "특강",      "hours": 4,  "topic": "GIS" },
-      { "year": 2024, "month": 0, "organization": "관악구청",         "title": "지역 공간정보 활용",              "format": "특강",      "hours": 4,  "topic": "GIS" },
-      { "year": 2023, "month": 0, "organization": "서울대학교 환경대학원", "title": "Python × QGIS 자동화 워크숍", "format": "워크숍",    "hours": 12, "topic": "Python · QGIS" },
-      { "year": 2023, "month": 0, "organization": "인천대학교",       "title": "QGIS 입문 특강",                  "format": "특강",      "hours": 4,  "topic": "QGIS" },
-      { "year": 2023, "month": 0, "organization": "현대모비스",       "title": "GIS 데이터 시각화",               "format": "특강",      "hours": 4,  "topic": "시각화" },
-      { "year": 2023, "month": 0, "organization": "충남농업기술원",   "title": "농업 분야 GIS 활용",              "format": "워크숍",    "hours": 8,  "topic": "GIS" },
-      { "year": 2022, "month": 0, "organization": "SeSAC",            "title": "GIS와 Python 융합",               "format": "정규 강의", "hours": 16, "topic": "GIS · Python" },
-      { "year": 2022, "month": 0, "organization": "서울대학교",       "title": "GIS 입문 세미나",                 "format": "세미나",    "hours": 2,  "topic": "GIS" }
+      { "date": "2025-01-01", "dateEnd": null, "organization": "한국환경공단",         "title": "QGIS 실무 교육",                "audience": "(입력 필요)", "attendees": 0, "hours": 16 },
+      { "date": "2025-01-01", "dateEnd": null, "organization": "현대NGV",              "title": "자동차 데이터 공간 시각화",      "audience": "(입력 필요)", "attendees": 0, "hours": 8 },
+      { "date": "2024-01-01", "dateEnd": null, "organization": "수자원공사",           "title": "QGIS 입문 워크숍",              "audience": "(입력 필요)", "attendees": 0, "hours": 8 },
+      { "date": "2024-01-01", "dateEnd": null, "organization": "한국생산성본부",        "title": "GIS 데이터 분석",               "audience": "(입력 필요)", "attendees": 0, "hours": 24 },
+      { "date": "2024-01-01", "dateEnd": null, "organization": "경기도 인재개발원",     "title": "공공데이터 활용 GIS",           "audience": "(입력 필요)", "attendees": 0, "hours": 4 },
+      { "date": "2024-01-01", "dateEnd": null, "organization": "관악구청",             "title": "지역 공간정보 활용",            "audience": "(입력 필요)", "attendees": 0, "hours": 4 },
+      { "date": "2023-01-01", "dateEnd": null, "organization": "서울대학교 환경대학원",  "title": "Python × QGIS 자동화 워크숍",   "audience": "(입력 필요)", "attendees": 0, "hours": 12 },
+      { "date": "2023-01-01", "dateEnd": null, "organization": "인천대학교",           "title": "QGIS 입문 특강",                "audience": "(입력 필요)", "attendees": 0, "hours": 4 },
+      { "date": "2023-01-01", "dateEnd": null, "organization": "현대모비스",           "title": "GIS 데이터 시각화",             "audience": "(입력 필요)", "attendees": 0, "hours": 4 },
+      { "date": "2023-01-01", "dateEnd": null, "organization": "충남농업기술원",        "title": "농업 분야 GIS 활용",            "audience": "(입력 필요)", "attendees": 0, "hours": 8 },
+      { "date": "2022-01-01", "dateEnd": null, "organization": "SeSAC",                "title": "GIS와 Python 융합",             "audience": "(입력 필요)", "attendees": 0, "hours": 16 },
+      { "date": "2022-01-01", "dateEnd": null, "organization": "서울대학교",           "title": "GIS 입문 세미나",               "audience": "(입력 필요)", "attendees": 0, "hours": 2 }
     ]
   },
 
