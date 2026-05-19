@@ -39,7 +39,7 @@ module.exports = {
 		themes: [
 			{
 				"upwise-light": {
-					"primary": "#f7931e",
+					"primary": "#ea7c0d",
 					"primary-content": "#ffffff",
 					"secondary": "#1e3a5f",
 					"secondary-content": "#ffffff",
