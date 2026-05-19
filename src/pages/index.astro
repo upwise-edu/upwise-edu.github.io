@@ -170,14 +170,7 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
   <section id="lectures" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
     <p class="type-caption text-primary mb-4">{site.lectures.eyebrow}</p>
     <h3 class="type-display-lg mb-4">{site.lectures.title}</h3>
-    <p class="type-body-lg text-base-content/75 max-w-2xl mb-6 whitespace-pre-line">{site.lectures.intro}</p>
-    <p class="type-body-sm text-base-content/60 mb-10">
-      누적 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalCount}건 이상</strong>의 출강
-      · <strong class="text-base-content" style="font-weight:540;">{lectStats.uniqueOrgs}개 기관·기업</strong>
-      {lectStats.totalHours > 0 && (
-        <> · 총 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalHours}시간 이상</strong></>
-      )}
-    </p>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-10 whitespace-pre-line">{site.lectures.intro}</p>
 
     <div class="space-y-10 pl-4 border-l-2 border-base-300/40">
       {lecturesByYear.map(({ year, items }) => (
@@ -188,7 +181,7 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
           <h5 class="text-3xl text-primary mb-4" style="font-weight:700;letter-spacing:-0.5px;">{year}</h5>
           <div class="space-y-1.5">
             {items.map((l) => (
-              <div class="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 py-2.5 hover:bg-base-200/40 -mx-2 px-2 rounded-md transition-colors">
+              <div class="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 py-2.5 hover:bg-sky-100/60 dark:hover:bg-sky-500/10 -mx-2 px-2 rounded-md transition-colors">
                 <span class="shrink-0 type-body-sm text-base-content/55 whitespace-nowrap w-fit md:w-28">
                   {formatLectureDate(l.date, l.dateEnd)}
                 </span>
