@@ -45,7 +45,7 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
     </h1>
 
     <p class="type-headline text-base-content/90 mb-8 max-w-2xl whitespace-pre-line">
-      {site.hero.taglineLead}<br/>
+      {site.hero.taglineLead}{' '}
       {site.hero.taglineHighlight.split(/(GIS)/).map((part) => (
         part === 'GIS'
           ? <span style="color:#00C471;font-weight:900;">{part}</span>
