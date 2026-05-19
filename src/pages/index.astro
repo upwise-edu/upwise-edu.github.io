@@ -15,6 +15,11 @@ const totalHours = Math.round(totalMinutes / 60);
 const lecturesByYear = groupLecturesByYear(offlineLectures);
 const lectStats = lectureStats(offlineLectures);
 
+// 강의 날짜 포맷 헬퍼 — "2025-03-15" → "2025.03.15", 범위면 "2025.03.15 ~ 2025.03.17"
+const fmtDate = (d: string) => d.replace(/-/g, '.');
+const formatLectureDate = (date: string, dateEnd?: string | null) =>
+  dateEnd ? `${fmtDate(date)} ~ ${fmtDate(dateEnd)}` : fmtDate(date);
+
 const orderedCourses = [
   courses.find((c) => c.id === 'free-election'),
   courses.find((c) => c.id === 'starter'),
@@ -182,6 +187,9 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
           <div class="space-y-1.5">
             {items.map((l) => (
               <div class="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 py-2.5 hover:bg-base-200/40 -mx-2 px-2 rounded-md transition-colors">
+                <span class="shrink-0 type-caption text-base-content/55 whitespace-nowrap w-fit md:w-32">
+                  {formatLectureDate(l.date, l.dateEnd)}
+                </span>
                 <span class="shrink-0 type-caption px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 w-fit">
                   {l.organization}
                 </span>
@@ -189,7 +197,9 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
                   {l.title}
                 </span>
                 <span class="type-caption text-base-content/55 whitespace-nowrap">
-                  {l.format}{l.hours ? ` · ${l.hours}h` : ''}{l.topic ? ` · ${l.topic}` : ''}
+                  {l.audience}
+                  {l.attendees > 0 ? ` · ${l.attendees}명` : ''}
+                  {l.hours ? ` · ${l.hours}h` : ''}
                 </span>
               </div>
             ))}

@@ -23,14 +23,13 @@ export type Course = {
 };
 
 export type OfflineLecture = {
-  year: number;
-  month: number;
+  date: string;                // YYYY-MM-DD (시작일, 필수)
+  dateEnd?: string | null;     // YYYY-MM-DD (종료일, 단일 날짜면 null)
   organization: string;
   title: string;
-  format: '워크숍' | '특강' | '정규 강의' | '세미나' | '컨퍼런스' | '멘토링';
-  hours?: number | null;
-  topic?: string;
-  note?: string;
+  audience: string;            // 강의 대상
+  attendees: number;           // 수강생 수 (0 = 미입력)
+  hours?: number | null;       // 진행 시간 (선택)
 };
 
 export type Collaboration = {
@@ -56,12 +55,21 @@ export function formatDuration(minutes: number, lang: 'en' | 'ko' = 'ko'): strin
   return `${h}시간 ${m}분`;
 }
 
-/** 연도별로 그룹핑 (최신 연도부터) */
+/** date 문자열에서 연도 추출 (예: "2025-03-15" → 2025) */
+function yearOf(dateStr: string): number {
+  return parseInt(dateStr.slice(0, 4), 10);
+}
+
+/** 연도별로 그룹핑 (최신 연도부터, 같은 연도 내에서는 날짜 내림차순) */
 export function groupLecturesByYear(lectures: OfflineLecture[]): { year: number; items: OfflineLecture[] }[] {
   const map = new Map<number, OfflineLecture[]>();
   for (const l of lectures) {
-    if (!map.has(l.year)) map.set(l.year, []);
-    map.get(l.year)!.push(l);
+    const y = yearOf(l.date);
+    if (!map.has(y)) map.set(y, []);
+    map.get(y)!.push(l);
+  }
+  for (const items of map.values()) {
+    items.sort((a, b) => b.date.localeCompare(a.date));
   }
   return Array.from(map.entries())
     .sort((a, b) => b[0] - a[0])
@@ -71,10 +79,12 @@ export function groupLecturesByYear(lectures: OfflineLecture[]): { year: number;
 /** 출강 누적 통계 */
 export function lectureStats(lectures: OfflineLecture[]) {
   const totalHours = lectures.reduce((sum, l) => sum + (l.hours ?? 0), 0);
+  const totalAttendees = lectures.reduce((sum, l) => sum + (l.attendees ?? 0), 0);
   const orgSet = new Set(lectures.map((l) => l.organization));
   return {
     totalCount: lectures.length,
     totalHours,
+    totalAttendees,
     uniqueOrgs: orgSet.size,
   };
 }
