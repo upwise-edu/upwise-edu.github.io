@@ -59,7 +59,7 @@
       {
         "title": "원격탐사 (Remote Sensing)",
         "subtitle": "위성영상 분석 · 항공기/드론 촬영자료 분석",
-        "body": "Landsat·Sentinel·MODIS 등 위성영상과 항공기/드론을 통해 촬영된 원격탐사 자료 연구 전문."
+        "body": "Landsat·MODIS·GEDI 등 위성자료와 항공기/드론을 통해 촬영된 원격탐사 자료 연구 전문."
       },
       {
         "title": "Python × GIS 융합",
