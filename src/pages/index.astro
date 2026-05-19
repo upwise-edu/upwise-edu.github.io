@@ -174,7 +174,9 @@ const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
     <p class="type-body-sm text-base-content/60 mb-10">
       누적 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalCount}건 이상</strong>의 출강
       · <strong class="text-base-content" style="font-weight:540;">{lectStats.uniqueOrgs}개 기관·기업</strong>
-      · 총 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalHours}시간 이상</strong>
+      {lectStats.totalHours > 0 && (
+        <> · 총 <strong class="text-base-content" style="font-weight:540;">{lectStats.totalHours}시간 이상</strong></>
+      )}
     </p>
 
     <div class="space-y-10 pl-4 border-l-2 border-base-300/40">
