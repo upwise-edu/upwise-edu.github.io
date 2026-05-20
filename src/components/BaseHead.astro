@@ -2,15 +2,103 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import site from '../data/site.json';
 
 export interface Props {
 	title: string;
 	description: string;
 	image?: string;
 	ogType?: string;
+	includeStructuredData?: boolean;
 }
 
-const { title, description, image = '/upwise_text.png', ogType = 'website' } = Astro.props;
+const { title, description, image = '/upwise_text.png', ogType = 'website', includeStructuredData = false } = Astro.props;
+
+// JSON-LD 구조화 데이터 — 메인 페이지에서만 사용 (Person + ProfilePage)
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": "https://upwise.co.kr/#person",
+			"name": "이승현",
+			"alternateName": "Seunghyun Lee",
+			"jobTitle": "GIS·Python 전문 강사",
+			"description": "QGIS·Python·원격탐사 활용 GIS 강의 전문 강사",
+			"url": "https://upwise.co.kr",
+			"image": "https://upwise.co.kr/upwise_text.png",
+			"sameAs": [
+				"https://www.inflearn.com/users/212773/@upwise",
+				"https://open.kakao.com/me/upwise"
+			],
+			"knowsAbout": [
+				"QGIS", "GIS", "Geographic Information System",
+				"Remote Sensing", "Python", "PostGIS",
+				"Spatial Data Analysis", "Map Visualization", "PyQGIS"
+			],
+			"alumniOf": {
+				"@type": "EducationalOrganization",
+				"name": "서울대학교 환경대학원",
+				"url": "https://gses.snu.ac.kr"
+			},
+			"worksFor": {
+				"@type": "Organization",
+				"name": "UPWISE",
+				"url": "https://upwise.co.kr"
+			}
+		},
+		{
+			"@type": "Organization",
+			"@id": "https://upwise.co.kr/#organization",
+			"name": "UPWISE",
+			"url": "https://upwise.co.kr",
+			"logo": "https://upwise.co.kr/upwise_logo.png",
+			"founder": { "@id": "https://upwise.co.kr/#person" },
+			"sameAs": [
+				"https://www.inflearn.com/users/212773/@upwise"
+			]
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://upwise.co.kr/#website",
+			"url": "https://upwise.co.kr",
+			"name": "UPWISE — GIS 전문 강사",
+			"description": site.site.description,
+			"inLanguage": "ko-KR",
+			"publisher": { "@id": "https://upwise.co.kr/#organization" }
+		},
+		...site.courses.items.map((course) => ({
+			"@type": "Course",
+			"name": course.title,
+			"description": course.description,
+			"provider": {
+				"@type": "Organization",
+				"name": "Inflearn",
+				"sameAs": "https://www.inflearn.com"
+			},
+			"instructor": { "@id": "https://upwise.co.kr/#person" },
+			"url": course.url,
+			"image": course.image ? `https://upwise.co.kr${course.image}` : undefined,
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": course.rating,
+				"bestRating": 5,
+				"ratingCount": course.students,
+			},
+			"offers": course.isFree ? {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "KRW",
+				"availability": "https://schema.org/InStock"
+			} : undefined,
+			"hasCourseInstance": {
+				"@type": "CourseInstance",
+				"courseMode": "online",
+				"courseWorkload": `PT${Math.round(course.durationMinutes / 60)}H${course.durationMinutes % 60}M`
+			}
+		}))
+	]
+};
 ---
 
 <!-- Global Metadata -->
@@ -18,6 +106,11 @@ const { title, description, image = '/upwise_text.png', ogType = 'website' } = A
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/upwise_logo.png" />
 <meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={Astro.url} />
+<meta name="author" content="이승현 (UPWISE)" />
+<meta name="robots" content="index, follow" />
+<meta name="google" content="notranslate" />
+<meta http-equiv="content-language" content="ko" />
 
 <!-- Theme detection (runs before paint to avoid flash) -->
 <script is:inline>
@@ -48,6 +141,7 @@ const { title, description, image = '/upwise_text.png', ogType = 'website' } = A
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+{site.site.keywords && <meta name="keywords" content={site.site.keywords} />}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
@@ -62,3 +156,8 @@ const { title, description, image = '/upwise_text.png', ogType = 'website' } = A
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- JSON-LD Structured Data (Person, Organization, WebSite, Courses) -->
+{includeStructuredData && (
+	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}

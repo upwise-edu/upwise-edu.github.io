@@ -14,13 +14,14 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
+  includeStructuredData = false,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ko">
   <head>
-    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} includeStructuredData={includeStructuredData} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>

@@ -35,7 +35,7 @@ const phoneChars = [...site.contact.phone].map((c) => c.charCodeAt(0));
 const telChars   = [...site.contact.phoneTelLink].map((c) => c.charCodeAt(0));
 ---
 
-<BaseLayout sideBarActiveItemID="about">
+<BaseLayout sideBarActiveItemID="about" includeStructuredData={true}>
   <!-- ───────── HERO ───────── -->
   <section id="top" class="pb-20 pt-10 scroll-mt-12 animate-fade-up">
     <p class="type-eyebrow text-[#1e3a5f] dark:text-base-content mb-6">{site.hero.eyebrow}</p>

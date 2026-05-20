@@ -2,8 +2,9 @@
   "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다. 줄바꿈은 문자열 안에 \\n 으로 표시하세요 (예: \"첫 줄\\n두 번째 줄\").",
 
   "site": {
-    "title": "UPWISE. | GIS 전문 강사",
-    "description": "UPWISE — QGIS·ArcGIS·Python을 기반으로 한 실무 중심 GIS 강의. 공공기관·대학·기업 강의 및 워크숍 진행."
+    "title": "UPWISE 이승현 | QGIS·Python 전문 강사 · 인프런 1,000+ 수강생",
+    "description": "QGIS·Python·원격탐사 활용 GIS 강의 전문 강사 UPWISE 이승현. 인프런 누적 1,000+ 수강생 평점 4.9. 공공기관·대학·기업 강의 의뢰 환영.",
+    "keywords": "QGIS, QGIS 강사, GIS 강사, GIS 강의, QGIS 강의, Python GIS, 원격탐사 강사, 인프런 GIS, UPWISE, 이승현, 공간정보 강의, QGIS 자동화"
   },
 
   "qrTarget": {
