@@ -7,6 +7,11 @@
     "keywords": "QGIS, QGIS 강사, GIS 강사, GIS 강의, QGIS 강의, Python GIS, 원격탐사 강사, 인프런 GIS, UPWISE, 이승현, 공간정보 강의, QGIS 자동화"
   },
 
+  "analytics": {
+    "_help": "Google Analytics 4 측정 ID. 비활성화하려면 빈 문자열로 두세요.",
+    "gtagId": "G-3CZL8L8B82"
+  },
+
   "qrTarget": {
     "_help": "https://upwise.co.kr/go 로 접속 시 자동 리다이렉트되는 목적지 URL. 인쇄된 QR 코드는 /go 를 가리키므로, 여기서 url 만 바꾸면 QR 재발급 없이 목적지를 변경할 수 있습니다.",
     "url": "https://upwise.co.kr/"
