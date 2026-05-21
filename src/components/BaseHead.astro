@@ -164,3 +164,16 @@ const structuredData = {
 {includeStructuredData && (
 	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 )}
+
+<!-- Google Analytics 4 -->
+{site.analytics?.gtagId && (
+	<>
+		<script async src={`https://www.googletagmanager.com/gtag/js?id=${site.analytics.gtagId}`}></script>
+		<script is:inline define:vars={{ gtagId: site.analytics.gtagId }}>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){ dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', gtagId);
+		</script>
+	</>
+)}
