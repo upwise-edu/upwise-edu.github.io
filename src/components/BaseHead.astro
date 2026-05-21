@@ -83,7 +83,7 @@ const structuredData = {
 				"@type": "AggregateRating",
 				"ratingValue": course.rating,
 				"bestRating": 5,
-				"ratingCount": course.students,
+				"ratingCount": parseInt(String(course.students).replace(/\D/g, ''), 10) || 1,
 			},
 			"offers": course.isFree ? {
 				"@type": "Offer",
@@ -111,6 +111,9 @@ const structuredData = {
 <meta name="robots" content="index, follow" />
 <meta name="google" content="notranslate" />
 <meta http-equiv="content-language" content="ko" />
+
+<!-- Search engine verification -->
+<meta name="naver-site-verification" content="613456383a86cd0ec8304900bc1e8e5bd07b11e2" />
 
 <!-- Theme detection (runs before paint to avoid flash) -->
 <script is:inline>
