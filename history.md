@@ -15,3 +15,26 @@
 *   `site.json`의 `analytics.gtagId`에 Google Analytics 4 측정 ID를 추가하고 `BaseHead.astro`에 추적 스크립트를 삽입하여 GA4 통합을 완료했습니다.
 *   SEO 개선 사항 적용 후 로컬 빌드 테스트(`npm run build`)를 수행하고 오류 없이 완료하여 푸시했습니다.
 
+## 2026-05-16
+
+- upwise-edu GitHub Organization 생성 및 `upwise-edu.github.io` 저장소 생성
+- Node.js 설치 확인 및 Astrofy 템플릿 설치
+- 로컬 개발 서버 구동 및 Astrofy 템플릿 정상 작동 확인
+- `upwise` 브랜드 컬러(남색/오렌지) 및 로고 적용
+- Brittany Chiang 스타일의 깔끔한 디자인 레퍼런스 적용
+- 사이드바, 헤더, 푸터 등 기본 레이아웃 구성 요소 브랜드 맞춤 수정
+- 홈페이지 콘텐츠(소개, 경력, 프로젝트 등) 초기 내용 채우기
+- 커서 스포트라이트 효과 및 섹션 전환 애니메이션 추가
+
+## 2026-05-18
+
+* `history_260518.md` 파일 생성 및 GitHub에 푸시
+* UPWISE 로고 색상(UP 주황, WISE 남색)을 웹페이지에 적용
+* 전화번호를 hover/tap 시에만 보이도록 JavaScript 로직 구현 및 적용
+* 모바일 등고선 시각화의 과도한 선명도 문제 해결 (기존 opacity 0.05 -> 0.15, 선 두께 0.15 -> 0.3, 액센트 라인 1.5배 복원)
+* 모바일 등고선 시각화의 `isTouch` 감지 로직 강화 및 디버그 뱃지 추가
+* 모바일 등고선 시각화의 `opacityMult` 0.15, `lineWidthMult` 0.3, 액센트 라인 1.5배 비율로 조정
+* 모바일 등고선 시각화의 CSS mask 문제 해결 및 `opacityMult` 0.4, 마스크 중앙 0.35, 가장자리 1.0으로 조정
+* 모바일 등고선 시각화의 선 두께 0.8, 그리드 55x38, blur 0.9px로 조정
+* 모바일 등고선 시각화의 선 두께 0.4, 그리드 65x45로 최종 조정
+
