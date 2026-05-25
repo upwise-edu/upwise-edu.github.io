@@ -62,3 +62,25 @@
 * GitHub Pages를 위한 `CNAME` 파일 생성 및 `astro.config.mjs` 파일의 `site` URL 업데이트
 * `upwise.co.kr` 도메인에 대한 A 레코드 4개 및 CNAME 레코드 1개 설정
 
+## 2026-05-20
+
+- site.json 파일에서 사이트 제목 및 설명 관련 텍스트 업데이트
+- src/data/site.json 파일에 Course 타입을 export 하는 index.ts 파일의 구조 확인
+- astro.config.mjs 파일에서 사이트 URL 설정 확인
+- tailwind.config.cjs 파일에서 Tailwind CSS 설정 및 폰트 패밀리 확인
+- .gitignore 파일에 빌드 관련 파일 및 폴더 제외 설정 확인
+- .github/workflows/deploy.yml 파일의 배포 워크플로우 설정 확인
+- CourseCard.astro 컴포넌트에서 Course 타입 및 카테고리별 그라디언트 설정 확인
+- cv/TimeLine.astro 컴포넌트의 타임라인 요소 렌더링 로직 확인
+
+## 2026-05-22
+
+- `ratingCount` 속성의 유효하지 않은 정수 경고를 해결하고 Search Console에 수정 확인 요청
+- Sitemap 및 robots.txt 생성
+- JSON-LD 구조화 데이터(Person, Organization, WebSite, 4 Courses) 설정
+- 메타 태그(title, description, keywords, canonical) 최적화
+- Google Search Console 등록, sitemap 처리 및 색인 완료
+- 네이버 서치 어드바이저 인증 및 sitemap 제출
+- Google Analytics 4 통합 (`G-3CZL8L8B82`)
+- 인프런 및 SNS에 도메인 백링크 추가
+
