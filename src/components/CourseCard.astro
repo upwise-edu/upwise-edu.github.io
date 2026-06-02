@@ -4,9 +4,19 @@ import { formatDuration } from '../data';
 
 interface Props {
   course: Course;
+  lang?: 'ko' | 'en';
 }
 
-const { course } = Astro.props as Props;
+const { course, lang = 'ko' } = Astro.props as Props;
+
+// 카테고리 키(한국어)는 내부 식별자. 화면 표시는 언어별로 변환.
+const categoryDisplay: Record<Course['category'], { ko: string; en: string }> = {
+  '입문':   { ko: '입문',   en: 'Beginner' },
+  '시각화': { ko: '시각화', en: 'Visualization' },
+  '자동화': { ko: '자동화', en: 'Automation' },
+};
+const categoryLabel = categoryDisplay[course.category]?.[lang] ?? course.category;
+const studentsUnit = lang === 'ko' ? '명' : '';
 
 const gradientByCategory: Record<Course['category'], string> = {
   '입문': 'from-[#1e3a5f] via-[#2c4870] to-[#f7931e]',
@@ -84,7 +94,7 @@ const categoryStyle: Record<Course['category'], string> = {
     <!-- 카테고리 컬러 하이라이트 (하이라이트 칩 바로 위) -->
     <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm ${categoryStyle[course.category]}`}>
       <span class="text-sm leading-none">{iconByCategory[course.category]}</span>
-      <span>{course.category}</span>
+      <span>{categoryLabel}</span>
     </div>
 
     <!-- Highlights -->
@@ -105,7 +115,7 @@ const categoryStyle: Record<Course['category'], string> = {
         <strong class="text-base-content">{course.rating.toFixed(1)}</strong>
       </span>
       <span>·</span>
-      <span>👥 {course.students}명</span>
+      <span>👥 {course.students}{studentsUnit}</span>
       <span>·</span>
       <span>⏱️ {formatDuration(course.durationMinutes)}</span>
     </div>

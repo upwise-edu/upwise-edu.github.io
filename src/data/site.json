@@ -13,8 +13,13 @@
   },
 
   "qrTarget": {
-    "_help": "https://upwise.co.kr/go 로 접속 시 자동 리다이렉트되는 목적지 URL. 인쇄된 QR 코드는 /go 를 가리키므로, 여기서 url 만 바꾸면 QR 재발급 없이 목적지를 변경할 수 있습니다.",
+    "_help": "https://upwise.co.kr/go 로 접속 시 자동 리다이렉트되는 목적지 URL (한국어). 인쇄된 QR 코드는 /go 를 가리키므로, 여기서 url 만 바꾸면 QR 재발급 없이 목적지를 변경할 수 있습니다.",
     "url": "https://upwise.co.kr/"
+  },
+
+  "qrTargetEn": {
+    "_help": "https://upwise.co.kr/go-en 로 접속 시 자동 리다이렉트되는 목적지 URL (영어). 영어용 QR 코드는 /go-en 을 가리킵니다.",
+    "url": "https://upwise.co.kr/en/"
   },
 
   "hero": {
@@ -80,9 +85,9 @@
     "title": "온라인 강의",
     "intro": "인프런에서 제공되는 온라인 강의입니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
     "categoryMeta": {
-      "입문":   { "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
-      "시각화": { "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
-      "자동화": { "label": "AUTOMATION",    "description": "반복 작업을 코드로 자동화하고 싶은 분께.", "icon": "⚡" }
+      "입문":   { "name": "입문",   "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
+      "시각화": { "name": "시각화", "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
+      "자동화": { "name": "자동화", "label": "AUTOMATION",    "description": "반복 작업을 코드로 자동화하고 싶은 분께.", "icon": "⚡" }
     },
     "items": [
       {
@@ -219,6 +224,7 @@
     "phoneName": "전화",
     "phone": "010-8455-5598",
     "phoneTelLink": "+82-10-8455-5598",
+    "phonePlaceholder": "마우스를 올리거나 탭하여 보기",
     "inflearnName": "인프런 강사 페이지",
     "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
     "inflearnDescription": "온라인 강의 수강"

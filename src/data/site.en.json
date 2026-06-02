@@ -1,0 +1,215 @@
+{
+  "_help": "English mirror of site.json. Same structure. Category keys under courses (입문/시각화/자동화) are kept as internal IDs — do NOT translate the keys, only the 'name'/'label' fields. Edit text inside quotes only.",
+
+  "site": {
+    "title": "UPWISE — Seunghyun Lee | QGIS·Python Instructor · 1,000+ Students",
+    "description": "GIS instructor Seunghyun Lee (UPWISE), specializing in QGIS, Python, and remote sensing. 1,000+ Inflearn students, 4.9 rating. Available for public-sector, university, and corporate training.",
+    "keywords": "QGIS, QGIS instructor, GIS instructor, GIS training, Python GIS, remote sensing, UPWISE, Seunghyun Lee, spatial data analysis, QGIS automation"
+  },
+
+  "hero": {
+    "eyebrow": "Hello, I'm Seunghyun Lee (UPWISE), a GIS instructor.",
+    "taglineLead": "Trusted by 1,000+ students —",
+    "taglineHighlight": "a QGIS expert instructor",
+    "taglineSuffix": ".",
+    "description": "I teach spatial data analysis and visualization using QGIS, Python, and PostGIS.\nWith clear explanations and hands-on examples that beginners can follow to the end, I build courses you can apply right away.",
+    "stats": [
+      { "value": "4.9", "suffix": " / 5.0 rating" },
+      { "value": "1000+", "suffix": " students" },
+      { "value": "100+", "suffix": " reviews" },
+      { "value": "10+", "suffix": " organizations" }
+    ],
+    "ctaPrimary": "Online Courses",
+    "ctaSecondary": "Mentoring Inquiry"
+  },
+
+  "about": {
+    "eyebrow": "01 — ABOUT",
+    "title": "About",
+    "paragraphs": [
+      "Through GIS, I give data its spatial context and deliver that meaning in a form that can be put to use in the field.",
+      "I majored in GIS and remote sensing at the Graduate School of Environmental Studies, Seoul National University, combining research and teaching with spatial data."
+    ],
+    "expertiseLine": "My main teaching areas are ",
+    "expertiseAreas": ["QGIS basics & advanced analysis", "map visualization", "QGIS × Python automation", "PostGIS large-scale queries", "remote sensing analysis"],
+    "expertiseLineSuffix": ".",
+    "stats": [
+      { "label": "Online students",    "value": "1000+", "unit": "" },
+      { "label": "Online courses",     "value": "29",    "unit": "h · 179 lec" },
+      { "label": "Average rating",     "value": "4.9",   "unit": "/5.0" },
+      { "label": "Offline students",   "value": "400+",  "unit": "" },
+      { "label": "Lectures delivered", "value": "15+",   "unit": "" },
+      { "label": "Partner orgs",       "value": "10+",   "unit": "" }
+    ],
+    "education": [
+      { "title": "Ph.D. Coursework Completed", "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
+      { "title": "M.S. Graduated",             "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" }
+    ],
+    "expertise": [
+      {
+        "title": "GIS · Spatial Analysis",
+        "subtitle": "QGIS · spatial data analysis & visualization",
+        "body": "The full pipeline of vector/raster data — collection, preprocessing, analysis, and visualization. Integrated use of public data, satellite imagery, and field-survey data."
+      },
+      {
+        "title": "Remote Sensing",
+        "subtitle": "Satellite imagery · aircraft/drone imagery analysis",
+        "body": "Specialized in research using satellite data such as Landsat, MODIS, and GEDI, as well as remote sensing data captured by aircraft and drones."
+      },
+      {
+        "title": "Python × GIS",
+        "subtitle": "Scripting & automating QGIS with PyQGIS",
+        "body": "Python-based automation of spatial data processing. Building workflows that turn repetitive tasks into efficient code."
+      }
+    ]
+  },
+
+  "courses": {
+    "eyebrow": "02 — ONLINE COURSES",
+    "title": "Online Courses",
+    "intro": "Online courses available on Inflearn.\nStructured in the order Beginner → Visualization → Automation for step-by-step learning.",
+    "categoryMeta": {
+      "입문":   { "name": "Beginner",      "label": "BEGINNER",      "description": "For those learning QGIS for the first time.",                 "icon": "🌱" },
+      "시각화": { "name": "Visualization", "label": "VISUALIZATION", "description": "For maps in presentations, reports, and content.",            "icon": "🗺️" },
+      "자동화": { "name": "Automation",    "label": "AUTOMATION",    "description": "For automating repetitive tasks with code.",                 "icon": "⚡" }
+    },
+    "items": [
+      {
+        "id": "starter",
+        "title": "QGIS Beginner All-in-One Starter Pack (Theory/Practice)",
+        "shortTitle": "QGIS All-in-One Starter Pack",
+        "category": "입문",
+        "isFree": false,
+        "url": "https://inf.run/tDaJz",
+        "description": "A comprehensive intro course covering everything from GIS fundamentals to real-world analysis.\nTheory and practice combined so beginners can follow through to the end.",
+        "rating": 4.9,
+        "students": "170+",
+        "durationMinutes": 641,
+        "lectures": 62,
+        "highlights": ["GIS fundamentals", "Advanced GIS analysis", "4 hands-on projects"],
+        "image": "/courses/starter.jpg"
+      },
+      {
+        "id": "viz",
+        "title": "QGIS Map Visualization A to Z (Vector/Basics)",
+        "shortTitle": "QGIS Map Visualization A to Z",
+        "category": "시각화",
+        "isFree": false,
+        "url": "https://inf.run/ve1Ja",
+        "description": "Create 7 thematic maps yourself through QGIS visualization and layout practice.\nGain the skills to make presentation- and report-ready maps from public data.",
+        "rating": 4.8,
+        "students": "200+",
+        "durationMinutes": 402,
+        "lectures": 40,
+        "highlights": ["Advanced vector visualization", "Layout & composition", "7 thematic map exercises"],
+        "image": "/courses/viz.jpg"
+      },
+      {
+        "id": "free-election",
+        "title": "A Taste of Trendy QGIS Visualization (Election Map)",
+        "shortTitle": "Trendy QGIS Visualization (Election Map)",
+        "category": "입문",
+        "isFree": true,
+        "url": "https://inf.run/aoePe",
+        "description": "A free course visualizing the 20th presidential election results by district.\nRecommended for anyone who wants to try QGIS the fastest way.",
+        "rating": 5.0,
+        "students": "290+",
+        "durationMinutes": 98,
+        "lectures": 8,
+        "highlights": ["Free", "News-style visuals", "Beginner-friendly"],
+        "image": "/courses/free-election.jpg"
+      },
+      {
+        "id": "automation",
+        "title": "QGIS Python Automation (Vector) Ver.2",
+        "shortTitle": "QGIS Python Automation Ver.2",
+        "category": "자동화",
+        "isFree": false,
+        "url": "https://inf.run/v28dc",
+        "description": "A practical course automating repetitive GIS tasks with pyQGIS code.\nFrom Python basics to automation — two birds with one stone.",
+        "rating": 4.8,
+        "students": "330+",
+        "durationMinutes": 592,
+        "lectures": 69,
+        "highlights": ["Python basics", "QGIS automation", "Real-world application"],
+        "image": "/courses/automation.jpg"
+      }
+    ]
+  },
+
+  "lectures": {
+    "_help": "Each item: date(YYYY-MM-DD), organization, title, audience, attendees. Optional: dateEnd, hours.",
+    "eyebrow": "03 — OFFLINE LECTURES",
+    "title": "Teaching Experience",
+    "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
+    "items": [
+      { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Advanced)", "audience": "Hyundai Autoever staff",        "attendees": 20 },
+      { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Basics)",   "audience": "Hyundai Autoever staff",        "attendees": 25 },
+      { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "K-water",                  "title": "2025 Water-Industry Talent Program: Q-GIS Practicum",                "audience": "K-water & water-industry staff", "attendees": 30 },
+      { "date": "2025-09-01", "dateEnd": "2025-12-31", "organization": "Incheon Nat'l Univ.",      "title": "Understanding & Applying Geospatial Information (3 credits)",         "audience": "Urban & Architecture undergrads", "attendees": 25 },
+      { "date": "2025-07-08", "dateEnd": "2025-07-16", "organization": "SeSAC",                    "title": "SeSAC AI & Big Data Analyst Program",                                "audience": "SeSAC trainees",                 "attendees": 30 },
+      { "date": "2025-04-23", "dateEnd": null,         "organization": "K-eco",                    "title": "Data Analysis Specialist Program",                                   "audience": "K-eco staff",                    "attendees": 20 },
+      { "date": "2024-10-25", "dateEnd": null,         "organization": "K-eco",                    "title": "Data Analysis Specialist Program",                                   "audience": "K-eco staff",                    "attendees": 20 },
+      { "date": "2024-10-16", "dateEnd": null,         "organization": "Chungnam ARES",            "title": "Visualizing Fire Blight Outbreaks with QGIS",                        "audience": "Chungnam public officials",      "attendees": 20 },
+      { "date": "2024-10-02", "dateEnd": null,         "organization": "K-water",                  "title": "2024 Water-Industry Upskilling: Q-GIS Practicum",                    "audience": "K-water & water-industry staff", "attendees": 30 },
+      { "date": "2024-09-01", "dateEnd": "2024-12-31", "organization": "Incheon Nat'l Univ.",      "title": "Understanding & Applying Geospatial Information (3 credits)",         "audience": "Urban & Architecture undergrads", "attendees": 30 },
+      { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "SNU Lifelong Edu.",        "title": "Mapping Our School with Public Data (Samsung HS)",                    "audience": "High school students",           "attendees": 20 },
+      { "date": "2024-07-08", "dateEnd": "2024-07-10", "organization": "SNU Lifelong Edu.",        "title": "Mapping Our School with Public Data (Seomun Girls' HS)",              "audience": "High school students",           "attendees": 20 },
+      { "date": "2024-05-11", "dateEnd": null,         "organization": "SNU Lifelong Edu.",        "title": "Mapping Our School with Public Data (Dongbuk HS)",                    "audience": "High school students",           "attendees": 20 },
+      { "date": "2024-02-23", "dateEnd": null,         "organization": "SNU GSES & BK21 Smart City", "title": "WISE-UP Workshop: Urban Spatial Data Analysis",                     "audience": "SNU graduate students",          "attendees": 20 },
+      { "date": "2023-10-07", "dateEnd": "2023-10-08", "organization": "Self-hosted",              "title": "QGIS Fundamentals Special Lecture",                                  "audience": "GIS practitioners",              "attendees": 30 },
+      { "date": "2023-06-19", "dateEnd": "2023-06-20", "organization": "K-water",                  "title": "Water-Industry Upskilling: Q-GIS Practicum (Beginner & Intermediate)", "audience": "K-water & water-industry staff", "attendees": 35 },
+      { "date": "2022-12-07", "dateEnd": "2022-12-09", "organization": "Gyeonggi HRD Institute",   "title": "Data Visualization That Transforms Your Reports",                     "audience": "Gyeonggi public officials",      "attendees": 25 }
+    ]
+  },
+
+  "customRequest": {
+    "title": "Custom Training · Mentoring",
+    "description": "From GIS training for institutions, companies, and universities to 1:1 online mentoring and\nspatial-analysis consulting — there are many ways we can work together.",
+    "ctaText": "Get in touch →"
+  },
+
+  "partners": {
+    "eyebrow": "04 — PARTNERS",
+    "title": "Partners",
+    "intro": "I've delivered GIS training, workshops, and consulting with a wide range of universities, public institutions, and companies.",
+    "items": [
+      { "name": "Seoul National Univ.", "nameEn": "SNU",                       "category": "academic",  "logo": "/partners/snu.svg" },
+      { "name": "SNU GSES",             "nameEn": "Grad. School of Env. Studies", "category": "academic", "logo": "/partners/gses.svg" },
+      { "name": "Incheon Nat'l Univ.",  "nameEn": "INU",                       "category": "academic",  "logo": "/partners/inu.svg" },
+      { "name": "Hanyang Cyber Univ.",  "nameEn": "HYCU",                      "category": "academic",  "logo": "/partners/hanyang_cyber.svg" },
+
+      { "name": "K-water",              "nameEn": "Korea Water Resources Corp.", "category": "public",  "logo": "/partners/k-water.svg" },
+      { "name": "K-eco",                "nameEn": "Korea Environment Corp.",   "category": "public",    "logo": "/partners/k-eco.svg" },
+      { "name": "KPC",                  "nameEn": "Korea Productivity Center",  "category": "public",    "logo": "/partners/kpc.svg" },
+      { "name": "Gyeonggi HRD",         "nameEn": "Gyeonggi HRD Institute",    "category": "public",    "logo": "/partners/gyeongg.svg" },
+      { "name": "Gwanak-gu Office",     "nameEn": "Gwanak District",           "category": "public",    "logo": "/partners/gwanak.svg" },
+      { "name": "Chungnam ARES",        "nameEn": "Chungnam Agri. R&E",        "category": "public",    "logo": "/partners/cnares.svg" },
+
+      { "name": "Hyundai Mobis",        "nameEn": "Hyundai Mobis",             "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
+      { "name": "Hyundai NGV",          "nameEn": "Hyundai NGV",               "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
+
+      { "name": "SeSAC",                "nameEn": "Seoul SW Academy",          "category": "training",  "logo": "/partners/sesac.png" },
+      { "name": "Inflearn",             "nameEn": "Inflearn",                  "category": "training",  "logo": "/partners/inflearn.svg" }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "05 — CONTACT",
+    "title": "Let's get in touch.",
+    "description": "I welcome all inquiries — course requests, 1:1 mentoring, GIS consulting, and research collaboration.\nKakaoTalk Open Profile is the fastest channel. Feel free to message anytime.",
+    "kakaoLabel": "FASTEST REPLY",
+    "kakaoName": "KakaoTalk Open Profile",
+    "kakaoUrl": "https://open.kakao.com/me/upwise",
+    "kakaoDisplay": "UPWISE",
+    "emailName": "Email",
+    "email": "upwise0506@gmail.com",
+    "phoneName": "Phone",
+    "phone": "010-8455-5598",
+    "phoneTelLink": "+82-10-8455-5598",
+    "phonePlaceholder": "Hover or tap to reveal",
+    "inflearnName": "Inflearn Instructor Page",
+    "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
+    "inflearnDescription": "View online courses"
+  }
+}

@@ -1,3 +1,9 @@
+---
+import LangToggle from "./LangToggle.astro";
+const { lang = "ko" } = Astro.props;
+const homeHref = lang === "en" ? "/en/" : "/";
+---
+
 <div
   class="sticky lg:hidden top-0 z-30 flex h-20 w-full justify-center bg-base-100/80 backdrop-blur transition-all duration-100 text-base-content border-b border-base-300"
 >
@@ -10,10 +16,12 @@
       </label>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-3xl" href="/">
+      <a class="btn btn-ghost normal-case text-3xl" href={homeHref}>
         <span class="text-primary">UP</span><span class="text-base-content">WISE</span><span class="text-primary">.</span>
       </a>
     </div>
-    <div class="navbar-end"></div>
+    <div class="navbar-end">
+      <LangToggle lang={lang} />
+    </div>
   </div>
 </div>

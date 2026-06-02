@@ -1,14 +1,29 @@
 ---
-const { sideBarActiveItemID } = Astro.props;
+const { sideBarActiveItemID, lang = "ko" } = Astro.props;
 const activeClass = "active-nav-item";
+const base = lang === "en" ? "/en/" : "/";
+const items =
+  lang === "en"
+    ? [
+        { id: "about", label: "About" },
+        { id: "courses", label: "Online Courses" },
+        { id: "lectures", label: "Teaching" },
+        { id: "partners", label: "Partners" },
+        { id: "contact", label: "Contact" },
+      ]
+    : [
+        { id: "about", label: "강사 소개" },
+        { id: "courses", label: "온라인 강의" },
+        { id: "lectures", label: "강의 경력" },
+        { id: "partners", label: "협업 기관" },
+        { id: "contact", label: "Contact" },
+      ];
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto gap-0.5 px-0">
-    <li><a class="py-2.5 text-base nav-item" id="about"    href="/#about"><span class="nav-bar"></span>강사 소개</a></li>
-    <li><a class="py-2.5 text-base nav-item" id="courses"  href="/#courses"><span class="nav-bar"></span>온라인 강의</a></li>
-    <li><a class="py-2.5 text-base nav-item" id="lectures" href="/#lectures"><span class="nav-bar"></span>강의 경력</a></li>
-    <li><a class="py-2.5 text-base nav-item" id="partners" href="/#partners"><span class="nav-bar"></span>협업 기관</a></li>
-    <li><a class="py-2.5 text-base nav-item" id="contact"  href="/#contact"><span class="nav-bar"></span>Contact</a></li>
+    {items.map((item) => (
+        <li><a class="py-2.5 text-base nav-item" id={item.id} href={`${base}#${item.id}`}><span class="nav-bar"></span>{item.label}</a></li>
+    ))}
 </ul>
 
 <style>
