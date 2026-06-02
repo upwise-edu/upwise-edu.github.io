@@ -1,14 +1,20 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
 import SideBarMenu from "./SideBarMenu.astro";
-const { sideBarActiveItemID } = Astro.props;
+import LangToggle from "./LangToggle.astro";
+const { sideBarActiveItemID, lang = "ko" } = Astro.props;
+const homeHref = lang === "en" ? "/en/" : "/";
+const tagline =
+  lang === "en"
+    ? "Raising the value of geospatial<br />information through practical GIS education."
+    : "실무 중심 GIS 교육으로<br />지리정보의 가치를 높입니다.";
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="px-4 pt-6 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col border-r border-base-300">
     <!-- Logo + Brand -->
-    <a href="/" class="group block mb-4">
+    <a href={homeHref} class="group block mb-4">
       <div class="flex flex-col items-start gap-2 transition-transform duration-300 group-hover:translate-x-1">
         <img
           src="/upwise_text.png"
@@ -22,13 +28,16 @@ const { sideBarActiveItemID } = Astro.props;
     </a>
 
     <!-- Tagline -->
-    <p class="text-sm text-base-content/70 leading-relaxed px-1 mb-6 mt-3">
-      실무 중심 GIS 교육으로<br />지리정보의 가치를 높입니다.
-    </p>
+    <p class="text-sm text-base-content/70 leading-relaxed px-1 mb-4 mt-3" set:html={tagline}></p>
+
+    <!-- Language toggle -->
+    <div class="px-1 mb-5">
+      <LangToggle lang={lang} />
+    </div>
 
     <div class="divider my-0 opacity-30"></div>
 
-    <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
+    <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} lang={lang} />
     <SideBarFooter />
   </aside>
 </div>

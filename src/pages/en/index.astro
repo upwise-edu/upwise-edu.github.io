@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HomePage from "../../components/HomePage.astro";
+import site from "../../data/site.en.json";
+---
+
+<BaseLayout
+  sideBarActiveItemID="about"
+  lang="en"
+  title={site.site.title}
+  description={site.site.description}
+>
+  <HomePage data={site} lang="en" />
+</BaseLayout>

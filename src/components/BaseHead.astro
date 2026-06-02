@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import site from '../data/site.json';
+import siteEn from '../data/site.en.json';
 
 export interface Props {
 	title: string;
@@ -10,9 +11,12 @@ export interface Props {
 	image?: string;
 	ogType?: string;
 	includeStructuredData?: boolean;
+	lang?: 'ko' | 'en';
 }
 
-const { title, description, image = '/upwise_text.png', ogType = 'website', includeStructuredData = false } = Astro.props;
+const { title, description, image = '/upwise_text.png', ogType = 'website', includeStructuredData = false, lang = 'ko' } = Astro.props;
+
+const keywords = lang === 'en' ? siteEn.site.keywords : site.site.keywords;
 
 // JSON-LD 구조화 데이터 — 메인 페이지에서만 사용 (Person + ProfilePage)
 const structuredData = {
@@ -109,8 +113,12 @@ const structuredData = {
 <link rel="canonical" href={Astro.url} />
 <meta name="author" content="이승현 (UPWISE)" />
 <meta name="robots" content="index, follow" />
-<meta name="google" content="notranslate" />
-<meta http-equiv="content-language" content="ko" />
+<meta http-equiv="content-language" content={lang} />
+
+<!-- hreflang alternates (KR / EN) -->
+<link rel="alternate" hreflang="ko" href="https://upwise.co.kr/" />
+<link rel="alternate" hreflang="en" href="https://upwise.co.kr/en/" />
+<link rel="alternate" hreflang="x-default" href="https://upwise.co.kr/" />
 
 <!-- Search engine verification -->
 <meta name="naver-site-verification" content="613456383a86cd0ec8304900bc1e8e5bd07b11e2" />
@@ -144,7 +152,7 @@ const structuredData = {
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-{site.site.keywords && <meta name="keywords" content={site.site.keywords} />}
+{keywords && <meta name="keywords" content={keywords} />}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
