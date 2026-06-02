@@ -126,19 +126,30 @@ const structuredData = {
 <!-- Theme detection (runs before paint to avoid flash + re-applies on view transitions) -->
 <script is:inline>
   (function () {
-    function applyTheme() {
+    // 외부 사이트(예: drseunghyeonlee.com)에서 ?theme=dark|light 로 진입하면
+    // 해당 테마를 최우선 적용하고 localStorage에 저장(이후 탐색·재방문에도 유지).
+    function themeFromUrl() {
+      try {
+        const p = new URLSearchParams(window.location.search).get('theme');
+        if (p === 'dark') return 'upwise-dark';
+        if (p === 'light') return 'upwise-light';
+      } catch (e) {}
+      return null;
+    }
+    function resolveTheme() {
+      const url = themeFromUrl();
+      if (url) { try { localStorage.setItem('upwise-theme', url); } catch (e) {} return url; }
       const saved = localStorage.getItem('upwise-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'upwise-dark' : 'upwise-light');
-      document.documentElement.setAttribute('data-theme', theme);
+      return saved || (prefersDark ? 'upwise-dark' : 'upwise-light');
+    }
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', resolveTheme());
     }
     applyTheme();
     // ViewTransitions: 교체 직전 새 문서에 테마를 미리 적용해 깜빡임 방지
     document.addEventListener('astro:before-swap', function (e) {
-      const saved = localStorage.getItem('upwise-theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'upwise-dark' : 'upwise-light');
-      if (e.newDocument) e.newDocument.documentElement.setAttribute('data-theme', theme);
+      if (e.newDocument) e.newDocument.documentElement.setAttribute('data-theme', resolveTheme());
     });
     // 교체 후에도 한 번 더 보장
     document.addEventListener('astro:after-swap', applyTheme);
