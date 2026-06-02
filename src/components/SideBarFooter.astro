@@ -75,32 +75,45 @@
 
 <script is:inline>
   (function () {
-    const toggle = document.getElementById('theme-toggle');
-    const sun = document.getElementById('theme-icon-sun');
-    const moon = document.getElementById('theme-icon-moon');
-    if (!toggle || !sun || !moon) return;
+    // 매 페이지 로드/전환(astro:page-load)마다 새 DOM 요소를 다시 조회하고 바인딩.
+    function setup() {
+      const toggle = document.getElementById('theme-toggle');
+      const sun = document.getElementById('theme-icon-sun');
+      const moon = document.getElementById('theme-icon-moon');
+      if (!toggle || !sun || !moon) return;
 
-    function syncIcon() {
-      const t = document.documentElement.getAttribute('data-theme');
-      if (t === 'upwise-dark') {
-        sun.classList.remove('hidden');
-        moon.classList.add('hidden');
-      } else {
-        moon.classList.remove('hidden');
-        sun.classList.add('hidden');
+      function syncIcon() {
+        const t = document.documentElement.getAttribute('data-theme');
+        if (t === 'upwise-dark') {
+          sun.classList.remove('hidden');
+          moon.classList.add('hidden');
+        } else {
+          moon.classList.remove('hidden');
+          sun.classList.add('hidden');
+        }
+      }
+      syncIcon();
+
+      // 중복 바인딩 방지 (요소는 전환마다 교체되므로 새 요소에만 1회 바인딩)
+      if (!toggle.dataset.bound) {
+        toggle.dataset.bound = '1';
+        toggle.addEventListener('click', function () {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'upwise-dark' ? 'upwise-light' : 'upwise-dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('upwise-theme', next);
+          syncIcon();
+        });
       }
     }
-    syncIcon();
 
-    toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'upwise-dark' ? 'upwise-light' : 'upwise-dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('upwise-theme', next);
-      syncIcon();
-    });
-
-    document.addEventListener('astro:after-swap', syncIcon);
+    // astro:page-load 는 최초 로드 + ViewTransitions 전환 후 모두 발생
+    document.addEventListener('astro:page-load', setup);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else {
+      setup();
+    }
   })();
 </script>
 
