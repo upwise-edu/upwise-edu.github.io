@@ -1,5 +1,6 @@
 ---
 import LangToggle from "./LangToggle.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 const { lang = "ko" } = Astro.props;
 const homeHref = lang === "en" ? "/en/" : "/";
 ---
@@ -21,7 +22,10 @@ const homeHref = lang === "en" ? "/en/" : "/";
       </a>
     </div>
     <div class="navbar-end">
-      <LangToggle lang={lang} />
+      <div class="flex items-center gap-1.5">
+        <LangToggle lang={lang} />
+        <ThemeToggle variant="bordered" />
+      </div>
     </div>
   </div>
 </div>

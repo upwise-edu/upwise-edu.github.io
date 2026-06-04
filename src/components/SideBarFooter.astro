@@ -1,3 +1,7 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
 <div
     class="block sticky pointer-events-none bottom-10 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
 >
@@ -56,66 +60,9 @@
     <!-- Divider -->
     <span class="w-px h-5 bg-base-300 mx-1"></span>
 
-    <!-- Theme toggle -->
-    <button
-        id="theme-toggle"
-        class="icon-btn theme-toggle-btn"
-        aria-label="Toggle theme"
-        title="라이트/다크 모드 전환"
-    >
-        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-        </svg>
-        <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-    </button>
+    <!-- Theme toggle (shared component, syncs with header toggle) -->
+    <ThemeToggle variant="plain" />
 </div>
-
-<script is:inline>
-  (function () {
-    // 매 페이지 로드/전환(astro:page-load)마다 새 DOM 요소를 다시 조회하고 바인딩.
-    function setup() {
-      const toggle = document.getElementById('theme-toggle');
-      const sun = document.getElementById('theme-icon-sun');
-      const moon = document.getElementById('theme-icon-moon');
-      if (!toggle || !sun || !moon) return;
-
-      function syncIcon() {
-        const t = document.documentElement.getAttribute('data-theme');
-        if (t === 'upwise-dark') {
-          sun.classList.remove('hidden');
-          moon.classList.add('hidden');
-        } else {
-          moon.classList.remove('hidden');
-          sun.classList.add('hidden');
-        }
-      }
-      syncIcon();
-
-      // 중복 바인딩 방지 (요소는 전환마다 교체되므로 새 요소에만 1회 바인딩)
-      if (!toggle.dataset.bound) {
-        toggle.dataset.bound = '1';
-        toggle.addEventListener('click', function () {
-          const current = document.documentElement.getAttribute('data-theme');
-          const next = current === 'upwise-dark' ? 'upwise-light' : 'upwise-dark';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('upwise-theme', next);
-          syncIcon();
-        });
-      }
-    }
-
-    // astro:page-load 는 최초 로드 + ViewTransitions 전환 후 모두 발생
-    document.addEventListener('astro:page-load', setup);
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setup);
-    } else {
-      setup();
-    }
-  })();
-</script>
 
 <style>
   /* Unified circular icon button — all icons render at 36px square, content centered */
