@@ -253,11 +253,27 @@ const {
             }
           });
 
-          if (reduceMotion) {
-            // 모션 비선호 시 정적 1프레임만 렌더
-            frame(performance.now());
+          // 성능: 첫 화면(LCP)이 그려진 뒤 idle 시점에 애니메이션 시작.
+          // 배경 노이즈 계산이 초기 렌더의 메인 스레드를 막지 않도록 지연 → 저속 기기 LCP/TBT 개선.
+          function begin() {
+            if (reduceMotion) {
+              frame(performance.now()); // 정적 1프레임만
+            } else {
+              lastFrameTime = performance.now();
+              schedule();
+            }
+          }
+          function deferBegin() {
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(begin, { timeout: 1500 });
+            } else {
+              setTimeout(begin, 300);
+            }
+          }
+          if (document.readyState === 'complete') {
+            deferBegin();
           } else {
-            schedule();
+            window.addEventListener('load', deferBegin, { once: true });
           }
         }
       }
