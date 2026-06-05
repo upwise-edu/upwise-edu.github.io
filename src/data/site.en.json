@@ -87,7 +87,7 @@
         "durationMinutes": 641,
         "lectures": 62,
         "highlights": ["GIS fundamentals", "Advanced GIS analysis", "4 hands-on projects"],
-        "image": "/courses/starter.jpg"
+        "image": "/courses/starter.webp"
       },
       {
         "id": "viz",
@@ -102,7 +102,7 @@
         "durationMinutes": 402,
         "lectures": 40,
         "highlights": ["Advanced vector visualization", "Layout & composition", "7 thematic map exercises"],
-        "image": "/courses/viz.jpg"
+        "image": "/courses/viz.webp"
       },
       {
         "id": "free-election",
@@ -117,7 +117,7 @@
         "durationMinutes": 98,
         "lectures": 8,
         "highlights": ["Free", "News-style visuals", "Beginner-friendly"],
-        "image": "/courses/free-election.jpg"
+        "image": "/courses/free-election.webp"
       },
       {
         "id": "automation",
@@ -132,7 +132,7 @@
         "durationMinutes": 592,
         "lectures": 69,
         "highlights": ["Python basics", "QGIS automation", "Real-world application"],
-        "image": "/courses/automation.jpg"
+        "image": "/courses/automation.webp"
       }
     ]
   },

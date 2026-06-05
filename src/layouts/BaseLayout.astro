@@ -84,6 +84,15 @@ const {
           const frameInterval = 1000 / targetFPS;
           let lastFrameTime = 0;
 
+          // 성능: 모션 민감 사용자 존중 + 탭이 가려지면 애니메이션 일시정지(CPU 절약)
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          let running = false;
+          function schedule() {
+            if (document.hidden || reduceMotion) { running = false; return; }
+            running = true;
+            requestAnimationFrame(frame);
+          }
+
           // Animation pacing — noticeable idle flow, scroll boosts directly to max 2x
           const IDLE_VEL = 0.00005;       // base flow per ms — needs to be loud enough that 2x is visible
 
@@ -176,7 +185,7 @@ const {
           function frame(now: number) {
             // Frame-rate cap (lower FPS on touch to reduce lag)
             if (now - lastFrameTime < frameInterval) {
-              requestAnimationFrame(frame);
+              schedule();
               return;
             }
             const dt = (now - lastFrameTime) || 16;
@@ -233,9 +242,23 @@ const {
               drawIsoline(grid, gw, gh, threshold, cellW, cellH);
             }
 
-            requestAnimationFrame(frame);
+            schedule();
           }
-          requestAnimationFrame(frame);
+
+          // 탭 가시성 변화 시 일시정지/재개 (재개 시 dt 폭주 방지)
+          document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !running && !reduceMotion) {
+              lastFrameTime = performance.now();
+              schedule();
+            }
+          });
+
+          if (reduceMotion) {
+            // 모션 비선호 시 정적 1프레임만 렌더
+            frame(performance.now());
+          } else {
+            schedule();
+          }
         }
       }
     </script>
