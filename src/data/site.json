@@ -197,6 +197,7 @@
       { "name": "한양사이버대학교",      "nameEn": "HYCU",           "category": "academic",  "logo": "/partners/hanyang_cyber.svg" },
 
       { "name": "한국수자원공사",        "nameEn": "K-water",        "category": "public",    "logo": "/partners/k-water.svg" },
+      { "name": "한국상하수도협회",      "nameEn": "KWWA",           "category": "public",    "logo": "/partners/kwwa.svg" },
       { "name": "한국환경공단",          "nameEn": "KECO",           "category": "public",    "logo": "/partners/k-eco.svg" },
       { "name": "한국생산성본부",        "nameEn": "KPC",            "category": "public",    "logo": "/partners/kpc.svg" },
       { "name": "경기도 인재개발원",     "nameEn": "GHRD",           "category": "public",    "logo": "/partners/gyeongg.svg" },
