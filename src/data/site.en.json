@@ -180,6 +180,7 @@
       { "name": "Hanyang Cyber Univ.",  "nameEn": "HYCU",                      "category": "academic",  "logo": "/partners/hanyang_cyber.svg" },
 
       { "name": "K-water",              "nameEn": "Korea Water Resources Corp.", "category": "public",  "logo": "/partners/k-water.svg" },
+      { "name": "KWWA",                 "nameEn": "Korea Water & Wastewater Works Assoc.", "category": "public", "logo": "/partners/kwwa.svg" },
       { "name": "K-eco",                "nameEn": "Korea Environment Corp.",   "category": "public",    "logo": "/partners/k-eco.svg" },
       { "name": "KPC",                  "nameEn": "Korea Productivity Center",  "category": "public",    "logo": "/partners/kpc.svg" },
       { "name": "Gyeonggi HRD",         "nameEn": "Gyeonggi HRD Institute",    "category": "public",    "logo": "/partners/gyeongg.svg" },
