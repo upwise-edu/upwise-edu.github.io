@@ -110,3 +110,28 @@
 * 사용되지 않는 `upwise_logo_solid.png` 파일 삭제
 * Pretendard 폰트를 동적 서브셋으로 전환하여 로딩 용량 대폭 축소
 
+## 2026-06-02
+
+- `site.json`에 영어 페이지용 필드 추가 및 영어 전문 번역본 `site.en.json` 신규 작성
+- 공유 컴포넌트 `HomePage.astro`로 index 본문을 `data`/`lang` prop 기반으로 추출하고 `index.astro` 슬림화 및 `en/index.astro` 영어 페이지 신규 생성
+- `BaseLayout`·`SideBar`·`SideBarMenu`·`Header`·`CourseCard`를 `lang` 대응으로 수정하고 `LangToggle.astro` 언어 토글 컴포넌트 추가
+- `BaseHead`에 `lang` prop, hreflang 대체 링크, 언어별 keywords/메타 추가
+- 영어 QR 리다이렉트 페이지 `go-en.astro` 생성 및 KR/EN QR 코드 2종을 Python으로 검정색 통일 재생성(디코딩 검증 포함)
+- `BaseHead`에 ViewTransitions 전환 시 다크/라이트 테마 유지 로직(before/after-swap 재적용) 추가
+- `SideBarFooter`의 테마 토글을 `astro:page-load`에서 재바인딩하도록 수정하여 전환 후 토글 버튼 사라짐 문제 해결
+
+## 2026-06-06
+
+- 폰트 CSS를 비차단(async preload) 방식으로 전환하고 강의 이미지에 width/height를 명시 (`BaseHead.astro`, `CourseCard.astro`) — FCP/LCP 개선
+- 토포 캔버스 애니메이션을 load+idle 이후 시작하도록 변경 (`BaseLayout.astro`) — 저속 기기 LCP/TBT 개선
+- 제목 계층을 h1→h2→h3 구조로 정리하고 드로어/햄버거에 aria-label 추가 (`HomePage.astro`, `Header.astro`, `BaseLayout.astro`) — 접근성 개선
+- 각 변경마다 빌드로 검증(폰트 로딩 방식·이미지 치수·제목 계층 카운트 확인) 후 커밋·푸시하고 GitHub Pages 배포 결과 확인
+
+## 2026-06-09
+
+- 명함 디자인 베스트 프랙티스/QR 활용 레퍼런스를 웹 조사하고 UPWISE 브랜드 기준 추천안(3방향 및 C안) 정리
+- 실제 로고·QR 자산과 한글 폰트를 확인해 추천안 C 기반 양면 명함 시안을 300dpi 인쇄 규격으로 생성
+- 앞면 이름과 하단 문구가 겹치는 레이아웃 버그를 수정해 명함 시안 재생성 후 미리보기·앞/뒷면 3장 전달
+- 한국상하수도협회(KWWA)를 `site.json` / `site.en.json` partners의 public 그룹에 추가하고 빌드·커밋·푸시
+- PC에서 배경 등고선이 안 움직이는 원인을 `BaseLayout.astro` 코드에서 점검하여 OS "동작 줄이기(reduce motion)" 설정 때문임을 진단하고 현 동작 유지로 결정
+
