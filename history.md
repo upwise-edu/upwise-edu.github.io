@@ -84,3 +84,8 @@
 - Google Analytics 4 통합 (`G-3CZL8L8B82`)
 - 인프런 및 SNS에 도메인 백링크 추가
 
+## 2026-05-29
+
+* `global.css` 수정으로 접힘 섹션 하단 여백 축소 및 chevron 크기 확대
+* `upwise-edu.github.io` 저장소의 `public/qr` 폴더와 `src/pages/go.astro` 파일 존재 여부 확인
+
