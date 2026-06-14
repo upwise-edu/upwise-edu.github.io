@@ -89,3 +89,24 @@
 * `global.css` 수정으로 접힘 섹션 하단 여백 축소 및 chevron 크기 확대
 * `upwise-edu.github.io` 저장소의 `public/qr` 폴더와 `src/pages/go.astro` 파일 존재 여부 확인
 
+## 2026-06-03
+
+- `BaseHead.astro` 수정하여 URL 파라미터를 통해 외부 진입 시 테마 적용 기능 구현
+- `LangToggle.astro` 및 `Header.astro` 파일 수정하여 언어 전환 버튼 기능 확인 및 개선
+- 다크모드에서 Upwise 버튼의 밝은 하이라이트 컬러 조절 및 로고 스타일 통일 작업
+- `dr` 페이지에 Upwise와 동일한 `ko/en` 버튼을 화면 우상단에 배치
+- 메뉴 하단 버튼이 두 줄로 표시되는 문제 해결 (ko/en 버튼 배치 후)
+- LinkedIn, Google Scholar, ORCID SVG 아이콘을 변경하기 위한 파일 위치 확인
+
+## 2026-06-05
+
+* drseunghyeonlee.com과 동일하게 모바일 헤더에 다크/라이트 모드 버튼 추가
+* 영어 이름의 오타 'Seunghyun'을 'Seunghyeon'으로 수정
+* `ThemeToggle.astro` 컴포넌트 생성 및 헤더, 사이드바 푸터 테마 토글 동기화
+* 강의 이미지 4개를 WebP 포맷으로 변환하고 원본 JPG 파일 백업
+* 사이트의 파비콘과 apple-touch-icon을 32x32 크기로 최적화
+* BaseHead에서 Inter 외부 폰트 링크 제거
+* 토포그래픽 배경 애니메이션을 탭 가려짐 시 일시정지 및 prefers-reduced-motion 존중하도록 최적화
+* 사용되지 않는 `upwise_logo_solid.png` 파일 삭제
+* Pretendard 폰트를 동적 서브셋으로 전환하여 로딩 용량 대폭 축소
+
