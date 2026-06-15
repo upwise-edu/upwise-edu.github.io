@@ -135,3 +135,8 @@
 - 한국상하수도협회(KWWA)를 `site.json` / `site.en.json` partners의 public 그룹에 추가하고 빌드·커밋·푸시
 - PC에서 배경 등고선이 안 움직이는 원인을 `BaseLayout.astro` 코드에서 점검하여 OS "동작 줄이기(reduce motion)" 설정 때문임을 진단하고 현 동작 유지로 결정
 
+## 2026-06-14
+
+*   `CourseCard.astro`에서 마우스 호버 시 전화번호가 보이도록 구현
+*   `HomePage.astro` 파일 조회
+
