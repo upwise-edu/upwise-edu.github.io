@@ -159,6 +159,7 @@
     "title": "강의 경력",
     "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
     "items": [
+      { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "한양사이버대학교",                       "title": "QGIS 초중고급 분석 실습 및 시각화",                                            "audience": "한양사이버대학교 학생",    "attendees": 20 },
       { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS와 DBMS를 통한 공간 분석 및 데이터 시각화 (심화)",                          "audience": "현대오토에버 재직자",      "attendees": 20 },
       { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "현대NGV",                              "title": "GIS와 DBMS를 통한 공간 분석 및 데이터 시각화 (기초)",                          "audience": "현대오토에버 재직자",      "attendees": 25 },
       { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "수자원공사",                            "title": "2025년 물기업 재직자 인재양성 과정 Q-GIS 실습",                               "audience": "수자원공사 및 물기업 재직자", "attendees": 30 },
