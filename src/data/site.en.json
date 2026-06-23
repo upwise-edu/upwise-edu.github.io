@@ -143,6 +143,7 @@
     "title": "Teaching Experience",
     "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
     "items": [
+      { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "Hanyang Cyber Univ.",      "title": "QGIS Analysis & Visualization (Basic to Advanced)",                  "audience": "Hanyang Cyber Univ. students",  "attendees": 20 },
       { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Advanced)", "audience": "Hyundai Autoever staff",        "attendees": 20 },
       { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Basics)",   "audience": "Hyundai Autoever staff",        "attendees": 25 },
       { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "K-water",                  "title": "2025 Water-Industry Talent Program: Q-GIS Practicum",                "audience": "K-water & water-industry staff", "attendees": 30 },
