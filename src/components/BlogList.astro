@@ -4,29 +4,33 @@ import { postSlug, fmtDate, type Post } from "../lib/blog";
 interface Props {
   lang: "ko" | "en";
   posts: Post[];
-  total: number;                                   // 현재 목록(전체 또는 필터)의 글 수
-  grandTotal: number;                              // 블로그 전체 글 수 (게시판 '전체' 카운트용)
+  total: number;                                   // 현재 목록(필터 시 필터된 수)
+  grandTotal: number;                              // 블로그 전체 글 수
   categories: { category: string; count: number }[];
+  tags: { tag: string; count: number }[];
   activeCategory?: string | null;
+  activeTag?: string | null;
   page?: number;
   totalPages?: number;
 }
 const {
-  lang, posts, total, grandTotal, categories,
-  activeCategory = null, page = 1, totalPages = 1,
+  lang, posts, total, grandTotal, categories, tags,
+  activeCategory = null, activeTag = null, page = 1, totalPages = 1,
 } = Astro.props as Props;
 const base = lang === "en" ? "/en/blog" : "/blog";
 const t = (ko: string, en: string) => (lang === "en" ? en : ko);
-const filtered = !!activeCategory;
+const filtered = !!activeCategory || !!activeTag;
 ---
 
 <section class="pt-10 pb-16 animate-fade-up">
   <p class="type-caption text-primary mb-4">06 — BLOG</p>
   <h1 class="type-display-lg text-base-content mb-3">{t("블로그", "Blog")}</h1>
   <p class="type-body-sm text-base-content/60 mb-8">
-    {filtered
+    {activeCategory
       ? t(`'${activeCategory}' 게시판 · ${total}개 글`, `Board '${activeCategory}' · ${total} posts`)
-      : t(`전체 ${grandTotal}개 글`, `${grandTotal} posts total`)}
+      : activeTag
+        ? t(`'#${activeTag}' 태그 · ${total}개 글`, `Tag '#${activeTag}' · ${total} posts`)
+        : t(`전체 ${grandTotal}개 글`, `${grandTotal} posts total`)}
   </p>
 
   <div class="grid grid-cols-1 md:grid-cols-[1fr_216px] gap-8 md:gap-10">
@@ -73,14 +77,15 @@ const filtered = !!activeCategory;
       )}
     </div>
 
-    <!-- ── Category board panel (right on desktop, below on mobile) ── -->
-    <aside>
-      <div class="md:sticky md:top-6 p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
+    <!-- ── Right panel: 게시판(카테고리) + 태그 ── -->
+    <aside class="md:sticky md:top-6 self-start space-y-4">
+      <!-- Boards -->
+      <div class="p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
         <p class="type-caption text-primary mb-3">{t("게시판", "BOARDS")}</p>
         <ul class="space-y-0.5">
           <li>
             <a href={`${base}/`}
-               class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${!activeCategory ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
+               class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${!filtered ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
               <span>{t("전체보기", "All posts")}</span>
               <span class="text-xs text-base-content/50">{grandTotal}</span>
             </a>
@@ -96,6 +101,21 @@ const filtered = !!activeCategory;
           ))}
         </ul>
       </div>
+
+      <!-- Tags -->
+      {tags.length > 0 && (
+        <div class="p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
+          <p class="type-caption text-primary mb-3">{t("태그", "TAGS")}</p>
+          <div class="flex flex-wrap gap-1.5">
+            {tags.map(({ tag, count }) => (
+              <a href={`${base}/tag/${encodeURIComponent(tag)}/`}
+                 class={`text-[11px] px-2 py-0.5 rounded-full border transition-colors ${activeTag === tag ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}>
+                #{tag} <span class="opacity-70">{count}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </aside>
   </div>
 </section>

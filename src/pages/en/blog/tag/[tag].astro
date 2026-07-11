@@ -7,22 +7,22 @@ export async function getStaticPaths() {
   const all = await getPosts("en");
   const categories = categoryCounts(all);
   const tags = tagCounts(all);
-  return categories.map(({ category }) => {
-    const posts = all.filter((p) => (p.data.category || "일반") === category);
+  return tags.map(({ tag }) => {
+    const posts = all.filter((p) => p.data.tags.includes(tag));
     return {
-      params: { category },
-      props: { category, posts, total: posts.length, grandTotal: all.length, categories, tags },
+      params: { tag },
+      props: { tag, posts, total: posts.length, grandTotal: all.length, categories, tags },
     };
   });
 }
 
-const { category, posts, total, grandTotal, categories, tags } = Astro.props;
+const { tag, posts, total, grandTotal, categories, tags } = Astro.props;
 ---
 
 <BaseLayout
   lang="en"
-  title={`${category} board | UPWISE Blog`}
-  description={`Posts in ${category}`}
+  title={`#${tag} tag | UPWISE Blog`}
+  description={`Posts tagged ${tag}`}
   langKoHref="/blog/"
   langEnHref="/en/blog/"
   sideBarActiveItemID="blog"
@@ -35,6 +35,6 @@ const { category, posts, total, grandTotal, categories, tags } = Astro.props;
     grandTotal={grandTotal}
     categories={categories}
     tags={tags}
-    activeCategory={category}
+    activeTag={tag}
   />
 </BaseLayout>
