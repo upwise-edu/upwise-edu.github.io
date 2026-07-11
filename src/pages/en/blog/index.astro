@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogList from "../../../components/BlogList.astro";
-import { getPosts, categoryCounts, PAGE_SIZE } from "../../../lib/blog";
+import { getPosts, categoryCounts, tagCounts, PAGE_SIZE } from "../../../lib/blog";
 
 const all = await getPosts("en");
 const posts = all.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
 const categories = categoryCounts(all);
+const tags = tagCounts(all);
 ---
 
 <BaseLayout
@@ -18,5 +19,5 @@ const categories = categoryCounts(all);
   sideBarActiveItemID="blog"
   noindex={true}
 >
-  <BlogList lang="en" posts={posts} total={all.length} grandTotal={all.length} categories={categories} page={1} totalPages={totalPages} />
+  <BlogList lang="en" posts={posts} total={all.length} grandTotal={all.length} categories={categories} tags={tags} page={1} totalPages={totalPages} />
 </BaseLayout>
