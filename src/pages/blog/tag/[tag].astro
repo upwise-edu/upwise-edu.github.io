@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogList from "../../../components/BlogList.astro";
+import { getPosts, tagCounts } from "../../../lib/blog";
+
+export async function getStaticPaths() {
+  const all = await getPosts("ko");
+  const tags = tagCounts(all);
+  return tags.map(({ tag }) => {
+    const posts = all.filter((p) => p.data.tags.includes(tag));
+    return { params: { tag }, props: { tag, posts, total: posts.length, tags } };
+  });
+}
+
+const { tag, posts, total, tags } = Astro.props;
+---
+
+<BaseLayout
+  lang="ko"
+  title={`'${tag}' 태그 | UPWISE 블로그`}
+  description={`${tag} 관련 글 모음`}
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+  noindex={true}
+>
+  <BlogList lang="ko" posts={posts} total={total} tags={tags} activeTag={tag} />
+</BaseLayout>
