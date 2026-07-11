@@ -1,16 +1,21 @@
 ---
-// KR ⇄ EN 언어 전환 토글. lang: 현재 페이지 언어
-const { lang = "ko" } = Astro.props as { lang?: "ko" | "en" };
+// KR ⇄ EN 언어 전환 토글. lang: 현재 페이지 언어.
+// koHref/enHref: 페이지별 상대 경로 지정용 (기본 홈, 블로그 등에서 오버라이드).
+const { lang = "ko", koHref = "/", enHref = "/en/" } = Astro.props as {
+  lang?: "ko" | "en";
+  koHref?: string;
+  enHref?: string;
+};
 ---
 
 <div class="lang-toggle inline-flex items-center rounded-lg border border-base-300 overflow-hidden text-xs">
   <a
-    href="/"
+    href={koHref}
     class={`px-2.5 py-1 transition-colors ${lang === "ko" ? "bg-primary text-white font-semibold" : "text-base-content/60 hover:text-primary"}`}
     aria-current={lang === "ko" ? "page" : undefined}
   >KO</a>
   <a
-    href="/en/"
+    href={enHref}
     class={`px-2.5 py-1 transition-colors ${lang === "en" ? "bg-primary text-white font-semibold" : "text-base-content/60 hover:text-primary"}`}
     aria-current={lang === "en" ? "page" : undefined}
   >EN</a>

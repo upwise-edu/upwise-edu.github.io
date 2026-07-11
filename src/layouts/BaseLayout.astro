@@ -16,6 +16,8 @@ const {
   ogType,
   includeStructuredData = false,
   lang = "ko",
+  langKoHref = "/",
+  langEnHref = "/en/",
 } = Astro.props;
 ---
 
@@ -32,7 +34,7 @@ const {
     <div class="drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" aria-label="메뉴 열기/닫기" />
       <div class="drawer-content">
-        <Header lang={lang} />
+        <Header lang={lang} langKoHref={langKoHref} langEnHref={langEnHref} />
         <div class="md:flex md:justify-center">
           <main class="p-5 sm:p-6 pt-10 lg:max-w-[900px] w-full max-w-full">
             <slot />
@@ -40,7 +42,7 @@ const {
         </div>
         <Footer />
       </div>
-      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} lang={lang} />}
+      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} lang={lang} langKoHref={langKoHref} langEnHref={langEnHref} />}
     </div>
 
     <!-- Cursor spotlight tracker (desktop only, fine pointer) -->

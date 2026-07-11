@@ -2,6 +2,8 @@
 const { sideBarActiveItemID, lang = "ko" } = Astro.props;
 const activeClass = "active-nav-item";
 const base = lang === "en" ? "/en/" : "/";
+const blogHref = lang === "en" ? "/en/blog/" : "/blog/";
+const blogLabel = lang === "en" ? "Blog" : "블로그";
 const items =
   lang === "en"
     ? [
@@ -24,6 +26,7 @@ const items =
     {items.map((item) => (
         <li><a class="py-2.5 text-base nav-item" id={item.id} href={`${base}#${item.id}`}><span class="nav-bar"></span>{item.label}</a></li>
     ))}
+    <li><a class="py-2.5 text-base nav-item" id="blog" href={blogHref}><span class="nav-bar"></span>{blogLabel}</a></li>
 </ul>
 
 <style>
