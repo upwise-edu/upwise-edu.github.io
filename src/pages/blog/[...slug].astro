@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ id }) => id.startsWith("ko/"));
+  return posts.map((post) => ({
+    params: { slug: post.slug.replace(/^ko\//, "") },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const fmt = (d: Date) =>
+  `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+---
+
+<BaseLayout
+  lang="ko"
+  title={`${post.data.title} | UPWISE 블로그`}
+  description={post.data.description}
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+>
+  <article class="pt-10 pb-16 animate-fade-up max-w-2xl">
+    <a href="/blog/" class="type-body-sm text-primary hover:underline">← 블로그 목록</a>
+    <h1 class="type-display-lg text-base-content mt-4 mb-3">{post.data.title}</h1>
+    <p class="type-body-sm text-base-content/55 mb-8">{fmt(post.data.date)}</p>
+
+    <div class="prose prose-slate dark:prose-invert max-w-none prose-a:text-primary prose-headings:text-base-content prose-img:rounded-xl">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

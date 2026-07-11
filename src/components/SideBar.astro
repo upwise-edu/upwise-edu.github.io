@@ -2,7 +2,7 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import SideBarMenu from "./SideBarMenu.astro";
 import LangToggle from "./LangToggle.astro";
-const { sideBarActiveItemID, lang = "ko" } = Astro.props;
+const { sideBarActiveItemID, lang = "ko", langKoHref = "/", langEnHref = "/en/" } = Astro.props;
 const homeHref = lang === "en" ? "/en/" : "/";
 const tagline =
   lang === "en"
@@ -32,7 +32,7 @@ const tagline =
 
     <!-- Language toggle -->
     <div class="px-1 mb-5">
-      <LangToggle lang={lang} />
+      <LangToggle lang={lang} koHref={langKoHref} enHref={langEnHref} />
     </div>
 
     <div class="divider my-0 opacity-30"></div>

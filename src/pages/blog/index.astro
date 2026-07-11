@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ id, data }) => id.startsWith("ko/") && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) =>
+  `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+const slugOf = (s: string) => s.replace(/^ko\//, "");
+---
+
+<BaseLayout
+  lang="ko"
+  title="블로그 | UPWISE 이승현"
+  description="QGIS·Python·공간정보 팁과 강의 소식 — UPWISE GIS 강사 블로그"
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+>
+  <section class="pt-10 pb-16 animate-fade-up">
+    <p class="type-caption text-primary mb-4">06 — BLOG</p>
+    <h1 class="type-display-lg text-base-content mb-4">블로그</h1>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-12">
+      QGIS·Python·공간정보 관련 팁과 강의 소식을 기록합니다.
+    </p>
+
+    {posts.length === 0 ? (
+      <p class="type-body text-base-content/60">아직 발행된 글이 없습니다.</p>
+    ) : (
+      <div class="space-y-4">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${slugOf(post.slug)}`}
+            class="group block p-6 rounded-2xl bg-base-200/50 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all"
+          >
+            <p class="type-body-sm text-base-content/55 mb-2">{fmt(post.data.date)}</p>
+            <h2 class="type-card-title text-base-content group-hover:text-primary transition-colors mb-2">
+              {post.data.title}
+            </h2>
+            {post.data.description && (
+              <p class="type-body text-base-content/70 mb-3 line-clamp-2">{post.data.description}</p>
+            )}
+            {post.data.tags.length > 0 && (
+              <div class="flex flex-wrap gap-1.5">
+                {post.data.tags.map((t) => (
+                  <span class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>
