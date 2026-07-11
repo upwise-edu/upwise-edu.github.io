@@ -30,33 +30,8 @@ const filtered = !!activeCategory;
   </p>
 
   <div class="grid grid-cols-1 md:grid-cols-[1fr_216px] gap-8 md:gap-10">
-    <!-- ── Category board panel (mobile: top / desktop: right) ── -->
-    <aside class="md:order-2">
-      <div class="md:sticky md:top-6 p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
-        <p class="type-caption text-primary mb-3">{t("게시판", "BOARDS")}</p>
-        <ul class="space-y-0.5">
-          <li>
-            <a href={`${base}/`}
-               class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${!activeCategory ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
-              <span>{t("전체보기", "All posts")}</span>
-              <span class="text-xs text-base-content/50">{grandTotal}</span>
-            </a>
-          </li>
-          {categories.map(({ category, count }) => (
-            <li>
-              <a href={`${base}/category/${encodeURIComponent(category)}/`}
-                 class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${activeCategory === category ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
-                <span class="truncate">{category}</span>
-                <span class="text-xs text-base-content/50 ml-2 shrink-0">{count}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </aside>
-
-    <!-- ── Post list (mobile: below / desktop: left) ── -->
-    <div class="md:order-1 min-w-0">
+    <!-- ── Post list (left) ── -->
+    <div class="min-w-0">
       {posts.length === 0 ? (
         <p class="type-body text-base-content/60">{t("아직 글이 없습니다.", "No posts yet.")}</p>
       ) : (
@@ -97,5 +72,30 @@ const filtered = !!activeCategory;
         </nav>
       )}
     </div>
+
+    <!-- ── Category board panel (right on desktop, below on mobile) ── -->
+    <aside>
+      <div class="md:sticky md:top-6 p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
+        <p class="type-caption text-primary mb-3">{t("게시판", "BOARDS")}</p>
+        <ul class="space-y-0.5">
+          <li>
+            <a href={`${base}/`}
+               class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${!activeCategory ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
+              <span>{t("전체보기", "All posts")}</span>
+              <span class="text-xs text-base-content/50">{grandTotal}</span>
+            </a>
+          </li>
+          {categories.map(({ category, count }) => (
+            <li>
+              <a href={`${base}/category/${encodeURIComponent(category)}/`}
+                 class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${activeCategory === category ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
+                <span class="truncate">{category}</span>
+                <span class="text-xs text-base-content/50 ml-2 shrink-0">{count}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
