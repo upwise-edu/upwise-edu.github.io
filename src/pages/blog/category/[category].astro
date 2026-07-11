@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogList from "../../../components/BlogList.astro";
+import { getPosts, categoryCounts } from "../../../lib/blog";
+
+export async function getStaticPaths() {
+  const all = await getPosts("ko");
+  const categories = categoryCounts(all);
+  return categories.map(({ category }) => {
+    const posts = all.filter((p) => (p.data.category || "일반") === category);
+    return {
+      params: { category },
+      props: { category, posts, total: posts.length, grandTotal: all.length, categories },
+    };
+  });
+}
+
+const { category, posts, total, grandTotal, categories } = Astro.props;
+---
+
+<BaseLayout
+  lang="ko"
+  title={`${category} 게시판 | UPWISE 블로그`}
+  description={`${category} 관련 글 모음`}
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+  noindex={true}
+>
+  <BlogList
+    lang="ko"
+    posts={posts}
+    total={total}
+    grandTotal={grandTotal}
+    categories={categories}
+    activeCategory={category}
+  />
+</BaseLayout>

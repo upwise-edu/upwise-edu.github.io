@@ -2,6 +2,7 @@
 title: "PyQGIS로 반복 작업 자동화하기"
 date: 2026-06-09
 description: "파이썬으로 QGIS 작업을 코드화해 반복을 줄이는 방법."
+category: "Python"
 tags: ["Python", "자동화"]
 draft: false
 ---

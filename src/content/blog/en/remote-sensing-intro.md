@@ -2,6 +2,7 @@
 title: "Remote Sensing 101 — Getting Started with Satellite Imagery"
 date: 2026-06-08
 description: "An overview for those handling Landsat/Sentinel imagery for the first time."
+category: "Remote Sensing"
 tags: ["Remote Sensing"]
 draft: false
 ---

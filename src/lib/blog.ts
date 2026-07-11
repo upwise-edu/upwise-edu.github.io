@@ -20,6 +20,18 @@ export function postSlug(entry: Post): string {
   return entry.slug.replace(/^(ko|en)\//, "");
 }
 
+/** 게시판(카테고리)별 글 개수 (많은 순) */
+export function categoryCounts(posts: Post[]): { category: string; count: number }[] {
+  const m = new Map<string, number>();
+  for (const p of posts) {
+    const c = p.data.category || "일반";
+    m.set(c, (m.get(c) || 0) + 1);
+  }
+  return [...m.entries()]
+    .map(([category, count]) => ({ category, count }))
+    .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category));
+}
+
 /** 태그별 글 개수 (많은 순) */
 export function tagCounts(posts: Post[]): { tag: string; count: number }[] {
   const m = new Map<string, number>();

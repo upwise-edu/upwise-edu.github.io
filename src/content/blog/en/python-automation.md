@@ -2,6 +2,7 @@
 title: "Automating Repetitive Tasks with PyQGIS"
 date: 2026-06-09
 description: "Turn repetitive QGIS work into code to save time."
+category: "Python"
 tags: ["Python", "Automation"]
 draft: false
 ---

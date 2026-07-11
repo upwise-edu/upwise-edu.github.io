@@ -2,6 +2,7 @@
 title: "Mapping Your Neighborhood with Open Data"
 date: 2026-06-10
 description: "Load open public data into QGIS and build a thematic map."
+category: "QGIS"
 tags: ["QGIS", "Open Data"]
 draft: false
 ---

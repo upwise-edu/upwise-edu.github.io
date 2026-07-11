@@ -8,6 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     description: z.string().optional().default(''),
+    category: z.string().optional().default('일반'), // 게시판(카테고리) — 글 1개당 1개
     tags: z.array(z.string()).optional().default([]),
     cover: z.string().optional(),
     draft: z.boolean().optional().default(false),

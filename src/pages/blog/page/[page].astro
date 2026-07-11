@@ -1,21 +1,21 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogList from "../../../components/BlogList.astro";
-import { getPosts, tagCounts, PAGE_SIZE, chunk } from "../../../lib/blog";
+import { getPosts, categoryCounts, PAGE_SIZE, chunk } from "../../../lib/blog";
 
 export async function getStaticPaths() {
   const all = await getPosts("ko");
   const pages = chunk(all, PAGE_SIZE);
-  const tags = tagCounts(all);
+  const categories = categoryCounts(all);
   return pages
     .map((posts, i) => ({
       params: { page: String(i + 1) },
-      props: { posts, total: all.length, totalPages: pages.length, page: i + 1, tags },
+      props: { posts, total: all.length, totalPages: pages.length, page: i + 1, categories },
     }))
     .filter((p) => p.props.page >= 2); // 1페이지는 /blog/ 에서 처리
 }
 
-const { posts, total, totalPages, page, tags } = Astro.props;
+const { posts, total, totalPages, page, categories } = Astro.props;
 ---
 
 <BaseLayout
@@ -27,5 +27,5 @@ const { posts, total, totalPages, page, tags } = Astro.props;
   sideBarActiveItemID="blog"
   noindex={true}
 >
-  <BlogList lang="ko" posts={posts} total={total} tags={tags} page={page} totalPages={totalPages} />
+  <BlogList lang="ko" posts={posts} total={total} grandTotal={total} categories={categories} page={page} totalPages={totalPages} />
 </BaseLayout>

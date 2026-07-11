@@ -2,6 +2,7 @@
 title: "블로그를 시작합니다"
 date: 2026-06-12
 description: "QGIS·Python·공간정보 관련 팁과 강의 소식을 이곳에 기록합니다."
+category: "공지"
 tags: ["공지", "QGIS"]
 draft: false
 ---
