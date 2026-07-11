@@ -2,6 +2,7 @@
 title: "QGIS 시각화 자주 쓰는 단축키 10선"
 date: 2026-06-11
 description: "발표·보고서용 지도를 빠르게 만드는 QGIS 단축키 모음."
+category: "QGIS"
 tags: ["QGIS", "시각화"]
 draft: false
 ---

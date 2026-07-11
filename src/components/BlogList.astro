@@ -3,82 +3,99 @@ import { postSlug, fmtDate, type Post } from "../lib/blog";
 
 interface Props {
   lang: "ko" | "en";
-  posts: Post[];              // 현재 페이지에 보여줄 글
-  total: number;             // 전체 글 수
-  tags: { tag: string; count: number }[];
-  activeTag?: string | null; // 태그 필터 활성 시
-  page?: number;             // 현재 페이지(1-base)
+  posts: Post[];
+  total: number;                                   // 현재 목록(전체 또는 필터)의 글 수
+  grandTotal: number;                              // 블로그 전체 글 수 (게시판 '전체' 카운트용)
+  categories: { category: string; count: number }[];
+  activeCategory?: string | null;
+  page?: number;
   totalPages?: number;
 }
-const { lang, posts, total, tags, activeTag = null, page = 1, totalPages = 1 } = Astro.props as Props;
+const {
+  lang, posts, total, grandTotal, categories,
+  activeCategory = null, page = 1, totalPages = 1,
+} = Astro.props as Props;
 const base = lang === "en" ? "/en/blog" : "/blog";
 const t = (ko: string, en: string) => (lang === "en" ? en : ko);
+const filtered = !!activeCategory;
 ---
 
 <section class="pt-10 pb-16 animate-fade-up">
   <p class="type-caption text-primary mb-4">06 — BLOG</p>
   <h1 class="type-display-lg text-base-content mb-3">{t("블로그", "Blog")}</h1>
   <p class="type-body-sm text-base-content/60 mb-8">
-    {activeTag
-      ? t(`'${activeTag}' 태그 · ${total}개 글`, `Tag '${activeTag}' · ${total} posts`)
-      : t(`전체 ${total}개 글`, `${total} posts total`)}
+    {filtered
+      ? t(`'${activeCategory}' 게시판 · ${total}개 글`, `Board '${activeCategory}' · ${total} posts`)
+      : t(`전체 ${grandTotal}개 글`, `${grandTotal} posts total`)}
   </p>
 
-  <!-- Tag filter -->
-  {tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mb-10">
-      <a
-        href={`${base}/`}
-        class={`text-xs px-3 py-1 rounded-full border transition-colors ${!activeTag ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
-      >{t("전체", "All")} <span class="opacity-70">{total}</span></a>
-      {tags.map(({ tag, count }) => (
-        <a
-          href={`${base}/tag/${encodeURIComponent(tag)}/`}
-          class={`text-xs px-3 py-1 rounded-full border transition-colors ${activeTag === tag ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
-        >{tag} <span class="opacity-70">{count}</span></a>
-      ))}
-    </div>
-  )}
+  <div class="grid grid-cols-1 md:grid-cols-[1fr_216px] gap-8 md:gap-10">
+    <!-- ── Category board panel (mobile: top / desktop: right) ── -->
+    <aside class="md:order-2">
+      <div class="md:sticky md:top-6 p-4 rounded-2xl bg-base-200/50 border border-base-300/60">
+        <p class="type-caption text-primary mb-3">{t("게시판", "BOARDS")}</p>
+        <ul class="space-y-0.5">
+          <li>
+            <a href={`${base}/`}
+               class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${!activeCategory ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
+              <span>{t("전체보기", "All posts")}</span>
+              <span class="text-xs text-base-content/50">{grandTotal}</span>
+            </a>
+          </li>
+          {categories.map(({ category, count }) => (
+            <li>
+              <a href={`${base}/category/${encodeURIComponent(category)}/`}
+                 class={`flex items-center justify-between px-2 py-1.5 rounded-lg text-sm transition-colors ${activeCategory === category ? "bg-primary/10 text-primary font-semibold" : "text-base-content/75 hover:text-primary hover:bg-base-200"}`}>
+                <span class="truncate">{category}</span>
+                <span class="text-xs text-base-content/50 ml-2 shrink-0">{count}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
 
-  <!-- Posts -->
-  {posts.length === 0 ? (
-    <p class="type-body text-base-content/60">{t("아직 글이 없습니다.", "No posts yet.")}</p>
-  ) : (
-    <div class="space-y-4">
-      {posts.map((post) => (
-        <a
-          href={`${base}/${postSlug(post)}/`}
-          class="group block p-6 rounded-2xl bg-base-200/50 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all"
-        >
-          <p class="type-body-sm text-base-content/55 mb-2">{fmtDate(post.data.date)}</p>
-          <h2 class="type-card-title text-base-content group-hover:text-primary transition-colors mb-2">
-            {post.data.title}
-          </h2>
-          {post.data.description && (
-            <p class="type-body text-base-content/70 mb-3 line-clamp-2">{post.data.description}</p>
-          )}
-          {post.data.tags.length > 0 && (
-            <div class="flex flex-wrap gap-1.5">
-              {post.data.tags.map((tg) => (
-                <span class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">{tg}</span>
-              ))}
-            </div>
-          )}
-        </a>
-      ))}
-    </div>
-  )}
+    <!-- ── Post list (mobile: below / desktop: left) ── -->
+    <div class="md:order-1 min-w-0">
+      {posts.length === 0 ? (
+        <p class="type-body text-base-content/60">{t("아직 글이 없습니다.", "No posts yet.")}</p>
+      ) : (
+        <div class="space-y-4">
+          {posts.map((post) => (
+            <a href={`${base}/${postSlug(post)}/`}
+               class="group block p-6 rounded-2xl bg-base-200/50 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">{post.data.category}</span>
+                <span class="type-body-sm text-base-content/55">{fmtDate(post.data.date)}</span>
+              </div>
+              <h2 class="type-card-title text-base-content group-hover:text-primary transition-colors mb-2">
+                {post.data.title}
+              </h2>
+              {post.data.description && (
+                <p class="type-body text-base-content/70 mb-3 line-clamp-2">{post.data.description}</p>
+              )}
+              {post.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-1.5">
+                  {post.data.tags.map((tg) => (
+                    <span class="text-[11px] text-base-content/55">#{tg}</span>
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
 
-  <!-- Pagination (태그 필터가 아닐 때만) -->
-  {!activeTag && totalPages > 1 && (
-    <nav class="flex items-center justify-center gap-2 mt-10">
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
-        <a
-          href={n === 1 ? `${base}/` : `${base}/page/${n}/`}
-          class={`w-9 h-9 inline-flex items-center justify-center rounded-lg border text-sm transition-colors ${n === page ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
-          aria-current={n === page ? "page" : undefined}
-        >{n}</a>
-      ))}
-    </nav>
-  )}
+      {/* Pagination — 필터가 아닐 때만 */}
+      {!filtered && totalPages > 1 && (
+        <nav class="flex items-center justify-center gap-2 mt-10">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+            <a href={n === 1 ? `${base}/` : `${base}/page/${n}/`}
+               class={`w-9 h-9 inline-flex items-center justify-center rounded-lg border text-sm transition-colors ${n === page ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
+               aria-current={n === page ? "page" : undefined}>{n}</a>
+          ))}
+        </nav>
+      )}
+    </div>
+  </div>
 </section>

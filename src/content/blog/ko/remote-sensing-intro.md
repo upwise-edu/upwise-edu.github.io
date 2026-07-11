@@ -2,6 +2,7 @@
 title: "원격탐사 입문 — 위성영상 시작하기"
 date: 2026-06-08
 description: "Landsat·Sentinel 위성영상을 처음 다뤄보는 분을 위한 개요."
+category: "원격탐사"
 tags: ["원격탐사"]
 draft: false
 ---

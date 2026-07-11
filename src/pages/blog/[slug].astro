@@ -45,12 +45,15 @@ const jsonld = {
 >
   <article class="pt-10 pb-16 animate-fade-up max-w-2xl">
     <a href="/blog/" class="type-body-sm text-primary hover:underline">← 블로그 목록</a>
-    <h1 class="type-display-lg text-base-content mt-4 mb-3">{post.data.title}</h1>
-    <p class="type-body-sm text-base-content/55 mb-4">{fmtDate(post.data.date)}</p>
+    <div class="flex items-center gap-2 mt-4 mb-3">
+      <a href={`/blog/category/${encodeURIComponent(post.data.category)}/`} class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20">{post.data.category}</a>
+      <span class="type-body-sm text-base-content/55">{fmtDate(post.data.date)}</span>
+    </div>
+    <h1 class="type-display-lg text-base-content mb-3">{post.data.title}</h1>
     {post.data.tags.length > 0 && (
-      <div class="flex flex-wrap gap-1.5 mb-8">
+      <div class="flex flex-wrap gap-2 mb-8">
         {post.data.tags.map((tg) => (
-          <a href={`/blog/tag/${encodeURIComponent(tg)}/`} class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20">{tg}</a>
+          <span class="text-xs text-base-content/55">#{tg}</span>
         ))}
       </div>
     )}

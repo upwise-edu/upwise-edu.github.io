@@ -2,6 +2,7 @@
 title: "Welcome to the Blog"
 date: 2026-06-12
 description: "Tips on QGIS, Python, and geospatial analysis, plus course news."
+category: "Notice"
 tags: ["Notice", "QGIS"]
 draft: false
 ---

@@ -2,6 +2,7 @@
 title: "공공데이터로 우리 동네 지도 만들기"
 date: 2026-06-10
 description: "공공데이터포털의 데이터를 QGIS로 불러와 주제도를 만드는 과정."
+category: "QGIS"
 tags: ["QGIS", "공공데이터"]
 draft: false
 ---
