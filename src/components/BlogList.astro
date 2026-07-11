@@ -1,0 +1,84 @@
+---
+import { postSlug, fmtDate, type Post } from "../lib/blog";
+
+interface Props {
+  lang: "ko" | "en";
+  posts: Post[];              // 현재 페이지에 보여줄 글
+  total: number;             // 전체 글 수
+  tags: { tag: string; count: number }[];
+  activeTag?: string | null; // 태그 필터 활성 시
+  page?: number;             // 현재 페이지(1-base)
+  totalPages?: number;
+}
+const { lang, posts, total, tags, activeTag = null, page = 1, totalPages = 1 } = Astro.props as Props;
+const base = lang === "en" ? "/en/blog" : "/blog";
+const t = (ko: string, en: string) => (lang === "en" ? en : ko);
+---
+
+<section class="pt-10 pb-16 animate-fade-up">
+  <p class="type-caption text-primary mb-4">06 — BLOG</p>
+  <h1 class="type-display-lg text-base-content mb-3">{t("블로그", "Blog")}</h1>
+  <p class="type-body-sm text-base-content/60 mb-8">
+    {activeTag
+      ? t(`'${activeTag}' 태그 · ${total}개 글`, `Tag '${activeTag}' · ${total} posts`)
+      : t(`전체 ${total}개 글`, `${total} posts total`)}
+  </p>
+
+  <!-- Tag filter -->
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-10">
+      <a
+        href={`${base}/`}
+        class={`text-xs px-3 py-1 rounded-full border transition-colors ${!activeTag ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
+      >{t("전체", "All")} <span class="opacity-70">{total}</span></a>
+      {tags.map(({ tag, count }) => (
+        <a
+          href={`${base}/tag/${encodeURIComponent(tag)}/`}
+          class={`text-xs px-3 py-1 rounded-full border transition-colors ${activeTag === tag ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
+        >{tag} <span class="opacity-70">{count}</span></a>
+      ))}
+    </div>
+  )}
+
+  <!-- Posts -->
+  {posts.length === 0 ? (
+    <p class="type-body text-base-content/60">{t("아직 글이 없습니다.", "No posts yet.")}</p>
+  ) : (
+    <div class="space-y-4">
+      {posts.map((post) => (
+        <a
+          href={`${base}/${postSlug(post)}/`}
+          class="group block p-6 rounded-2xl bg-base-200/50 border border-base-300/60 hover:border-primary/60 hover:bg-base-200/80 transition-all"
+        >
+          <p class="type-body-sm text-base-content/55 mb-2">{fmtDate(post.data.date)}</p>
+          <h2 class="type-card-title text-base-content group-hover:text-primary transition-colors mb-2">
+            {post.data.title}
+          </h2>
+          {post.data.description && (
+            <p class="type-body text-base-content/70 mb-3 line-clamp-2">{post.data.description}</p>
+          )}
+          {post.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {post.data.tags.map((tg) => (
+                <span class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">{tg}</span>
+              ))}
+            </div>
+          )}
+        </a>
+      ))}
+    </div>
+  )}
+
+  <!-- Pagination (태그 필터가 아닐 때만) -->
+  {!activeTag && totalPages > 1 && (
+    <nav class="flex items-center justify-center gap-2 mt-10">
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+        <a
+          href={n === 1 ? `${base}/` : `${base}/page/${n}/`}
+          class={`w-9 h-9 inline-flex items-center justify-center rounded-lg border text-sm transition-colors ${n === page ? "bg-primary text-white border-primary" : "text-base-content/70 border-base-300 hover:border-primary hover:text-primary"}`}
+          aria-current={n === page ? "page" : undefined}
+        >{n}</a>
+      ))}
+    </nav>
+  )}
+</section>

@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { fmtDate } from "../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ id }) => id.startsWith("ko/"));
+  return posts.map((post) => ({
+    params: { slug: post.slug.replace(/^ko\//, "") },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: { "@type": "Person", name: "이승현", url: "https://upwise.co.kr" },
+  publisher: {
+    "@type": "Organization",
+    name: "UPWISE",
+    logo: { "@type": "ImageObject", url: "https://upwise.co.kr/upwise_logo.png" },
+  },
+  mainEntityOfPage: pageUrl,
+  inLanguage: "ko-KR",
+  ...(post.data.cover ? { image: new URL(post.data.cover, Astro.site).href } : {}),
+};
+---
+
+<BaseLayout
+  lang="ko"
+  title={`${post.data.title} | UPWISE 블로그`}
+  description={post.data.description}
+  image={post.data.cover}
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+  noindex={true}
+>
+  <article class="pt-10 pb-16 animate-fade-up max-w-2xl">
+    <a href="/blog/" class="type-body-sm text-primary hover:underline">← 블로그 목록</a>
+    <h1 class="type-display-lg text-base-content mt-4 mb-3">{post.data.title}</h1>
+    <p class="type-body-sm text-base-content/55 mb-4">{fmtDate(post.data.date)}</p>
+    {post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 mb-8">
+        {post.data.tags.map((tg) => (
+          <a href={`/blog/tag/${encodeURIComponent(tg)}/`} class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20">{tg}</a>
+        ))}
+      </div>
+    )}
+    <div class="prose prose-slate dark:prose-invert max-w-none prose-a:text-primary prose-headings:text-base-content prose-img:rounded-xl">
+      <Content />
+    </div>
+  </article>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import BlogList from "../../../../components/BlogList.astro";
+import { getPosts, tagCounts, PAGE_SIZE, chunk } from "../../../../lib/blog";
+
+export async function getStaticPaths() {
+  const all = await getPosts("en");
+  const pages = chunk(all, PAGE_SIZE);
+  const tags = tagCounts(all);
+  return pages
+    .map((posts, i) => ({
+      params: { page: String(i + 1) },
+      props: { posts, total: all.length, totalPages: pages.length, page: i + 1, tags },
+    }))
+    .filter((p) => p.props.page >= 2);
+}
+
+const { posts, total, totalPages, page, tags } = Astro.props;
+---
+
+<BaseLayout
+  lang="en"
+  title={`Blog (page ${page}) | UPWISE`}
+  description="Tips on QGIS, Python, and geospatial analysis."
+  langKoHref="/blog/"
+  langEnHref="/en/blog/"
+  sideBarActiveItemID="blog"
+  noindex={true}
+>
+  <BlogList lang="en" posts={posts} total={total} tags={tags} page={page} totalPages={totalPages} />
+</BaseLayout>
