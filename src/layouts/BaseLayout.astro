@@ -18,13 +18,14 @@ const {
   lang = "ko",
   langKoHref = "/",
   langEnHref = "/en/",
+  noindex = false,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <BaseHead title={title} description={description} image={image} ogType={ogType} includeStructuredData={includeStructuredData} lang={lang} />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} includeStructuredData={includeStructuredData} lang={lang} noindex={noindex} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>

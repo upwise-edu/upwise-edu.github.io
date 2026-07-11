@@ -26,7 +26,9 @@ const items =
     {items.map((item) => (
         <li><a class="py-2.5 text-base nav-item" id={item.id} href={`${base}#${item.id}`}><span class="nav-bar"></span>{item.label}</a></li>
     ))}
+    {/* 블로그는 아직 비공개 프리뷰 — 나중에 공개 시 아래 주석 해제
     <li><a class="py-2.5 text-base nav-item" id="blog" href={blogHref}><span class="nav-bar"></span>{blogLabel}</a></li>
+    */}
 </ul>
 
 <style>

@@ -10,7 +10,8 @@ export default defineConfig({
     mdx(),
     tailwind(),
     sitemap({
-      filter: (page) => !page.includes('/go'),
+      // /go 리다이렉트 + /blog 비공개 프리뷰는 sitemap 제외
+      filter: (page) => !page.includes('/go') && !page.includes('/blog'),
     }),
   ],
 });
