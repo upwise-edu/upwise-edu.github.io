@@ -2,8 +2,8 @@
   "_help": "English mirror of site.json. Same structure. Category keys under courses (입문/시각화/자동화) are kept as internal IDs — do NOT translate the keys, only the 'name'/'label' fields. Edit text inside quotes only.",
 
   "site": {
-    "title": "UPWISE — Seunghyeon Lee | QGIS·Python Instructor · 1,000+ Students",
-    "description": "GIS instructor Seunghyeon Lee (UPWISE), specializing in QGIS, Python, and remote sensing. 1,000+ Inflearn students, 4.9 rating. Available for public-sector, university, and corporate training.",
+    "title": "QGIS Courses · UPWISE — Seunghyeon Lee | QGIS·Python Instructor (1,000+ Students)",
+    "description": "QGIS course instructor Seunghyeon Lee (UPWISE). QGIS·Python·remote sensing online courses on Inflearn. 1,000+ students, 4.9 rating. Available for public-sector, university, and corporate training.",
     "keywords": "QGIS, QGIS instructor, GIS instructor, GIS training, Python GIS, remote sensing, UPWISE, Seunghyeon Lee, spatial data analysis, QGIS automation"
   },
 
@@ -66,8 +66,8 @@
 
   "courses": {
     "eyebrow": "02 — ONLINE COURSES",
-    "title": "Online Courses",
-    "intro": "Online courses available on Inflearn.\nStructured in the order Beginner → Visualization → Automation for step-by-step learning.",
+    "title": "QGIS Online Courses",
+    "intro": "QGIS online courses available on Inflearn.\nStructured in the order Beginner → Visualization → Automation to learn QGIS step by step.",
     "categoryMeta": {
       "입문":   { "name": "Beginner",      "label": "BEGINNER",      "description": "For those learning QGIS for the first time.",                 "icon": "🌱" },
       "시각화": { "name": "Visualization", "label": "VISUALIZATION", "description": "For maps in presentations, reports, and content.",            "icon": "🗺️" },

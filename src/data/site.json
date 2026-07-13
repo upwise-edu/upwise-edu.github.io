@@ -2,8 +2,8 @@
   "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다. 줄바꿈은 문자열 안에 \\n 으로 표시하세요 (예: \"첫 줄\\n두 번째 줄\").",
 
   "site": {
-    "title": "UPWISE 이승현 | QGIS·Python 전문 강사 · 인프런 1,000+ 수강생",
-    "description": "QGIS·Python·원격탐사 활용 GIS 강의 전문 강사 UPWISE 이승현. 인프런 누적 1,000+ 수강생 평점 4.9. 공공기관·대학·기업 강의 의뢰 환영.",
+    "title": "QGIS 강의 · UPWISE 이승현 | QGIS·Python 전문 강사 (인프런 1,000+ 수강생)",
+    "description": "QGIS 강의 전문 강사 UPWISE 이승현. QGIS·Python·원격탐사 기반 GIS 온라인 강의를 인프런에서 제공합니다. 누적 1,000+ 수강생 평점 4.9, 공공기관·대학·기업 강의 의뢰 환영.",
     "keywords": "QGIS, QGIS 강사, GIS 강사, GIS 강의, QGIS 강의, Python GIS, 원격탐사 강사, 인프런 GIS, UPWISE, 이승현, 공간정보 강의, QGIS 자동화"
   },
 
@@ -82,8 +82,8 @@
 
 "courses": {
     "eyebrow": "02 — ONLINE COURSES",
-    "title": "온라인 강의",
-    "intro": "인프런에서 제공되는 온라인 강의입니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별 학습이 가능합니다.",
+    "title": "QGIS 온라인 강의",
+    "intro": "QGIS 온라인 강의를 인프런에서 제공합니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별로 QGIS를 배울 수 있습니다.",
     "categoryMeta": {
       "입문":   { "name": "입문",   "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
       "시각화": { "name": "시각화", "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
