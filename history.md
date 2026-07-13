@@ -145,3 +145,14 @@
 *   한양사이버대학교 QGIS 초중고급 분석 실습 및 시각화 강의 경력을 국문 및 영문 JSON에 추가
 *   QGIS 특강 준비를 위한 setup 가이드, 테스트 계획, 샘플 데이터 관련 파일들을 Git에 추가하고 푸시
 
+## 2026-07-11
+
+- `src/content/config.ts`에 블로그 글의 카테고리 필드를 추가했습니다.
+- `src/lib/blog.ts`에 카테고리별 글 개수를 계산하는 함수를 추가했습니다.
+- `src/components/BlogList.astro`를 수정하여 블로그 글 목록과 우측 게시판 패널을 함께 표시하도록 변경했습니다.
+- `src/pages/blog/category/[category].astro`와 `src/pages/en/blog/category/[category].astro`를 생성하여 카테고리별 블로그 글 목록 페이지를 구현했습니다.
+- `src/pages/blog/tag/[tag].astro`와 `src/pages/en/blog/tag/[tag].astro`를 복구하여 태그별 블로그 글 목록 페이지를 다시 추가했습니다.
+- 블로그 글 작성 시 `category`와 `tags` frontmatter를 통해 게시판 및 태그 분류가 가능하도록 기능을 추가했습니다.
+- 블로그 게시판 패널의 레이아웃 문제를 해결하여 글 목록과 게시판 패널이 올바르게 배치되도록 수정했습니다.
+- 게시판과 태그 기능을 함께 사용할 수 있도록 우측 패널을 구성하고, 태그 클라우드를 추가했습니다.
+
