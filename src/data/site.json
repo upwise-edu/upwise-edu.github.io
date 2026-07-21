@@ -154,7 +154,7 @@
   },
 
   "lectures": {
-    "_help": "각 항목 필수: date(YYYY-MM-DD), organization, title, audience(강의 대상), attendees(수강생 수, 미정이면 0). 선택: dateEnd(범위인 경우 종료일, 없으면 null), dateLabel(여러 회차 등 날짜를 직접 표기; 있으면 date/dateEnd 대신 이 문자열로 표시), hours(진행 시간, 없으면 필드 자체 생략). 신규 출강은 items 배열 맨 위에 추가합니다.",
+    "_help": "각 항목 필수: date(YYYY-MM-DD), organization, title, audience(강의 대상), attendees(수강생 수, 미정이면 0). 선택: dateEnd(범위인 경우 종료일, 없으면 null), hours(진행 시간, 없으면 필드 자체 생략). 신규 출강은 items 배열 맨 위에 추가합니다.",
     "eyebrow": "03 — OFFLINE LECTURES",
     "title": "강의 경력",
     "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
