@@ -210,7 +210,7 @@
       { "name": "경기도 인재개발원",     "nameEn": "GHRD",           "category": "public",    "logo": "/partners/gyeongg.svg" },
       { "name": "관악구청",              "nameEn": "Gwanak-gu",      "category": "public",    "logo": "/partners/gwanak.svg" },
       { "name": "충남농업기술원",        "nameEn": "CNARES",         "category": "public",    "logo": "/partners/cnares.svg" },
-      { "name": "인천도시재생센터",      "nameEn": "Incheon URC",    "category": "public",    "logo": "/partners/incheon_urc.jpg" },
+      { "name": "인천광역시 도시재생지원센터", "nameEn": "Incheon URC", "category": "public",    "logo": "/partners/incheon_urc.jpg" },
 
       { "name": "현대모비스",            "nameEn": "Hyundai Mobis",  "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
       { "name": "현대NGV",               "nameEn": "Hyundai NGV",    "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
