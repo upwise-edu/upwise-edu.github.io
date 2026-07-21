@@ -143,7 +143,13 @@
     "title": "Teaching Experience",
     "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
     "items": [
-      { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "Hanyang Cyber Univ.",      "title": "QGIS Analysis & Visualization (Basic to Advanced)",                  "audience": "Hanyang Cyber Univ. students",  "attendees": 20 },
+      { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "Incheon URC",              "title": "Urban Regeneration Performance Indicators & Baseline Analysis with QGIS", "audience": "Incheon URC staff",             "attendees": 15 },
+      { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Advanced)",         "audience": "University students",           "attendees": 25 },
+      { "date": "2026-07-22", "dateEnd": "2026-07-23", "organization": "Incheon URC",              "title": "Urban Regeneration Performance Indicators & Baseline Analysis with QGIS", "audience": "Incheon URC staff",             "attendees": 15 },
+      { "date": "2026-07-20", "dateEnd": "2026-07-21", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Basics)",           "audience": "University students",           "attendees": 25 },
+      { "date": "2026-07-14", "dateEnd": "2026-07-15", "organization": "Incheon URC",              "title": "Urban Regeneration Performance Indicators & Baseline Analysis with QGIS", "audience": "Incheon URC staff",             "attendees": 15 },
+      { "date": "2026-07-06", "dateEnd": "2026-07-07", "organization": "SNU Lifelong Edu.",        "title": "Mapping Our School with Public Data (Yeongnak HS)",                       "audience": "High school students",          "attendees": 10 },
+      { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "Hanyang Cyber Univ.",      "title": "QGIS Analysis & Visualization (Basic to Advanced)",                  "audience": "Hanyang Cyber Univ. graduate students",  "attendees": 20 },
       { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Advanced)", "audience": "Hyundai Autoever staff",        "attendees": 20 },
       { "date": "2025-10-23", "dateEnd": "2025-10-24", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Basics)",   "audience": "Hyundai Autoever staff",        "attendees": 25 },
       { "date": "2025-09-18", "dateEnd": "2025-09-19", "organization": "K-water",                  "title": "2025 Water-Industry Talent Program: Q-GIS Practicum",                "audience": "K-water & water-industry staff", "attendees": 30 },
@@ -187,9 +193,11 @@
       { "name": "Gyeonggi HRD",         "nameEn": "Gyeonggi HRD Institute",    "category": "public",    "logo": "/partners/gyeongg.svg" },
       { "name": "Gwanak-gu Office",     "nameEn": "Gwanak District",           "category": "public",    "logo": "/partners/gwanak.svg" },
       { "name": "Chungnam ARES",        "nameEn": "Chungnam Agri. R&E",        "category": "public",    "logo": "/partners/cnares.svg" },
+      { "name": "Incheon URC",          "nameEn": "Incheon Urban Regen. Center", "category": "public",  "logo": "/partners/incheon_urc.jpg" },
 
       { "name": "Hyundai Mobis",        "nameEn": "Hyundai Mobis",             "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
       { "name": "Hyundai NGV",          "nameEn": "Hyundai NGV",               "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
+      { "name": "KECC",                 "nameEn": "Korea Engineering Consultants Corp.", "category": "corporate", "logo": "/partners/kecc.svg" },
 
       { "name": "SeSAC",                "nameEn": "Seoul SW Academy",          "category": "training",  "logo": "/partners/sesac.png" },
       { "name": "Inflearn",             "nameEn": "Inflearn",                  "category": "training",  "logo": "/partners/inflearn.svg" }
