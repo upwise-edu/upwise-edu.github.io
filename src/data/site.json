@@ -159,9 +159,11 @@
     "title": "강의 경력",
     "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
     "items": [
+      { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 종합성과지표 분석",                            "audience": "인천도시재생센터 재직자",  "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "한국상하수도협회",                     "title": "74기 물환경 엔지니어링 TOOL 마스터 과정(고급)",                             "audience": "대학생",                   "attendees": 25 },
+      { "date": "2026-07-22", "dateEnd": "2026-07-23", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 기초현황 분석",                                "audience": "인천도시재생센터 재직자",  "attendees": 15 },
       { "date": "2026-07-20", "dateEnd": "2026-07-21", "organization": "한국상하수도협회",                     "title": "74기 물환경 엔지니어링 TOOL 마스터 과정(기초)",                             "audience": "대학생",                   "attendees": 25 },
-      { "date": "2026-07-14", "dateEnd": "2026-07-31", "dateLabel": "26.07.14·22·30", "organization": "인천도시재생센터",   "title": "QGIS를 활용한 도시재생 종합성과지표 및 기초현황 분석 (3회차)",                "audience": "인천도시재생센터 재직자",  "attendees": 15 },
+      { "date": "2026-07-14", "dateEnd": "2026-07-15", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 분석 및 시각화",                               "audience": "인천도시재생센터 재직자",  "attendees": 15 },
       { "date": "2026-07-06", "dateEnd": "2026-07-07", "organization": "서울대 평생교육원",                     "title": "공공데이터를 활용한 우리학교 지도 만들기 (영락고)",                          "audience": "고등학생",                 "attendees": 10 },
       { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "한양사이버대학교",                       "title": "QGIS 초중고급 분석 실습 및 시각화",                                            "audience": "한양사이버대학교 대학원생", "attendees": 20 },
       { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "현대NGV",                              "title": "GIS와 DBMS를 통한 공간 분석 및 데이터 시각화 (심화)",                          "audience": "현대오토에버 재직자",      "attendees": 20 },
