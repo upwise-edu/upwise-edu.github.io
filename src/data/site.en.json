@@ -143,9 +143,11 @@
     "title": "Teaching Experience",
     "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
     "items": [
+      { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "Incheon URC",              "title": "Urban Regeneration Site Performance Indicators Analysis with QGIS",       "audience": "Incheon URC staff",             "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Advanced)",         "audience": "University students",           "attendees": 25 },
+      { "date": "2026-07-22", "dateEnd": "2026-07-23", "organization": "Incheon URC",              "title": "Urban Regeneration Site Baseline Analysis with QGIS",                     "audience": "Incheon URC staff",             "attendees": 15 },
       { "date": "2026-07-20", "dateEnd": "2026-07-21", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Basics)",           "audience": "University students",           "attendees": 25 },
-      { "date": "2026-07-14", "dateEnd": "2026-07-31", "dateLabel": "26.07.14·22·30", "organization": "Incheon URC",   "title": "Urban Regeneration Performance Indicators & Baseline Analysis with QGIS (3 sessions)", "audience": "Incheon URC staff",             "attendees": 15 },
+      { "date": "2026-07-14", "dateEnd": "2026-07-15", "organization": "Incheon URC",              "title": "Urban Regeneration Site Analysis & Visualization with QGIS",              "audience": "Incheon URC staff",             "attendees": 15 },
       { "date": "2026-07-06", "dateEnd": "2026-07-07", "organization": "SNU Lifelong Edu.",        "title": "Mapping Our School with Public Data (Yeongnak HS)",                       "audience": "High school students",          "attendees": 10 },
       { "date": "2026-06-20", "dateEnd": "2026-06-21", "organization": "Hanyang Cyber Univ.",      "title": "QGIS Analysis & Visualization (Basic to Advanced)",                  "audience": "Hanyang Cyber Univ. graduate students",  "attendees": 20 },
       { "date": "2025-11-10", "dateEnd": "2025-11-12", "organization": "Hyundai NGV",              "title": "Spatial Analysis & Data Visualization with GIS and DBMS (Advanced)", "audience": "Hyundai Autoever staff",        "attendees": 20 },
