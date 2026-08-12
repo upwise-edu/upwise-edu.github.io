@@ -214,10 +214,9 @@
     "kakaoDisplay": "UPWISE",
     "emailName": "Email",
     "email": "upwise0506@gmail.com",
-    "phoneName": "Phone",
-    "phone": "010-8455-5598",
-    "phoneTelLink": "+82-10-8455-5598",
-    "phonePlaceholder": "Hover or tap to reveal",
+    "instagramName": "Instagram",
+    "instagramUrl": "https://www.instagram.com/upwise.gis.shlee",
+    "instagramDisplay": "@upwise.gis.shlee",
     "inflearnName": "Inflearn Instructor Page",
     "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
     "inflearnDescription": "View online courses"

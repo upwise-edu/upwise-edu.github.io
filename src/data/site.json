@@ -231,10 +231,9 @@
     "kakaoDisplay": "UPWISE",
     "emailName": "이메일",
     "email": "upwise0506@gmail.com",
-    "phoneName": "전화",
-    "phone": "010-8455-5598",
-    "phoneTelLink": "+82-10-8455-5598",
-    "phonePlaceholder": "마우스를 올리거나 탭하여 보기",
+    "instagramName": "인스타그램",
+    "instagramUrl": "https://www.instagram.com/upwise.gis.shlee",
+    "instagramDisplay": "@upwise.gis.shlee",
     "inflearnName": "인프런 강사 페이지",
     "inflearnUrl": "https://www.inflearn.com/users/212773/@upwise",
     "inflearnDescription": "온라인 강의 수강"
