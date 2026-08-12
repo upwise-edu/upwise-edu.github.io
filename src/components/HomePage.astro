@@ -274,24 +274,6 @@ const categoryKeys = Object.keys(categoryMeta);
         </div>
       </a>
 
-      <!-- Email -->
-      <a
-        href={`mailto:${data.contact.email}`}
-        class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
-      >
-        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <p class="type-caption text-primary mb-1">EMAIL</p>
-          <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{data.contact.emailName}</p>
-          <p class="text-xs text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate transition-colors" style="font-family:var(--font-sans);">{data.contact.email}</p>
-        </div>
-      </a>
-
       <!-- Instagram -->
       <a
         href={data.contact.instagramUrl}
@@ -309,6 +291,24 @@ const categoryKeys = Object.keys(categoryMeta);
           <p class="type-caption mb-1" style="color:#E4405F;">INSTAGRAM</p>
           <p class="type-body text-base-content dark:text-slate-200 group-hover:text-[#E4405F] transition-colors" style="font-weight:600;">{data.contact.instagramName}</p>
           <p class="text-xs text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate transition-colors" style="font-family:var(--font-sans);">{data.contact.instagramDisplay}</p>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a
+        href={`mailto:${data.contact.email}`}
+        class="group flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-base-300/60 dark:border-white/10 hover:border-primary/60 hover:bg-orange-50 dark:hover:bg-white/10 transition-all shadow-sm dark:shadow-none"
+      >
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <div class="min-w-0">
+          <p class="type-caption text-primary mb-1">EMAIL</p>
+          <p class="type-body text-base-content dark:text-slate-200 group-hover:text-primary transition-colors" style="font-weight:600;">{data.contact.emailName}</p>
+          <p class="text-xs text-base-content/55 dark:text-white/45 group-hover:text-base-content dark:group-hover:text-white truncate transition-colors" style="font-family:var(--font-sans);">{data.contact.email}</p>
         </div>
       </a>
 
