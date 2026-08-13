@@ -33,7 +33,7 @@
       { "value": "4.9", "suffix": "/5.0 평점" },
       { "value": "1000+", "suffix": "명 수강" },
       { "value": "100+", "suffix": "개 수강평" },
-      { "value": "10+", "suffix": "개 기관 출강" }
+      { "value": "12+", "suffix": "개 기관 출강" }
     ],
     "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"
@@ -54,8 +54,8 @@
       { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
       { "label": "평균 평점",            "value": "4.9",   "unit": "/5.0" },
       { "label": "누적 수강생 (오프라인)", "value": "400+",    "unit": "명" },
-      { "label": "총 출강 횟수",         "value": "15+",   "unit": "강" },
-      { "label": "협업 기관",            "value": "10+",   "unit": "곳" }
+      { "label": "총 출강 횟수",         "value": "20+",   "unit": "강" },
+      { "label": "협업 기관",            "value": "15+",   "unit": "곳" }
     ],
     "education": [
       { "title": "박사 과정 수료", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
