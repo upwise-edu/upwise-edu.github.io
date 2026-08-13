@@ -17,7 +17,7 @@
       { "value": "4.9", "suffix": " / 5.0 rating" },
       { "value": "1000+", "suffix": " students" },
       { "value": "100+", "suffix": " reviews" },
-      { "value": "10+", "suffix": " organizations" }
+      { "value": "12+", "suffix": " organizations" }
     ],
     "ctaPrimary": "Online Courses",
     "ctaSecondary": "Mentoring Inquiry"
@@ -38,8 +38,8 @@
       { "label": "Online courses",     "value": "29",    "unit": "h · 179 lec" },
       { "label": "Average rating",     "value": "4.9",   "unit": "/5.0" },
       { "label": "Offline students",   "value": "400+",  "unit": "" },
-      { "label": "Lectures delivered", "value": "15+",   "unit": "" },
-      { "label": "Partner orgs",       "value": "10+",   "unit": "" }
+      { "label": "Lectures delivered", "value": "20+",   "unit": "" },
+      { "label": "Partner orgs",       "value": "15+",   "unit": "" }
     ],
     "education": [
       { "title": "Ph.D. Coursework Completed", "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
