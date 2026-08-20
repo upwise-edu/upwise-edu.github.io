@@ -1,6 +1,6 @@
 ---
 import type { Course } from '../data';
-import { formatDuration } from '../data';
+import { formatDuration, formatStudents } from '../data';
 
 interface Props {
   course: Course;
@@ -118,7 +118,7 @@ const categoryStyle: Record<Course['category'], string> = {
         <strong class="text-base-content">{course.rating.toFixed(1)}</strong>
       </span>
       <span>·</span>
-      <span>👥 {course.students}{studentsUnit}</span>
+      <span>👥 {formatStudents(course.students)}{studentsUnit}</span>
       <span>·</span>
       <span>⏱️ {formatDuration(course.durationMinutes)}</span>
     </div>
