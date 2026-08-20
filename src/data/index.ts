@@ -2,7 +2,22 @@
 // 이 파일은 그 데이터를 타입과 함께 export 하고, 보조 계산 함수를 제공합니다.
 // 사용자가 일반적으로 편집할 일은 없습니다 — site.json 만 편집하세요.
 
-import site from './site.json';
+import siteRaw from './site.json';
+import siteEnRaw from './site.en.json';
+
+// ───────── 사이트 공통 값 (여기 한 곳만 고치면 전 페이지 반영) ─────────
+
+/** 누적 온라인 수강생 수(콤마 표기). 인프런 수강생 갱신 시 이 값만 수정하세요. */
+export const STUDENTS_TOTAL = '1,100+';
+
+/** 데이터 안의 {{students}} 토큰을 STUDENTS_TOTAL 로 치환 (빌드 시 1회). */
+function hydrate<T>(data: T): T {
+  return JSON.parse(JSON.stringify(data).split('{{students}}').join(STUDENTS_TOTAL));
+}
+
+/** hydrate 된 사이트 데이터 — 모든 페이지/컴포넌트는 여기서 import 하세요. */
+export const site = hydrate(siteRaw);
+export const siteEn = hydrate(siteEnRaw);
 
 // ───────── Types ─────────
 
