@@ -10,9 +10,15 @@ import siteEnRaw from './site.en.json';
 /** 누적 온라인 수강생 수(콤마 표기). 인프런 수강생 갱신 시 이 값만 수정하세요. */
 export const STUDENTS_TOTAL = '1,100+';
 
-/** 데이터 안의 {{students}} 토큰을 STUDENTS_TOTAL 로 치환 (빌드 시 1회). */
+/** 온라인 강의 평균 평점(집계값). 갱신 시 이 값만 수정하세요. 과목별 평점은 courses.items[].rating. */
+export const RATING_AVG = '4.9';
+
+/** JSON 데이터의 {{토큰}} 을 공통 상수로 치환 (빌드 시 1회). */
+const TOKENS: Record<string, string> = { students: STUDENTS_TOTAL, rating: RATING_AVG };
 function hydrate<T>(data: T): T {
-  return JSON.parse(JSON.stringify(data).split('{{students}}').join(STUDENTS_TOTAL));
+  let s = JSON.stringify(data);
+  for (const [k, v] of Object.entries(TOKENS)) s = s.split(`{{${k}}}`).join(v);
+  return JSON.parse(s);
 }
 
 /** hydrate 된 사이트 데이터 — 모든 페이지/컴포넌트는 여기서 import 하세요. */
