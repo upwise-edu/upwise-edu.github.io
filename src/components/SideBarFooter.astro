@@ -1,5 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import { site } from "../data";
+const c = site.contact; // 연락처 정본은 site.json (한/영 동일)
 ---
 
 <div
@@ -10,7 +12,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 <div class="social-icons px-3 pb-5 pt-1 flex flex-wrap items-center self-center justify-center sticky bottom-0 bg-base-200 gap-1">
     <!-- Kakao open profile -->
     <a
-        href="https://open.kakao.com/me/upwise"
+        href={c.kakaoUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="icon-btn"
@@ -22,7 +24,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     <!-- Inflearn instructor page (official logo) -->
     <a
-        href="https://www.inflearn.com/users/212773/@upwise"
+        href={c.inflearnUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="icon-btn hover:bg-[#00C471]/10"
@@ -34,7 +36,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     <!-- Email -->
     <a
-        href="mailto:upwise0506@gmail.com"
+        href={`mailto:${c.email}`}
         class="icon-btn"
         aria-label="Email"
         title="Email"
@@ -47,12 +49,12 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     <!-- Instagram -->
     <a
-        href="https://www.instagram.com/upwise.gis.shlee"
+        href={c.instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="icon-btn icon-btn-insta"
         aria-label="인스타그램"
-        title="인스타그램 @upwise.gis.shlee"
+        title={`인스타그램 ${c.instagramDisplay}`}
     >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>

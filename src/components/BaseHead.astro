@@ -17,23 +17,24 @@ const { title, description, image = '/upwise_text.png', ogType = 'website', incl
 
 const keywords = lang === 'en' ? siteEn.site.keywords : site.site.keywords;
 
+// 도메인 정본은 astro.config.mjs 의 `site` (Astro.site). 연락처 정본은 site.json.
+const base = (Astro.site?.href ?? 'https://upwise.co.kr/').replace(/\/$/, '');
+const c = site.contact;
+
 // JSON-LD 구조화 데이터 — 메인 페이지에서만 사용 (Person + ProfilePage)
 const structuredData = {
 	"@context": "https://schema.org",
 	"@graph": [
 		{
 			"@type": "Person",
-			"@id": "https://upwise.co.kr/#person",
+			"@id": `${base}/#person`,
 			"name": "이승현",
 			"alternateName": "Seunghyeon Lee",
 			"jobTitle": "GIS·Python 전문 강사",
 			"description": "QGIS·Python·원격탐사 활용 GIS 강의 전문 강사",
-			"url": "https://upwise.co.kr",
-			"image": "https://upwise.co.kr/upwise_text.png",
-			"sameAs": [
-				"https://www.inflearn.com/users/212773/@upwise",
-				"https://open.kakao.com/me/upwise"
-			],
+			"url": base,
+			"image": `${base}/upwise_text.png`,
+			"sameAs": [c.inflearnUrl, c.kakaoUrl, c.instagramUrl],
 			"knowsAbout": [
 				"QGIS", "GIS", "Geographic Information System",
 				"Remote Sensing", "Python", "PostGIS",
@@ -47,28 +48,26 @@ const structuredData = {
 			"worksFor": {
 				"@type": "Organization",
 				"name": "UPWISE",
-				"url": "https://upwise.co.kr"
+				"url": base
 			}
 		},
 		{
 			"@type": "Organization",
-			"@id": "https://upwise.co.kr/#organization",
+			"@id": `${base}/#organization`,
 			"name": "UPWISE",
-			"url": "https://upwise.co.kr",
-			"logo": "https://upwise.co.kr/upwise_logo.png",
-			"founder": { "@id": "https://upwise.co.kr/#person" },
-			"sameAs": [
-				"https://www.inflearn.com/users/212773/@upwise"
-			]
+			"url": base,
+			"logo": `${base}/upwise_logo.png`,
+			"founder": { "@id": `${base}/#person` },
+			"sameAs": [c.inflearnUrl]
 		},
 		{
 			"@type": "WebSite",
-			"@id": "https://upwise.co.kr/#website",
-			"url": "https://upwise.co.kr",
+			"@id": `${base}/#website`,
+			"url": base,
 			"name": "UPWISE — GIS 전문 강사",
 			"description": site.site.description,
 			"inLanguage": "ko-KR",
-			"publisher": { "@id": "https://upwise.co.kr/#organization" }
+			"publisher": { "@id": `${base}/#organization` }
 		},
 		...site.courses.items.map((course) => ({
 			"@type": "Course",
@@ -79,9 +78,9 @@ const structuredData = {
 				"name": "Inflearn",
 				"sameAs": "https://www.inflearn.com"
 			},
-			"instructor": { "@id": "https://upwise.co.kr/#person" },
+			"instructor": { "@id": `${base}/#person` },
 			"url": course.url,
-			"image": course.image ? `https://upwise.co.kr${course.image}` : undefined,
+			"image": course.image ? `${base}${course.image}` : undefined,
 			"aggregateRating": {
 				"@type": "AggregateRating",
 				"ratingValue": course.rating,
@@ -116,9 +115,9 @@ const structuredData = {
 <meta http-equiv="content-language" content={lang} />
 
 <!-- hreflang alternates (KR / EN) -->
-<link rel="alternate" hreflang="ko" href="https://upwise.co.kr/" />
-<link rel="alternate" hreflang="en" href="https://upwise.co.kr/en/" />
-<link rel="alternate" hreflang="x-default" href="https://upwise.co.kr/" />
+<link rel="alternate" hreflang="ko" href={`${base}/`} />
+<link rel="alternate" hreflang="en" href={`${base}/en/`} />
+<link rel="alternate" hreflang="x-default" href={`${base}/`} />
 
 <!-- Search engine verification -->
 <meta name="naver-site-verification" content="613456383a86cd0ec8304900bc1e8e5bd07b11e2" />
