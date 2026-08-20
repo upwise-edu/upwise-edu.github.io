@@ -2,8 +2,8 @@
   "_help": "이 파일 하나에 사이트의 모든 텍스트와 데이터가 들어 있습니다. 따옴표 안의 내용만 바꾸세요. 콤마(,), 중괄호({}), 대괄호([])는 건드리지 마세요. 마지막 항목 뒤에 콤마가 있으면 안 됩니다. 줄바꿈은 문자열 안에 \\n 으로 표시하세요 (예: \"첫 줄\\n두 번째 줄\").",
 
   "site": {
-    "title": "QGIS 강의 · UPWISE 이승현 | QGIS·Python 전문 강사 (인프런 1,100+ 수강생)",
-    "description": "QGIS 강의 전문 강사 UPWISE 이승현. QGIS·Python·원격탐사 기반 GIS 온라인 강의를 인프런에서 제공합니다. 누적 1,100+ 수강생 평점 4.9, 공공기관·대학·기업 강의 의뢰 환영.",
+    "title": "QGIS 강의 · UPWISE 이승현 | QGIS·Python 전문 강사 (인프런 {{students}} 수강생)",
+    "description": "QGIS 강의 전문 강사 UPWISE 이승현. QGIS·Python·원격탐사 기반 GIS 온라인 강의를 인프런에서 제공합니다. 누적 {{students}} 수강생 평점 4.9, 공공기관·대학·기업 강의 의뢰 환영.",
     "keywords": "QGIS, QGIS 강사, GIS 강사, GIS 강의, QGIS 강의, Python GIS, 원격탐사 강사, 인프런 GIS, UPWISE, 이승현, 공간정보 강의, QGIS 자동화"
   },
 
@@ -25,13 +25,13 @@
   "hero": {
     "_help": "taglineLead/Highlight/Suffix 는 자유롭게 편집하세요. taglineHighlight 는 오렌지(GIS는 녹색)로 강조됩니다. stats 는 hero 하단 social proof 박스에 표시되는 4개 항목으로, 각 항목의 value(굵은 강조)와 suffix(보조 설명)를 자유롭게 수정 가능합니다. 첫 항목엔 별 아이콘이 자동 표시됩니다.",
     "eyebrow": "안녕하세요. GIS 전문 강사 UPWISE 이승현입니다.",
-    "taglineLead": "누적 1,100+ 명의 수강생이 선택한",
+    "taglineLead": "누적 {{students}} 명의 수강생이 선택한",
     "taglineHighlight": "QGIS 전문 강사",
     "taglineSuffix": "입니다.",
     "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 즉시 활용 가능한 강의를 만듭니다.",
     "stats": [
       { "value": "4.9", "suffix": "/5.0 평점" },
-      { "value": "1,100+", "suffix": "명 수강" },
+      { "value": "{{students}}", "suffix": "명 수강" },
       { "value": "100+", "suffix": "개 수강평" },
       { "value": "12+", "suffix": "개 기관 출강" }
     ],
@@ -50,7 +50,7 @@
     "expertiseAreas": ["QGIS 기초·심화 분석", "지도 시각화", "QGIS × Python 자동화", "PostGIS 대용량 쿼리", "원격 탐사 분석"],
     "expertiseLineSuffix": "입니다.",
     "stats": [
-      { "label": "누적 수강생 (온라인)", "value": "1,100+", "unit": "명" },
+      { "label": "누적 수강생 (온라인)", "value": "{{students}}", "unit": "명" },
       { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
       { "label": "평균 평점",            "value": "4.9",   "unit": "/5.0" },
       { "label": "누적 수강생 (오프라인)", "value": "400+",    "unit": "명" },
