@@ -53,7 +53,7 @@ export type Course = {
   url: string;
   description: string;
   rating: number;
-  students: string;
+  students: number;                // 원본 수강생 수 (표시는 formatStudents 로 10단위 내림+)
   durationMinutes: number;
   lectures: number;
   highlights: string[];
@@ -91,6 +91,11 @@ export function formatDuration(minutes: number, lang: 'en' | 'ko' = 'ko'): strin
   const m = minutes % 60;
   if (lang === 'en') return `${h}h ${m}m`;
   return `${h}시간 ${m}분`;
+}
+
+/** 과목별 수강생 수 표시: 10명 단위 내림 + '+' (예: 328 → "320+"). 인프런 실제 수강생 수만 site.json 에 갱신하면 됨. */
+export function formatStudents(n: number): string {
+  return `${Math.floor(n / 10) * 10}+`;
 }
 
 /** date 문자열에서 연도 추출 (예: "2025-03-15" → 2025) */
