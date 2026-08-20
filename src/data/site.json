@@ -33,7 +33,7 @@
       { "value": "{{rating}}", "suffix": "/5.0 평점" },
       { "value": "{{students}}", "suffix": "명 수강" },
       { "value": "100+", "suffix": "개 수강평" },
-      { "value": "12+", "suffix": "개 기관 출강" }
+      { "value": "{{partnerCount}}", "suffix": "개 기관 출강" }
     ],
     "ctaPrimary": "온라인 강의",
     "ctaSecondary": "멘토링 문의"

@@ -17,7 +17,7 @@
       { "value": "{{rating}}", "suffix": " / 5.0 rating" },
       { "value": "{{students}}", "suffix": " students" },
       { "value": "100+", "suffix": " reviews" },
-      { "value": "12+", "suffix": " organizations" }
+      { "value": "{{partnerCount}}", "suffix": " organizations" }
     ],
     "ctaPrimary": "Online Courses",
     "ctaSecondary": "Mentoring Inquiry"
