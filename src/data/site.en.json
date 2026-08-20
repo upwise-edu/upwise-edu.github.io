@@ -35,11 +35,11 @@
     "expertiseLineSuffix": ".",
     "stats": [
       { "label": "Online students",    "value": "{{students}}", "unit": "" },
-      { "label": "Online courses",     "value": "29",    "unit": "h · 179 lec" },
+      { "label": "Online courses",     "value": "{{onlineHours}}",    "unit": "h · {{onlineLectures}} lec" },
       { "label": "Average rating",     "value": "{{rating}}",   "unit": "/5.0" },
-      { "label": "Offline students",   "value": "400+",  "unit": "" },
-      { "label": "Lectures delivered", "value": "20+",   "unit": "" },
-      { "label": "Partner orgs",       "value": "15+",   "unit": "" }
+      { "label": "Offline students",   "value": "{{offlineStudents}}",  "unit": "" },
+      { "label": "Lectures delivered", "value": "{{lectureCount}}",   "unit": "" },
+      { "label": "Partner orgs",       "value": "{{partnerCount}}",   "unit": "" }
     ],
     "education": [
       { "title": "Ph.D. Coursework Completed", "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },

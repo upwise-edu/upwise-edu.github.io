@@ -13,8 +13,25 @@ export const STUDENTS_TOTAL = '1,100+';
 /** 온라인 강의 평균 평점(집계값). 갱신 시 이 값만 수정하세요. 과목별 평점은 courses.items[].rating. */
 export const RATING_AVG = '4.9';
 
-/** JSON 데이터의 {{토큰}} 을 공통 상수로 치환 (빌드 시 1회). */
-const TOKENS: Record<string, string> = { students: STUDENTS_TOTAL, rating: RATING_AVG };
+// 아래는 courses/lectures/partners 에서 파생하는 통계 — 하드코딩하지 말 것.
+const _c = siteRaw.courses.items;
+const _l = siteRaw.lectures.items;
+const ONLINE_HOURS = String(Math.round(_c.reduce((a, c) => a + c.durationMinutes, 0) / 60));   // 총 강의시간(시)
+const ONLINE_LECTURES = String(_c.reduce((a, c) => a + c.lectures, 0));                        // 총 강의 수
+const PARTNER_COUNT = String(siteRaw.partners.items.length);                                   // 협업기관 수 (그대로)
+const LECTURE_COUNT = String(_l.length);                                                       // 누적 출강 횟수 (그대로)
+const OFFLINE_STUDENTS = `${Math.floor(_l.reduce((a, l) => a + (l.attendees || 0), 0) / 100) * 100}+`; // 100명 단위 내림 + '+'
+
+/** JSON 데이터의 {{토큰}} 을 공통 상수/파생값으로 치환 (빌드 시 1회). */
+const TOKENS: Record<string, string> = {
+  students: STUDENTS_TOTAL,
+  rating: RATING_AVG,
+  onlineHours: ONLINE_HOURS,
+  onlineLectures: ONLINE_LECTURES,
+  partnerCount: PARTNER_COUNT,
+  lectureCount: LECTURE_COUNT,
+  offlineStudents: OFFLINE_STUDENTS,
+};
 function hydrate<T>(data: T): T {
   let s = JSON.stringify(data);
   for (const [k, v] of Object.entries(TOKENS)) s = s.split(`{{${k}}}`).join(v);
