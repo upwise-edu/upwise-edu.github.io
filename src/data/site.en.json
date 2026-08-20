@@ -3,7 +3,7 @@
 
   "site": {
     "title": "QGIS Courses · UPWISE — Seunghyeon Lee | QGIS·Python Instructor ({{students}} Students)",
-    "description": "QGIS course instructor Seunghyeon Lee (UPWISE). QGIS·Python·remote sensing online courses on Inflearn. {{students}} students, 4.9 rating. Available for public-sector, university, and corporate training.",
+    "description": "QGIS course instructor Seunghyeon Lee (UPWISE). QGIS·Python·remote sensing online courses on Inflearn. {{students}} students, {{rating}} rating. Available for public-sector, university, and corporate training.",
     "keywords": "QGIS, QGIS instructor, GIS instructor, GIS training, Python GIS, remote sensing, UPWISE, Seunghyeon Lee, spatial data analysis, QGIS automation"
   },
 
@@ -14,7 +14,7 @@
     "taglineSuffix": ".",
     "description": "I teach spatial data analysis and visualization using QGIS, Python, and PostGIS.\nWith clear explanations and hands-on examples that beginners can follow to the end, I build courses you can apply right away.",
     "stats": [
-      { "value": "4.9", "suffix": " / 5.0 rating" },
+      { "value": "{{rating}}", "suffix": " / 5.0 rating" },
       { "value": "{{students}}", "suffix": " students" },
       { "value": "100+", "suffix": " reviews" },
       { "value": "12+", "suffix": " organizations" }
@@ -36,7 +36,7 @@
     "stats": [
       { "label": "Online students",    "value": "{{students}}", "unit": "" },
       { "label": "Online courses",     "value": "29",    "unit": "h · 179 lec" },
-      { "label": "Average rating",     "value": "4.9",   "unit": "/5.0" },
+      { "label": "Average rating",     "value": "{{rating}}",   "unit": "/5.0" },
       { "label": "Offline students",   "value": "400+",  "unit": "" },
       { "label": "Lectures delivered", "value": "20+",   "unit": "" },
       { "label": "Partner orgs",       "value": "15+",   "unit": "" }

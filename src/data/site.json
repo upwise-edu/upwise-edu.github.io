@@ -3,7 +3,7 @@
 
   "site": {
     "title": "QGIS 강의 · UPWISE 이승현 | QGIS·Python 전문 강사 (인프런 {{students}} 수강생)",
-    "description": "QGIS 강의 전문 강사 UPWISE 이승현. QGIS·Python·원격탐사 기반 GIS 온라인 강의를 인프런에서 제공합니다. 누적 {{students}} 수강생 평점 4.9, 공공기관·대학·기업 강의 의뢰 환영.",
+    "description": "QGIS 강의 전문 강사 UPWISE 이승현. QGIS·Python·원격탐사 기반 GIS 온라인 강의를 인프런에서 제공합니다. 누적 {{students}} 수강생 평점 {{rating}}, 공공기관·대학·기업 강의 의뢰 환영.",
     "keywords": "QGIS, QGIS 강사, GIS 강사, GIS 강의, QGIS 강의, Python GIS, 원격탐사 강사, 인프런 GIS, UPWISE, 이승현, 공간정보 강의, QGIS 자동화"
   },
 
@@ -30,7 +30,7 @@
     "taglineSuffix": "입니다.",
     "description": "QGIS·Python·PostGIS를 활용한 공간 데이터 분석과 시각화를 가르칩니다.\n입문자도 끝까지 따라올 수 있는 설명과 실전 예제로, 즉시 활용 가능한 강의를 만듭니다.",
     "stats": [
-      { "value": "4.9", "suffix": "/5.0 평점" },
+      { "value": "{{rating}}", "suffix": "/5.0 평점" },
       { "value": "{{students}}", "suffix": "명 수강" },
       { "value": "100+", "suffix": "개 수강평" },
       { "value": "12+", "suffix": "개 기관 출강" }
@@ -52,7 +52,7 @@
     "stats": [
       { "label": "누적 수강생 (온라인)", "value": "{{students}}", "unit": "명" },
       { "label": "총 온라인 강의",       "value": "29",    "unit": "h · 179강" },
-      { "label": "평균 평점",            "value": "4.9",   "unit": "/5.0" },
+      { "label": "평균 평점",            "value": "{{rating}}",   "unit": "/5.0" },
       { "label": "누적 수강생 (오프라인)", "value": "400+",    "unit": "명" },
       { "label": "총 출강 횟수",         "value": "20+",   "unit": "강" },
       { "label": "협업 기관",            "value": "15+",   "unit": "곳" }
