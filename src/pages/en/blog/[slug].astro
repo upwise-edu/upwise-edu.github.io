@@ -4,7 +4,10 @@ import { getCollection } from "astro:content";
 import { fmtDate } from "../../../lib/blog";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
+  const posts = await getCollection(
+    "blog",
+    ({ id, data }) => id.startsWith("en/") && !data.draft
+  );
   return posts.map((post) => ({
     params: { slug: post.slug.replace(/^en\//, "") },
     props: { post },

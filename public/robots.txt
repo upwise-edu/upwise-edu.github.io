@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /go
+Disallow: /preview
 
 Sitemap: https://upwise.co.kr/sitemap-index.xml

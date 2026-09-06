@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { fmtDate, postSlug } from "../../../lib/blog";
+
+export async function getStaticPaths() {
+  const token = import.meta.env.PREVIEW_TOKEN;
+  if (!token) return [];
+  const posts = await getCollection("blog", ({ id }) => id.startsWith("ko/"));
+  return posts.map((post) => ({
+    params: { token, slug: postSlug(post) },
+    props: { post },
+  }));
+}
+
+const { token } = Astro.params;
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  lang="ko"
+  title={`[미리보기] ${post.data.title} | UPWISE`}
+  description={post.data.description}
+  image={post.data.cover}
+  noindex={true}
+>
+  <article class="pt-10 pb-16 animate-fade-up max-w-2xl">
+    <div class="mb-6 rounded-xl border-2 border-warning bg-warning/15 px-4 py-3">
+      <p class="type-body font-bold text-base-content">초안 미리보기(DRAFT)</p>
+      <p class="type-body-sm text-base-content/70 mt-1">
+        비공개 주소입니다. 공유하지 마세요.
+      </p>
+    </div>
+
+    <a href={`/preview/${token}/`} class="type-body-sm text-primary hover:underline">
+      ← 미리보기 목록
+    </a>
+    <div class="flex items-center gap-2 mt-4 mb-3 flex-wrap">
+      <span class="text-[11px] px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
+        {post.data.category}
+      </span>
+      <span class="type-body-sm text-base-content/55">{fmtDate(post.data.date)}</span>
+      {post.data.draft && (
+        <span class="text-[11px] px-2 py-0.5 rounded bg-warning/20 text-warning-content border border-warning/50 font-bold">
+          초안
+        </span>
+      )}
+    </div>
+    <h1 class="type-display-lg text-base-content mb-3">{post.data.title}</h1>
+    {post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-8">
+        {post.data.tags.map((tg) => (
+          <span class="text-xs text-base-content/55">#{tg}</span>
+        ))}
+      </div>
+    )}
+    <div class="prose prose-slate dark:prose-invert max-w-none prose-a:text-primary prose-headings:text-base-content prose-img:rounded-xl">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

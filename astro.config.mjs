@@ -10,8 +10,9 @@ export default defineConfig({
     mdx(),
     tailwind(),
     sitemap({
-      // /go 리다이렉트 + /blog 비공개 프리뷰는 sitemap 제외
-      filter: (page) => !page.includes('/go') && !page.includes('/blog'),
+      // /go 리다이렉트 + /blog 비공개 프리뷰 + /preview 비밀 토큰 URL 은 sitemap 제외
+      filter: (page) =>
+        !page.includes('/go') && !page.includes('/blog') && !page.includes('/preview'),
     }),
   ],
 });

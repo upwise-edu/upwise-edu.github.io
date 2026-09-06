@@ -23,6 +23,8 @@ jobs:
 
       - name: Install, build, and upload site
         uses: withastro/action@v3
+        env:
+          PREVIEW_TOKEN: ${{ secrets.PREVIEW_TOKEN }}
 
   deploy:
     needs: build
