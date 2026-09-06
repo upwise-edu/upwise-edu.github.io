@@ -227,3 +227,17 @@
 - `site.json`의 `about.stats` 항목의 누적 오프라인 수강생 수를 데이터에서 자동 계산되도록 수정
 - `site.json`의 각 강의별 수강생 수를 원본 정수로 저장하고, 표시 시 10단위 내림 + '+' 규칙을 적용하도록 수정
 
+## 2026-09-06
+
+* `_analytics` 폴더 생성 및 gitignore 설정
+* SEO/분석 태그를 포함한 `BaseHead.astro` 파일 검토
+* Google Search Console, GA4 측정 ID, hreflang, sitemap, robots.txt 등 SEO 설정 현황 확인
+* Google Cloud 서비스 계정 키 발급 및 GA4, Search Console에 읽기 권한 부여
+* GA4 속성 ID와 Search Console 속성 유형을 바탕으로 `config.json` 파일 생성
+* GA4 및 Search Console API를 사용하여 최근 28일간의 방문자 및 검색 데이터 수집
+* Bing Webmaster Tools API 키 발급 및 설정
+* Bing Webmaster Tools API를 사용하여 사이트 인증 및 노출/클릭 데이터 수집
+* sitemap 및 주요 URL 색인 상태 점검을 위한 `check_health.py` 스크립트 작성
+* Blog 콘텐츠 생성 폼 확정을 위한 `qgis-coordinate-system.md` 골든 샘플 작성
+* 초안 글 3개(SHP 파일, V-World 플러그인, 지오메트리 무결성) 작성
+
