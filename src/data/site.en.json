@@ -42,8 +42,9 @@
       { "label": "Partner orgs",       "value": "{{partnerCount}}",   "unit": "" }
     ],
     "education": [
-      { "title": "Ph.D. Awarded (Aug 2026)",      "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
-      { "title": "M.S. Graduated",             "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" }
+      { "title": "Ph.D. in Engineering (Aug 2026)",       "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
+      { "title": "Master of Landscape Architecture",     "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
+      { "title": "B.S. in Agriculture (Feb 2017)",       "subtitle": "Kyungpook National University" }
     ],
     "expertise": [
       {
