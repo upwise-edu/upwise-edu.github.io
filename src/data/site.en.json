@@ -42,7 +42,7 @@
       { "label": "Partner orgs",       "value": "{{partnerCount}}",   "unit": "" }
     ],
     "education": [
-      { "title": "Ph.D. Coursework Completed", "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
+      { "title": "Ph.D. Awarded (Aug 2026)",      "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
       { "title": "M.S. Graduated",             "subtitle": "Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" }
     ],
     "expertise": [
