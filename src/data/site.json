@@ -87,6 +87,7 @@
     "intro": "QGIS 온라인 강의를 인프런에서 제공합니다.\n입문 → 시각화 → 자동화 순으로 구성되어 단계별로 QGIS를 배울 수 있습니다.",
     "categoryMeta": {
       "입문":   { "name": "입문",   "label": "BEGINNER",      "description": "QGIS를 처음 배우는 분께.",                    "icon": "🌱" },
+      "분석":   { "name": "분석",   "label": "ANALYSIS",      "description": "벡터·래스터 공간분석을 제대로 익히고 싶은 분께.", "icon": "🔍" },
       "시각화": { "name": "시각화", "label": "VISUALIZATION", "description": "발표·보고서·콘텐츠용 지도가 필요한 분께.",     "icon": "🗺️" },
       "자동화": { "name": "자동화", "label": "AUTOMATION",    "description": "반복 작업을 코드로 자동화하고 싶은 분께.", "icon": "⚡" }
     },
@@ -95,7 +96,7 @@
         "id": "starter",
         "title": "QGIS 입문자 올인원 스타터팩 (이론/실습형)",
         "shortTitle": "QGIS 올인원 스타터팩",
-        "category": "입문",
+        "category": "분석",
         "isFree": false,
         "url": "https://inf.run/tDaJz",
         "description": "GIS 기초 개념부터 실전 분석까지 한 번에 다루는 종합 입문 강의.\n이론과 실습 병행으로 입문자도 끝까지 따라올 수 있도록 구성.",
