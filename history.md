@@ -241,3 +241,12 @@
 * Blog 콘텐츠 생성 폼 확정을 위한 `qgis-coordinate-system.md` 골든 샘플 작성
 * 초안 글 3개(SHP 파일, V-World 플러그인, 지오메트리 무결성) 작성
 
+## 2026-09-13
+
+- `04.lectures/00.inflearn_published` 폴더에 인프런 공개 강의 4개의 커리큘럼을 정본으로 커밋했습니다.
+- `src/content/blog/ko/qgis-vworld-plugin.md` 파일 삭제 및 관련 링크를 재연결했습니다.
+- 블로그 로드맵 문서를 `_docs/blog_roadmap.md`에 저장했습니다.
+- 구미도시공사 특강 이력과 로고를 `site.json` 및 `site.en.json`에 추가했습니다.
+- 강사 학력을 박사(공학박사)/석사(조경학석사)/학사(농학사)로 upwise 사이트에 반영했습니다.
+- QGIS 온라인 강의 섹션 카테고리를 '입문/분석/시각화/자동화' 순으로 변경하고, 카테고리 타일 레이아웃을 수정했습니다.
+
