@@ -42,9 +42,9 @@
       { "label": "Partner orgs",       "value": "{{partnerCount}}",   "unit": "" }
     ],
     "education": [
-      { "title": "Ph.D. in Engineering (Aug 2026)",             "subtitle": "Interdisciplinary Program in Landscape Architecture, Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
-      { "title": "Master of Landscape Architecture (Feb 2022)", "subtitle": "Dept. of Environmental Landscape Architecture, Graduate School of Environmental Studies, SNU · GIS / Remote Sensing" },
-      { "title": "B.S. in Agriculture (Feb 2017)",             "subtitle": "Dept. of Landscape Architecture, College of Agriculture and Life Sciences, Kyungpook National University" }
+      { "title": "Ph.D. · 2022.03 — 2026.08", "subtitle": "Interdisciplinary Program in Landscape Architecture · Integrated Major in SmartCity Global Convergence, Seoul National University" },
+      { "title": "M.A. · 2020.03 — 2022.02",  "subtitle": "Landscape Architecture · Integrated Major in SmartCity Global Convergence, Graduate School of Environmental Studies, Seoul National University" },
+      { "title": "B.S. · 2011.03 — 2017.02",  "subtitle": "Landscape Architecture, College of Agriculture & Life Sciences, Kyungpook National University" }
     ],
     "expertise": [
       {
