@@ -143,6 +143,7 @@
     "title": "Teaching Experience",
     "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
     "items": [
+      { "date": "2026-09-10", "dateEnd": null,         "organization": "Gumi Urban Corp.",         "title": "Sewerage Design Standards Course",                                        "audience": "Sewage treatment staff",        "attendees": 12 },
       { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "Incheon URC",              "title": "Urban Regeneration Site Performance Indicators Analysis with QGIS",       "audience": "Incheon URC staff",             "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Advanced)",         "audience": "University students",           "attendees": 25 },
       { "date": "2026-07-22", "dateEnd": "2026-07-23", "organization": "Incheon URC",              "title": "Urban Regeneration Site Baseline Analysis with QGIS",                     "audience": "Incheon URC staff",             "attendees": 15 },
@@ -194,6 +195,7 @@
       { "name": "Gwanak-gu Office",     "nameEn": "Gwanak District",           "category": "public",    "logo": "/partners/gwanak.svg" },
       { "name": "Chungnam ARES",        "nameEn": "Chungnam Agri. R&E",        "category": "public",    "logo": "/partners/cnares.svg" },
       { "name": "Incheon URC",          "nameEn": "Incheon Urban Regen. Center", "category": "public",  "logo": "/partners/incheon_urc.jpg" },
+      { "name": "Gumi Urban Corp.",     "nameEn": "Gumi Urban Corporation",    "category": "public",    "logo": "/partners/gumi.svg" },
 
       { "name": "Hyundai Mobis",        "nameEn": "Hyundai Mobis",             "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
       { "name": "Hyundai NGV",          "nameEn": "Hyundai NGV",               "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },

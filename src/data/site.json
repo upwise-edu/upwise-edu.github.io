@@ -159,6 +159,7 @@
     "title": "강의 경력",
     "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
     "items": [
+      { "date": "2026-09-10", "dateEnd": null,         "organization": "구미도시공사",                         "title": "하수도 설계기준 해설 과정",                                                  "audience": "하수처리업 재직자",        "attendees": 12 },
       { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 종합성과지표 분석",                            "audience": "인천도시재생센터 재직자",  "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "한국상하수도협회",                     "title": "74기 물환경 엔지니어링 TOOL 마스터 과정(고급)",                             "audience": "대학생",                   "attendees": 25 },
       { "date": "2026-07-22", "dateEnd": "2026-07-23", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 기초현황 분석",                                "audience": "인천도시재생센터 재직자",  "attendees": 15 },
@@ -211,6 +212,7 @@
       { "name": "관악구청",              "nameEn": "Gwanak-gu",      "category": "public",    "logo": "/partners/gwanak.svg" },
       { "name": "충남농업기술원",        "nameEn": "CNARES",         "category": "public",    "logo": "/partners/cnares.svg" },
       { "name": "인천 도시재생지원센터",  "nameEn": "Incheon URC",    "category": "public",    "logo": "/partners/incheon_urc.jpg" },
+      { "name": "구미도시공사",          "nameEn": "Gumi Urban Corp.", "category": "public",   "logo": "/partners/gumi.svg" },
 
       { "name": "현대모비스",            "nameEn": "Hyundai Mobis",  "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
       { "name": "현대NGV",               "nameEn": "Hyundai NGV",    "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
