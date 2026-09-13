@@ -58,7 +58,7 @@
       { "label": "협업 기관",            "value": "{{partnerCount}}",   "unit": "곳" }
     ],
     "education": [
-      { "title": "박사 과정 수료", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
+      { "title": "박사 학위 취득 (2026. 8)", "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" },
       { "title": "석사 졸업",      "subtitle": "서울대학교 환경대학원 · GIS / Remote Sensing 전공" }
     ],
     "expertise": [
