@@ -42,9 +42,9 @@
       { "label": "Partner orgs",       "value": "{{partnerCount}}",   "unit": "" }
     ],
     "education": [
-      { "title": "Ph.D. in Engineering · 2022.03 — 2026.08",          "subtitle": "Interdisciplinary Program in Landscape Architecture · Integrated Major in SmartCity Global Convergence, Seoul National University" },
-      { "title": "M.A. in Landscape Architecture · 2020.03 — 2022.02", "subtitle": "Landscape Architecture · Integrated Major in SmartCity Global Convergence, Graduate School of Environmental Studies, Seoul National University" },
-      { "title": "B.S. in Agriculture · 2011.03 — 2017.02",           "subtitle": "Landscape Architecture, College of Agriculture & Life Sciences, Kyungpook National University" }
+      { "title": "Ph.D. (Engineering) · 2022.03 — 2026.08",           "subtitle": "Interdisciplinary Program in Landscape Architecture · Integrated Major in SmartCity Global Convergence, Seoul National University" },
+      { "title": "M.A. (Landscape Architecture) · 2020.03 — 2022.02", "subtitle": "Landscape Architecture · Integrated Major in SmartCity Global Convergence, Graduate School of Environmental Studies, Seoul National University" },
+      { "title": "B.S. (Agriculture) · 2011.03 — 2017.02",            "subtitle": "Landscape Architecture, College of Agriculture & Life Sciences, Kyungpook National University" }
     ],
     "expertise": [
       {
