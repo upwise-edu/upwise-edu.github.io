@@ -1,5 +1,5 @@
 {
-  "_help": "English mirror of site.json. Same structure. Category keys under courses (입문/시각화/자동화) are kept as internal IDs — do NOT translate the keys, only the 'name'/'label' fields. Edit text inside quotes only.",
+  "_help": "English mirror of site.json. Same structure. Category keys under courses (입문/분석/시각화/자동화; AI to be added when the QGIS+MCP course launches) are kept as internal IDs — do NOT translate the keys, only the 'name'/'label' fields. Edit text inside quotes only.",
 
   "site": {
     "title": "QGIS Courses · UPWISE — Seunghyeon Lee | QGIS·Python Instructor ({{students}} Students)",
@@ -71,6 +71,7 @@
     "intro": "QGIS online courses available on Inflearn.\nStructured in the order Beginner → Visualization → Automation to learn QGIS step by step.",
     "categoryMeta": {
       "입문":   { "name": "Beginner",      "label": "BEGINNER",      "description": "For those learning QGIS for the first time.",                 "icon": "🌱" },
+      "분석":   { "name": "Analysis",      "label": "ANALYSIS",      "description": "For mastering vector and raster spatial analysis.",           "icon": "🔍" },
       "시각화": { "name": "Visualization", "label": "VISUALIZATION", "description": "For maps in presentations, reports, and content.",            "icon": "🗺️" },
       "자동화": { "name": "Automation",    "label": "AUTOMATION",    "description": "For automating repetitive tasks with code.",                 "icon": "⚡" }
     },
@@ -79,7 +80,7 @@
         "id": "starter",
         "title": "QGIS Beginner All-in-One Starter Pack (Theory/Practice)",
         "shortTitle": "QGIS All-in-One Starter Pack",
-        "category": "입문",
+        "category": "분석",
         "isFree": false,
         "url": "https://inf.run/tDaJz",
         "description": "A comprehensive intro course covering everything from GIS fundamentals to real-world analysis.\nTheory and practice combined so beginners can follow through to the end.",

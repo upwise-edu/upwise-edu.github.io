@@ -48,7 +48,7 @@ export type Course = {
   id: string;
   title: string;
   shortTitle: string;
-  category: '입문' | '시각화' | '자동화';
+  category: '입문' | '분석' | '시각화' | '자동화';   // 순서는 site.json categoryMeta 키 순서. QGIS+MCP 강의 공개 시 'AI' 추가 예정
   isFree: boolean;
   url: string;
   description: string;
