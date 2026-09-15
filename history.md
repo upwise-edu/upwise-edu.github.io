@@ -250,3 +250,14 @@
 - 강사 학력을 박사(공학박사)/석사(조경학석사)/학사(농학사)로 upwise 사이트에 반영했습니다.
 - QGIS 온라인 강의 섹션 카테고리를 '입문/분석/시각화/자동화' 순으로 변경하고, 카테고리 타일 레이아웃을 수정했습니다.
 
+## 2026-09-15
+
+* Google Analytics 4 속성 ID를 `site.json`에 업데이트하고 GA4 태그 배포 완료 확인
+* Google Search Console에 대한 서비스 계정 인증 및 조회 시도
+* Google Analytics 4에 서비스 계정 사용자 추가 오류 분석 및 해결 시도
+* Google Analytics 4에 OAuth 클라이언트를 생성하고 관련 정보를 `ga4_oauth_client.json`에 저장
+* Google Analytics 4 데이터 확인 결과, 활성 사용자 0, 세션 0, 페이지뷰 0으로 집계됨
+* GitHub 계정 복구 관련 문제 진단 및 정보 수집 (SSH 키, 토큰 인증, 저장된 토큰 확인)
+* GitHub 계정 복구 절차 및 정책 확인 (2FA 자격 증명 분실 시 지원 불가 등)
+* GitHub 계정 복구와 관련하여 `project_github_account_recovery.md` 파일 생성 및 MEMORY.md 인덱스 업데이트
+
