@@ -13,16 +13,16 @@
   in Plugins / Manage and Install Plugins / Settings / Add.
 -->
 <plugins>
-  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.1.3">
+  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.1.4">
     <description>Chat dock for QGIS backed by a long-lived Claude Code CLI session.</description>
     <about>A thin chat dock widget for QGIS. Reasoning and tool execution run in a separate long-lived Claude Code CLI process (stream-json in/out), so the plugin reuses an existing Claude Code installation and its subscription authentication. 0.1.0 includes streaming chat, a tool-use approval bar, skill preset buttons with prerequisite checks, and UPWISE branding. Requires the Claude Code CLI and, for map control, the QGIS MCP plugin with the UPWISE toolkit.</about>
     <qgis_minimum_version>3.28</qgis_minimum_version>
     <qgis_maximum_version>4.99</qgis_maximum_version>
     <homepage>https://upwise.co.kr</homepage>
-    <file_name>upwise_chat_for_qgis.0.1.3.zip</file_name>
+    <file_name>upwise_chat_for_qgis.0.1.4.zip</file_name>
     <icon>resources/icon.png</icon>
     <author_name>UPWISE</author_name>
-    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.1.3.zip</download_url>
+    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.1.4.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>
     <repository>https://github.com/upwise-edu/upwise-chat-for-qgis</repository>
