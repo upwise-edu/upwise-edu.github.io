@@ -12,6 +12,7 @@ const { course, lang = 'ko' } = Astro.props as Props;
 // 카테고리 키(한국어)는 내부 식별자. 화면 표시는 언어별로 변환.
 const categoryDisplay: Record<Course['category'], { ko: string; en: string }> = {
   '입문':   { ko: '입문',   en: 'Beginner' },
+  '분석':   { ko: '분석',   en: 'Analysis' },
   '시각화': { ko: '시각화', en: 'Visualization' },
   '자동화': { ko: '자동화', en: 'Automation' },
 };
@@ -20,12 +21,14 @@ const studentsUnit = lang === 'ko' ? '명' : '';
 
 const gradientByCategory: Record<Course['category'], string> = {
   '입문': 'from-[#1e3a5f] via-[#2c4870] to-[#f7931e]',
+  '분석': 'from-[#134e6f] via-[#1e88a8] to-[#f7931e]',
   '시각화': 'from-[#ff6b35] via-[#f7931e] to-[#ffa756]',
   '자동화': 'from-[#0a1929] via-[#1e3a5f] to-[#f7931e]',
 };
 
 const iconByCategory: Record<Course['category'], string> = {
   '입문': '🌱',
+  '분석': '📊',
   '시각화': '🗺️',
   '자동화': '⚡',
 };
@@ -34,6 +37,7 @@ const iconByCategory: Record<Course['category'], string> = {
 // 라이트/다크 모드 모두에서 분명히 보이도록 채도 높은 색 사용
 const categoryStyle: Record<Course['category'], string> = {
   '입문':   'bg-emerald-500 text-white',  // 성장의 녹색
+  '분석':   'bg-sky-600 text-white',      // 분석의 파랑 (📊 매칭)
   '시각화': 'bg-[#f7931e] text-white',     // 브랜드 오렌지
   '자동화': 'bg-indigo-500 text-white',    // 일렉트릭 인디고 (⚡ 매칭)
 };
