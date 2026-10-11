@@ -200,7 +200,7 @@
       { "name": "Incheon URC",          "nameEn": "Incheon Urban Regen. Center", "category": "public",  "logo": "/partners/incheon_urc.jpg" },
       { "name": "Gumi Urban Corp.",     "nameEn": "Gumi Urban Corporation",    "category": "public",    "logo": "/partners/gumi.svg" },
 
-      { "name": "Hyundai Mobis",        "nameEn": "Hyundai Mobis",             "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
+      { "name": "Hyundai AutoEver",     "nameEn": "Hyundai AutoEver",          "category": "corporate", "logo": "/partners/hyundai_autoever.svg" },
       { "name": "Hyundai NGV",          "nameEn": "Hyundai NGV",               "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
       { "name": "KECC",                 "nameEn": "Korea Engineering Consultants Corp.", "category": "corporate", "logo": "/partners/kecc.svg" },
 

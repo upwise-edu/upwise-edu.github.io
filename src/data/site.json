@@ -217,7 +217,7 @@
       { "name": "인천 도시재생지원센터",  "nameEn": "Incheon URC",    "category": "public",    "logo": "/partners/incheon_urc.jpg" },
       { "name": "구미도시공사",          "nameEn": "Gumi Urban Corp.", "category": "public",   "logo": "/partners/gumi.svg" },
 
-      { "name": "현대모비스",            "nameEn": "Hyundai Mobis",  "category": "corporate", "logo": "/partners/hyundai_mobis.svg" },
+      { "name": "현대오토에버",          "nameEn": "Hyundai AutoEver", "category": "corporate", "logo": "/partners/hyundai_autoever.svg" },
       { "name": "현대NGV",               "nameEn": "Hyundai NGV",    "category": "corporate", "logo": "/partners/hyundai_ngv.svg" },
       { "name": "한국종합기술",          "nameEn": "KECC",           "category": "corporate", "logo": "/partners/kecc.svg" },
 
