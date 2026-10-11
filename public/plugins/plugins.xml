@@ -13,16 +13,16 @@
   in Plugins / Manage and Install Plugins / Settings / Add.
 -->
 <plugins>
-  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.2.2">
+  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.2.3">
     <description>Chat dock for QGIS backed by a long-lived Claude Code CLI session.</description>
-    <about>A thin chat dock widget for QGIS. Reasoning and tool execution run in a separate long-lived Claude Code CLI process (stream-json in/out), so the plugin reuses an existing Claude Code installation and its subscription authentication. Features streaming chat, a tool-use approval bar, skill preset buttons with prerequisite checks, and UPWISE branding. 0.2.0 adds general-purpose public data collection: the plugin runs its own collection server, so API keys stay out of the model context and never leave the machine. 0.2.1 adds a non-modal key settings panel in the dock and value-based redaction of stored keys in the transcript, the session recording and the diagnostic log. Requires the Claude Code CLI and, for map control, the QGIS MCP plugin with the UPWISE toolkit.</about>
+    <about>A thin chat dock widget for QGIS. Reasoning and tool execution run in a separate long-lived Claude Code CLI process (stream-json in/out), so the plugin reuses an existing Claude Code installation and its subscription authentication. Features streaming chat, a tool-use approval bar, skill preset buttons with prerequisite checks, and UPWISE branding. 0.2.0 adds general-purpose public data collection: the plugin runs its own collection server, so API keys stay out of the model context and never leave the machine. 0.2.1 adds a non-modal key settings panel in the dock and value-based redaction of stored keys in the transcript, the session recording and the diagnostic log. 0.2.3 adds per-cell copy buttons, drag selection of a row range with Ctrl+C, and one-button Markdown export of the whole transcript (redacted, written to a fixed path under the QGIS profile). Requires the Claude Code CLI and, for map control, the QGIS MCP plugin with the UPWISE toolkit.</about>
     <qgis_minimum_version>3.28</qgis_minimum_version>
     <qgis_maximum_version>4.99</qgis_maximum_version>
     <homepage>https://upwise.co.kr</homepage>
-    <file_name>upwise_chat_for_qgis.0.2.2.zip</file_name>
+    <file_name>upwise_chat_for_qgis.0.2.3.zip</file_name>
     <icon>resources/icon.png</icon>
     <author_name>UPWISE</author_name>
-    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.2.2.zip</download_url>
+    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.2.3.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>
     <repository>https://github.com/upwise-edu/upwise-chat-for-qgis</repository>
