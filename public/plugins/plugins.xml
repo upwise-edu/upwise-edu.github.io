@@ -13,16 +13,16 @@
   in Plugins / Manage and Install Plugins / Settings / Add.
 -->
 <plugins>
-  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.4.0">
+  <pyqgis_plugin name="UPWISE Chat for QGIS" version="0.4.1">
     <description>Chat dock for QGIS backed by a long-lived Claude Code CLI session.</description>
     <about>A chat dock widget for QGIS. Reasoning and tool execution run in a separate long-lived Claude Code CLI process (stream-json in/out), so the plugin reuses an existing Claude Code installation and its existing authentication. Features streaming chat, a tool-use approval bar, skill preset buttons with prerequisite checks, per-cell and row-range copy, one-button Markdown export of the whole transcript (written to a fixed path under the QGIS profile), and UPWISE branding. Map control is built in as of 0.3.0: the plugin runs its own QGIS socket server on an ephemeral port and its own standard-library bridge, so there is no second QGIS plugin to install, no Run MCP button to press, and map control needs no uvx and no network fetch at run time. 78 QGIS tools are offered, the socket requires a per-session token, code and SQL execution tools are refused by the server itself, a tool result larger than 256 KB is cut at that limit with a hint to narrow the request, and the built-in connection check reports the port, the plugin version, the QGIS version and the layer count without spending a model turn. General-purpose public data collection runs in a plugin-owned server with a non-modal key settings panel in the dock, so API keys stay out of the model context and are sent only to the data provider's API, in HTTP requests the plugin makes itself. Once a key is stored, its value is redacted from what the plugin writes after that: the transcript, every clipboard write, the export, the session recording and the diagnostic log. Requires the Claude Code CLI.</about>
     <qgis_minimum_version>3.28</qgis_minimum_version>
     <qgis_maximum_version>4.99</qgis_maximum_version>
     <homepage>https://upwise.co.kr</homepage>
-    <file_name>upwise_chat_for_qgis.0.4.0.zip</file_name>
+    <file_name>upwise_chat_for_qgis.0.4.1.zip</file_name>
     <icon>resources/icon.png</icon>
     <author_name>UPWISE</author_name>
-    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.4.0.zip</download_url>
+    <download_url>https://upwise.co.kr/plugins/upwise_chat_for_qgis.0.4.1.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>
     <repository>https://github.com/upwise-edu/upwise-chat-for-qgis</repository>
