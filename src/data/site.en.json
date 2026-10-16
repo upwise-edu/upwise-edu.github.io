@@ -145,6 +145,8 @@
     "title": "Teaching Experience",
     "intro": "A record of university courses, workshops, special lectures, and custom training delivered for schools, public institutions, and companies.",
     "items": [
+      { "date": "2026-10-15", "dateEnd": "2026-10-16", "organization": "HBNU",                     "title": "QGIS Python Automation & Automated Data Model Analysis",                  "audience": "Urban Engineering undergraduates", "attendees": 30, "hours": 12 },
+      { "date": "2026-10-12", "dateEnd": "2026-10-14", "organization": "Hyundai NGV",              "title": "AI-Powered Task Automation with QGIS MCP",                                "audience": "Hyundai Autoever staff",        "attendees": 15, "hours": 21 },
       { "date": "2026-09-10", "dateEnd": null,         "organization": "Gumi Urban Corp.",         "title": "Sewerage Design Standards Course",                                        "audience": "Sewage treatment staff",        "attendees": 12 },
       { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "Incheon URC",              "title": "Urban Regeneration Site Performance Indicators Analysis with QGIS",       "audience": "Incheon URC staff",             "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "KWWA",                     "title": "Water Environment Engineering Tool Master, Cohort 74 (Advanced)",         "audience": "University students",           "attendees": 25 },
@@ -189,6 +191,7 @@
       { "name": "SNU GSES",             "nameEn": "Grad. School of Env. Studies", "category": "academic", "logo": "/partners/gses.svg" },
       { "name": "Incheon Nat'l Univ.",  "nameEn": "INU",                       "category": "academic",  "logo": "/partners/inu.svg" },
       { "name": "Hanyang Cyber Univ.",  "nameEn": "HYCU",                      "category": "academic",  "logo": "/partners/hanyang_cyber.svg" },
+      { "name": "Hanbat Nat'l Univ.",   "nameEn": "HBNU",                      "category": "academic",  "logo": "/partners/hbnu.svg" },
 
       { "name": "K-water",              "nameEn": "Korea Water Resources Corp.", "category": "public",  "logo": "/partners/k-water.svg" },
       { "name": "KWWA",                 "nameEn": "Korea Water & Wastewater Works Assoc.", "category": "public", "logo": "/partners/kwwa.svg" },

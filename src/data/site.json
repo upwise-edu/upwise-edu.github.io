@@ -161,6 +161,8 @@
     "title": "강의 경력",
     "intro": "학교·기관·기업을 대상으로 진행한 대학 정규 수업·워크숍·특강·맞춤형 강의 이력입니다.",
     "items": [
+      { "date": "2026-10-15", "dateEnd": "2026-10-16", "organization": "국립한밭대학교",                       "title": "QGIS Python 자동화와 데이터 모델 분석 자동화",                               "audience": "도시공학과 학부생",        "attendees": 30, "hours": 12 },
+      { "date": "2026-10-12", "dateEnd": "2026-10-14", "organization": "현대NGV",                              "title": "AI를 활용한 QGIS MCP 활용 업무 자동화",                                      "audience": "현대오토에버 재직자",      "attendees": 15, "hours": 21 },
       { "date": "2026-09-10", "dateEnd": null,         "organization": "구미도시공사",                         "title": "하수도 설계기준 해설 과정",                                                  "audience": "하수처리업 재직자",        "attendees": 12 },
       { "date": "2026-07-30", "dateEnd": "2026-07-31", "organization": "인천도시재생센터",                     "title": "QGIS를 활용한 도시재생 대상지 종합성과지표 분석",                            "audience": "인천도시재생센터 재직자",  "attendees": 15 },
       { "date": "2026-07-27", "dateEnd": "2026-07-29", "organization": "한국상하수도협회",                     "title": "74기 물환경 엔지니어링 TOOL 마스터 과정(고급)",                             "audience": "대학생",                   "attendees": 25 },
@@ -206,6 +208,7 @@
       { "name": "서울대학교 환경대학원", "nameEn": "GSES, SNU",      "category": "academic",  "logo": "/partners/gses.svg" },
       { "name": "인천대학교",            "nameEn": "INU",            "category": "academic",  "logo": "/partners/inu.svg" },
       { "name": "한양사이버대학교",      "nameEn": "HYCU",           "category": "academic",  "logo": "/partners/hanyang_cyber.svg" },
+      { "name": "국립한밭대학교",        "nameEn": "HBNU",           "category": "academic",  "logo": "/partners/hbnu.svg" },
 
       { "name": "한국수자원공사",        "nameEn": "K-water",        "category": "public",    "logo": "/partners/k-water.svg" },
       { "name": "한국상하수도협회",      "nameEn": "KWWA",           "category": "public",    "logo": "/partners/kwwa.svg" },
