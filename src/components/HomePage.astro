@@ -121,9 +121,32 @@ const categoryKeys = Object.keys(categoryMeta);
   <!-- Education -->
   <p class="type-eyebrow text-primary mb-5">EDUCATION</p>
   <div class="time-line-container grid gap-4 mb-12">
-    {data.about.education.map((e: any) => (
-      <TimeLineElement title={e.title} subtitle={e.subtitle} />
-    ))}
+    {data.about.education.map((e: any) =>
+      e.link ? (
+        <TimeLineElement title={e.title} subtitle={e.subtitle}>
+          <a
+            slot="aside"
+            class="portfolio-badge"
+            href={e.link.url}
+            data-base={e.link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`drseunghyeonlee.com — ${e.link.label}`}
+            title={`drseunghyeonlee.com — ${e.link.label}`}
+          >
+            <span class="portfolio-wordmark"><span class="pw-name">{e.link.wordmark}</span><span class="pw-dot">.</span></span>
+            <span class="portfolio-badge-text">{e.link.label}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </TimeLineElement>
+      ) : (
+        <TimeLineElement title={e.title} subtitle={e.subtitle} />
+      )
+    )}
   </div>
 
   <!-- Expertise (detailed) -->
@@ -330,6 +353,27 @@ const categoryKeys = Object.keys(categoryMeta);
     </div>
   </div>
 </section>
+
+<!-- Carry the current light/dark theme to drseunghyeonlee.com via ?theme= so the
+     external site opens in the matching theme. Keeps in sync on toggle. -->
+<script is:inline>
+  (function () {
+    function sync() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'upwise-dark';
+      document.querySelectorAll('a.portfolio-badge').forEach(function (badge) {
+        const base = badge.getAttribute('data-base') || badge.getAttribute('href');
+        if (!base) return;
+        const sep = base.indexOf('?') >= 0 ? '&' : '?';
+        badge.setAttribute('href', base + sep + 'theme=' + (dark ? 'dark' : 'light'));
+      });
+    }
+    sync();
+    new MutationObserver(sync).observe(document.documentElement, {
+      attributes: true, attributeFilter: ['data-theme'],
+    });
+    document.addEventListener('astro:after-swap', sync);
+  })();
+</script>
 
 <!-- ───────── Scroll-spy ───────── -->
 <script is:inline>

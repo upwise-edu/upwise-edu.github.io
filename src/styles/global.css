@@ -472,6 +472,69 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   color: #f7931e;
 }
 
+/* portfolio badge — links to drseunghyeonlee.com from the EDUCATION (Ph.D.) row.
+   Reverse counterpart of the .upwise-badge on drseunghyeonlee.com's Teaching
+   section; same pill design, but the brand colors are the TARGET site's palette
+   (accent gold #e0b941, light body #0f2218, dark body #e2e8e0).
+   Colors are written as explicit hex/rgba (NOT hsl(var(--bc)) — DaisyUI v4
+   stores tokens as OKLCH, so hsl(var(...)) is invalid and renders nothing). */
+.portfolio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #fdfdfb;                       /* near-white, faint warm tint */
+  border: 1.5px solid rgba(15, 34, 24, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.portfolio-badge:hover {
+  transform: translateY(-1px);
+  border-color: rgba(224, 185, 65, 0.55);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.10);
+}
+/* Text wordmark: 이승현. / Seunghyeon Lee. */
+.portfolio-wordmark {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.portfolio-wordmark .pw-name { color: #0f2218; }   /* shleeclay base-content (light) */
+.portfolio-wordmark .pw-dot { color: #e0b941; }    /* shleeclay accent gold */
+/* Descriptor text (연구 포트폴리오 / Research portfolio) */
+.portfolio-badge-text {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: rgba(15, 34, 24, 0.6);
+  white-space: nowrap;
+  padding-left: 8px;
+  border-left: 1px solid rgba(15, 34, 24, 0.18);
+}
+.portfolio-badge svg { color: rgba(15, 34, 24, 0.45); }
+
+/* Dark mode: subtle chip (not the bright white plate), light text, clear border. */
+[data-theme="upwise-dark"] .portfolio-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: none;
+}
+[data-theme="upwise-dark"] .portfolio-badge:hover {
+  border-color: rgba(224, 185, 65, 0.55);
+  box-shadow: none;
+}
+[data-theme="upwise-dark"] .portfolio-wordmark .pw-name { color: #e2e8e0; }
+[data-theme="upwise-dark"] .portfolio-badge-text {
+  color: rgba(226, 232, 224, 0.62);
+  border-left-color: rgba(255, 255, 255, 0.20);
+}
+[data-theme="upwise-dark"] .portfolio-badge svg { color: rgba(226, 232, 224, 0.5); }
+
 /* Section rhythm: 96px section gap on desktop, 64px on mobile */
 .section-gap {
   margin-top: 64px;
