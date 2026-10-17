@@ -476,10 +476,11 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
    Reverse counterpart of the .upwise-badge on drseunghyeonlee.com's Teaching
    section. Sized to sit at the height of the title text beside it (~22px, so it
    reads as part of that line rather than as a button stacked on it), and colored
-   with THIS site's palette: a warm primary-tinted chip (the same #fff5e6 →
-   #ffe7c4 warm pair the color blocks use) with orange text — light uses #a8540a
-   so 13px text still clears WCAG AA on that tint (measured 4.94:1), dark uses
-   primary #f7931e on a translucent orange wash (6.25:1).
+   with THIS site's palette: a lightly warm primary-tinted chip (a paler step of
+   the #fff5e6 → #ffe7c4 warm pair the color blocks use) with orange text, so the
+   border and label carry the highlight and the fill stays quiet. Light text is
+   #a8540a, not primary #ea7c0d, so 13px text clears WCAG AA on that tint
+   (measured 5.13:1); dark is primary #f7931e on a faint orange wash (6.91:1).
    Colors are written as explicit hex/rgba (NOT hsl(var(--bc)) — DaisyUI v4
    stores tokens as OKLCH, so hsl(var(...)) is invalid and renders nothing). */
 .portfolio-badge {
@@ -489,14 +490,14 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   flex-shrink: 0;
   padding: 2px 10px;
   border-radius: 999px;
-  background: #fff5e6;                       /* warm primary tint */
+  background: #fffaf2;                       /* warm primary tint, 연한 채움 */
   border: 1px solid rgba(234, 124, 13, 0.45);
   color: #a8540a;                            /* 워드마크·아이콘이 상속 */
   transition: transform .2s ease, border-color .2s ease, background-color .2s ease, color .2s ease;
 }
 .portfolio-badge:hover {
   transform: translateY(-1px);
-  background: #ffe7c4;
+  background: #fff3e1;
   border-color: #ea7c0d;                     /* primary (light) */
   color: #8f4708;
 }
@@ -517,12 +518,12 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
 
 /* Dark mode: translucent orange wash instead of the opaque tint. */
 [data-theme="upwise-dark"] .portfolio-badge {
-  background: rgba(247, 147, 30, 0.14);
+  background: rgba(247, 147, 30, 0.08);
   border-color: rgba(247, 147, 30, 0.40);
   color: #f7931e;                            /* primary (dark) */
 }
 [data-theme="upwise-dark"] .portfolio-badge:hover {
-  background: rgba(247, 147, 30, 0.22);
+  background: rgba(247, 147, 30, 0.14);
   border-color: rgba(247, 147, 30, 0.70);
   color: #ffa756;                            /* orange-soft */
 }
