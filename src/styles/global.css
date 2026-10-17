@@ -474,66 +474,72 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
 
 /* portfolio badge — links to drseunghyeonlee.com from the EDUCATION (Ph.D.) row.
    Reverse counterpart of the .upwise-badge on drseunghyeonlee.com's Teaching
-   section; same pill design, but the brand colors are the TARGET site's palette
-   (accent gold #e0b941, light body #0f2218, dark body #e2e8e0).
+   section. Sized to sit at the height of the title text beside it (~22px, so it
+   reads as part of that line rather than as a button stacked on it), and colored
+   with THIS site's palette: navy base-content #1e3a5f / #e2e8f0 for the text,
+   primary orange (#ea7c0d light · #f7931e dark) as the single accent, surfaces
+   from base-200/base-300.
    Colors are written as explicit hex/rgba (NOT hsl(var(--bc)) — DaisyUI v4
    stores tokens as OKLCH, so hsl(var(...)) is invalid and renders nothing). */
 .portfolio-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
-  padding: 7px 15px;
+  padding: 2px 10px;
   border-radius: 999px;
-  background: #fdfdfb;                       /* near-white, faint warm tint */
-  border: 1.5px solid rgba(15, 34, 24, 0.15);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+  background: #f8fafc;                       /* base-200 */
+  border: 1px solid #e2e8f0;                 /* base-300 */
+  transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
 }
 .portfolio-badge:hover {
   transform: translateY(-1px);
-  border-color: rgba(224, 185, 65, 0.55);
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+  border-color: rgba(234, 124, 13, 0.55);    /* primary (light) */
 }
 /* Text wordmark: 이승현. / Seunghyeon Lee. */
 .portfolio-wordmark {
-  font-weight: 800;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 13px;
   letter-spacing: 0.01em;
-  line-height: 1;
+  line-height: 1.3;
   white-space: nowrap;
 }
-.portfolio-wordmark .pw-name { color: #0f2218; }   /* shleeclay base-content (light) */
-.portfolio-wordmark .pw-dot { color: #e0b941; }    /* shleeclay accent gold */
+.portfolio-wordmark .pw-name { color: #1e3a5f; }   /* base-content (light) */
+.portfolio-wordmark .pw-dot { color: #ea7c0d; }    /* primary (light) */
 /* Descriptor text (연구 포트폴리오 / Research portfolio) */
 .portfolio-badge-text {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.3;
   letter-spacing: 0.01em;
-  color: rgba(15, 34, 24, 0.6);
+  color: rgba(30, 58, 95, 0.62);
   white-space: nowrap;
-  padding-left: 8px;
-  border-left: 1px solid rgba(15, 34, 24, 0.18);
+  padding-left: 6px;
+  border-left: 1px solid rgba(30, 58, 95, 0.16);
 }
-.portfolio-badge svg { color: rgba(15, 34, 24, 0.45); }
+.portfolio-badge svg {
+  width: 11px;
+  height: 11px;
+  color: rgba(30, 58, 95, 0.45);
+}
 
-/* Dark mode: subtle chip (not the bright white plate), light text, clear border. */
+/* Dark mode: navy chip on the dark surface, light text, same orange accent. */
 [data-theme="upwise-dark"] .portfolio-badge {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.20);
-  box-shadow: none;
+  background: #0f1e35;                       /* base-200 */
+  border-color: #1e3a5f;                     /* base-300 */
 }
 [data-theme="upwise-dark"] .portfolio-badge:hover {
-  border-color: rgba(224, 185, 65, 0.55);
-  box-shadow: none;
+  background: #14253f;
+  border-color: rgba(247, 147, 30, 0.6);     /* primary (dark) */
 }
-[data-theme="upwise-dark"] .portfolio-wordmark .pw-name { color: #e2e8e0; }
+[data-theme="upwise-dark"] .portfolio-wordmark .pw-name { color: #e2e8f0; }
+[data-theme="upwise-dark"] .portfolio-wordmark .pw-dot { color: #f7931e; }
 [data-theme="upwise-dark"] .portfolio-badge-text {
-  color: rgba(226, 232, 224, 0.62);
-  border-left-color: rgba(255, 255, 255, 0.20);
+  color: rgba(226, 232, 240, 0.62);
+  border-left-color: rgba(226, 232, 240, 0.22);
 }
-[data-theme="upwise-dark"] .portfolio-badge svg { color: rgba(226, 232, 224, 0.5); }
+[data-theme="upwise-dark"] .portfolio-badge svg { color: rgba(226, 232, 240, 0.45); }
 
 /* Section rhythm: 96px section gap on desktop, 64px on mobile */
 .section-gap {
