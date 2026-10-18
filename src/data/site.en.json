@@ -31,7 +31,7 @@
       "I majored in GIS and remote sensing at the Graduate School of Environmental Studies, Seoul National University, combining research and teaching with spatial data."
     ],
     "expertiseLine": "My main teaching areas are ",
-    "expertiseAreas": ["QGIS basics & advanced analysis", "map visualization", "QGIS × Python automation", "PostGIS large-scale queries", "remote sensing analysis"],
+    "expertiseAreas": ["QGIS basics & advanced analysis", "map visualization", "QGIS × Python automation", "PostGIS large-scale queries", "remote sensing analysis", "AI × QGIS automation (MCP)"],
     "expertiseLineSuffix": ".",
     "stats": [
       { "label": "Online students",    "value": "{{students}}", "unit": "" },
@@ -61,6 +61,11 @@
         "title": "Python × GIS",
         "subtitle": "Scripting & automating QGIS with PyQGIS",
         "body": "Python-based automation of spatial data processing. Building workflows that turn repetitive tasks into efficient code."
+      },
+      {
+        "title": "AI-Assisted GIS (QGIS × MCP)",
+        "subtitle": "Conversational QGIS automation with LLM agents and MCP",
+        "body": "Connecting QGIS to AI agents such as Claude through MCP (Model Context Protocol) so data collection, preprocessing, analysis, and map production run from natural-language instructions. Taught in corporate and university workshops with environmental-impact-assessment and workflow-automation cases."
       }
     ]
   },
@@ -70,10 +75,10 @@
     "title": "QGIS Online Courses",
     "intro": "QGIS online courses available on Inflearn.\nStructured in the order Beginner → Visualization → Automation to learn QGIS step by step.",
     "categoryMeta": {
-      "입문":   { "name": "Beginner",      "label": "BEGINNER",      "description": "For those learning QGIS for the first time.",                 "icon": "🌱" },
-      "분석":   { "name": "Analysis",      "label": "ANALYSIS",      "description": "For mastering vector and raster spatial analysis.",           "icon": "🔍" },
-      "시각화": { "name": "Visualization", "label": "VISUALIZATION", "description": "For maps in presentations, reports, and content.",            "icon": "🗺️" },
-      "자동화": { "name": "Automation",    "label": "AUTOMATION",    "description": "For automating repetitive tasks with code.",                 "icon": "⚡" }
+      "입문":   { "name": "Beginner",      "label": "BEGINNER",      "description": "For those learning QGIS for the first time.",                 "short": "First steps in QGIS",      "icon": "🌱" },
+      "분석":   { "name": "Analysis",      "label": "ANALYSIS",      "description": "For mastering vector and raster spatial analysis.",           "short": "Vector & raster analysis", "icon": "🔍" },
+      "시각화": { "name": "Visualization", "label": "VISUALIZATION", "description": "For maps in presentations, reports, and content.",            "short": "Maps for reports & talks", "icon": "🗺️" },
+      "자동화": { "name": "Automation",    "label": "AUTOMATION",    "description": "For automating repetitive tasks with code.",                 "short": "Automate repetitive work", "icon": "⚡" }
     },
     "items": [
       {
