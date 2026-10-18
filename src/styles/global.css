@@ -60,6 +60,11 @@ body {
   font-variation-settings: "wght" 380;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* 한국어는 어절(띄어쓰기) 단위로만 줄바꿈 — 기본값은 음절 사이에서도 끊어
+     좁은 폰 화면에서 "통/합 활용"처럼 단어가 잘린 듯 보인다. 띄어쓰기 없는 긴
+     토큰(URL 등)은 overflow-wrap 이 어디서든 끊어 가로 넘침을 막는다. */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   position: relative;
   /* base background (theme-aware via DaisyUI --b1) — drawer wrappers are
      transparent so the topo SVG layer above body bg shows through to content. */
@@ -526,6 +531,16 @@ body, .drawer-content, .drawer-side, aside, .navbar, .btn, .badge {
   background: rgba(247, 147, 30, 0.14);
   border-color: rgba(247, 147, 30, 0.70);
   color: #ffa756;                            /* orange-soft */
+}
+
+/* 모바일: 강의 카드 설명의 3줄 클램프 해제 — 좁은 폭에서는 3줄을 넘겨
+   문장이 "…"로 잘리므로 전부 보여준다(sm 이상은 Tailwind line-clamp-3 유지). */
+@media (max-width: 639px) {
+  .grid .line-clamp-3 {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+  }
 }
 
 /* Section rhythm: 96px section gap on desktop, 64px on mobile */
