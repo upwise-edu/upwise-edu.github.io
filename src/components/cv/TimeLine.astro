@@ -1,5 +1,5 @@
 ---
-const { title, subtitle } = Astro.props;
+const { title, subtitle, inlineSubtitle = false } = Astro.props;
 // Optional named slot: rendered on the same row as the title (e.g. an external
 // link badge). When nothing is passed, the title keeps its original markup so
 // the layout is byte-for-byte what it was before the slot existed.
@@ -17,16 +17,18 @@ const titlePeriod = titleMatch ? titleMatch[2] : null;
 ---
 
 <div class="flex">
-  <div class="education__time">
-    <span class="w-2.5 h-2.5 block rounded-full border-2 border-primary bg-base-100 mt-[5px]"></span>
-    <span class="education__line bg-base-300 block h-full w-[2px] translate-x-[4px]"></span>
+  <div class="education__time flex flex-col items-center">
+    <span class="w-2.5 h-2.5 shrink-0 rounded-full border-2 border-primary bg-base-100 mt-[5px] relative z-10"></span>
+    <span class="education__line bg-base-300 w-[2px] flex-1 min-h-0"></span>
   </div>
   <div class="experience__data bd-grid px-5">
     {hasAside ? (
       <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mb-1">
         <h3 class="text-base-content" style="font-weight:650;font-size:1.05rem;">
           {titleMain}{titlePeriod && (
-            <span class="text-base-content/55 ml-2" style="font-weight:450;font-size:0.95em;">{titlePeriod}</span>
+            <span class="text-primary ml-2 whitespace-nowrap" style="font-weight:500;font-size:0.9em;">{titlePeriod}</span>
+          )}{inlineSubtitle && subtitle && (
+            <span class="text-primary ml-2" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
           )}
         </h3>
         <span class="shrink-0"><slot name="aside" /></span>
@@ -34,11 +36,13 @@ const titlePeriod = titleMatch ? titleMatch[2] : null;
     ) : (
       <h3 class="text-base-content mb-1" style="font-weight:650;font-size:1.05rem;">
         {titleMain}{titlePeriod && (
-          <span class="text-base-content/55 ml-2" style="font-weight:450;font-size:0.95em;">{titlePeriod}</span>
+          <span class="text-primary ml-2 whitespace-nowrap" style="font-weight:500;font-size:0.9em;">{titlePeriod}</span>
+        )}{inlineSubtitle && subtitle && (
+          <span class="text-primary ml-2" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
         )}
       </h3>
     )}
-    <span class="font-light text-sm text-base-content/75">{subtitle}</span>
+    {!inlineSubtitle && <span class="font-light text-sm text-base-content/75">{subtitle}</span>}
     <p class="my-2 text-justify text-base-content/85 whitespace-pre-line">
       <slot />
     </p>

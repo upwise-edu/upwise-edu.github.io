@@ -152,7 +152,7 @@ const categoryKeys = Object.keys(categoryMeta);
   <p class="type-eyebrow text-primary mb-5">EXPERTISE</p>
   <div class="time-line-container">
     {data.about.expertise.map((e: any) => (
-      <TimeLineElement title={e.title} subtitle={e.subtitle}>
+      <TimeLineElement title={e.title} subtitle={e.subtitle} inlineSubtitle>
         {e.body}
       </TimeLineElement>
     ))}
@@ -214,8 +214,8 @@ const categoryKeys = Object.keys(categoryMeta);
                 <span class="shrink-0 type-body-sm text-base-content/55 whitespace-nowrap w-fit md:w-32 md:pr-3 md:order-1">
                   {formatLectureDate(l.date, l.dateEnd)}
                 </span>
-                <span class="md:hidden shrink-0 type-body-sm text-base-content/55 whitespace-nowrap">
-                  · {fmtAttendees(l.attendees)}{l.hours ? ` · ${l.hours}h` : ''}
+                <span class="md:hidden type-body-sm text-base-content/55">
+                  {l.audience} · {fmtAttendees(l.attendees)}{l.hours ? ` · ${l.hours}h` : ''}
                 </span>
               </div>
               <span class="flex-1 type-body text-base-content md:order-3" style="font-weight:480;">
