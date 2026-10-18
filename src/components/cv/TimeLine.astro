@@ -28,7 +28,7 @@ const titlePeriod = titleMatch ? titleMatch[2] : null;
           {titleMain}{titlePeriod && (
             <span class="text-primary ml-2 whitespace-nowrap" style="font-weight:500;font-size:0.9em;">{titlePeriod}</span>
           )}{inlineSubtitle && subtitle && (
-            <span class="text-primary ml-2" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
+            <span class="text-primary ml-2 hidden md:inline" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
           )}
         </h3>
         <span class="shrink-0"><slot name="aside" /></span>
@@ -38,11 +38,15 @@ const titlePeriod = titleMatch ? titleMatch[2] : null;
         {titleMain}{titlePeriod && (
           <span class="text-primary ml-2 whitespace-nowrap" style="font-weight:500;font-size:0.9em;">{titlePeriod}</span>
         )}{inlineSubtitle && subtitle && (
-          <span class="text-primary ml-2" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
+          <span class="text-primary ml-2 hidden md:inline" style="font-weight:500;font-size:0.82em;">{subtitle}</span>
         )}
       </h3>
     )}
-    {!inlineSubtitle && <span class="font-light text-sm text-base-content/75">{subtitle}</span>}
+    {inlineSubtitle ? (
+      <span class="block md:hidden text-sm text-primary" style="font-weight:500;">{subtitle}</span>
+    ) : (
+      <span class="font-light text-sm text-base-content/75">{subtitle}</span>
+    )}
     <p class="my-2 text-base-content/85 whitespace-pre-line">
       <slot />
     </p>
