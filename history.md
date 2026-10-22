@@ -261,3 +261,93 @@
 * GitHub 계정 복구 절차 및 정책 확인 (2FA 자격 증명 분실 시 지원 불가 등)
 * GitHub 계정 복구와 관련하여 `project_github_account_recovery.md` 파일 생성 및 MEMORY.md 인덱스 업데이트
 
+## 2026-10-16
+
+- CHANGELOG에 0.3.1 항목 작성 — posture W 쓰기 권한 바 문제 등 결함 3건·사용성 1건 수정 내역 기록
+- `upwise_chat_for_qgis.0.4.0.zip` 플러그인 패키지 빌드 후 `plugins.xml` 저장소 메타데이터 갱신
+- 배포 zip의 해시 산출로 패키지 무결성 확인
+- 웹 배포 공지 문구 초안(`msg_web.txt` / `msg_web2.txt`) 작성·수정
+
+## 2026-10-17
+
+- 현대NGV(2026-10-12~14, 15명, 21h)·국립한밭대학교(2026-10-15~16, 30명, 12h) 특강 2건을 upwise `site.json`/`site.en.json` 강의 경력에 추가
+- 국립한밭대(HBNU)를 partners academic 항목에 등록하고 `hbnu.svg` 로고를 `public/partners/`에 추가
+- upwise 학력 박사 항목에 drseunghyeonlee.com 연결 배지를 신설(`TimeLine.astro` aside 슬롯 · `HomePage.astro` 데이터 구동 · `global.css` 스타일)하고, 상대 사이트의 `?theme=` 수신부를 추가해 테마 전달을 양방향화
+- `compare_lectures.py`·`unify_attendees_20261017.py`·`verify_match.py`로 두 사이트 출강 인원을 대조해 불일치 10건을 큰 값으로 통일(upwise 7건·drseunghyeonlee.com 3건), `application_info.xlsx` Teaching 시트도 동반 수정
+- drseunghyeonlee.com `site.json` 교육 목록에 특강 3건 추가(29→32건)하고 인프런 온라인 강의 수강생 수 4건 갱신
+- 배지 높이를 약 36px→23px로 낮추고 색을 shleeclay 골드·딥그린에서 upwise 네이비·오렌지 팔레트로 교체
+- 배지 문구를 국·영문 모두 `drseunghyeonlee.com` 단일 표기로 통일하고 구분선·설명 칸과 관련 CSS(`portfolio-badge-text`·`pw-dot`) 제거
+- 배지 색을 따뜻한 오렌지 칩으로 하이라이트한 뒤 채움색만 다시 연하게 조정하고(라이트 `#fffaf2`, 다크 워시 8%), WCAG 대비 실측·`badge_doublecheck.py`로 한/영×라이트/다크 4경우 동일성 검증(영문 미반영은 CDN 10분 캐시가 원인으로 확인)
+
+## 2026-10-18
+
+- 헤드리스 Chrome으로 upwise.co.kr 데스크톱 라이트·다크·모바일 전 구간 스크린샷을 찍어 페이지 색감·강조 진단 (오렌지 과다·위계 부재 원인 규명)
+- `TimeLine.astro` 학력·전문분야 스타일 개편 — 제목 네이비(650), 기간 분리, 16px 꽉 찬 점 → 10px 속 빈 링, 세로선 회색화
+- `site.json` / `site.en.json`에 EXPERTISE "AI 활용 (QGIS × MCP)" 항목 및 주요 강의 분야 목록 추가 (국·영문)
+- `HomePage.astro` 모바일 압축 — 로드맵 4블록 한 줄화(130px→48px), 특강 행 4줄 → 2줄(기관·일자·수강생·시간) 후 대상 복구
+- 전문분야 타임라인 링 잘림 수정 — 세로선 `h-full` 넘침을 flex 잔여 높이로 교체하고 링 z축 상향
+- 주황 포인트를 제목에서 기간·부제 라벨로 이전하고, 폰에서는 부제를 제목 아래 줄로 분기(md 이상만 인라인)
+- `global.css`에 `word-break: keep-all` + `overflow-wrap: anywhere` 적용, 강의 카드 설명 모바일 클램프 해제로 한국어 음절 단절 해소
+- CDP 모바일 에뮬레이션 오버플로 프로브(`overflow_probe.mjs`)·전후 캡처 스크립트(`preview_shots.py`) 작성, 360·375·390·412px 검증 후 4개 커밋 푸시 및 메모리 갱신
+
+## 2026-09-27
+
+- 인프런 강의 소개 페이지 에디터 모드(Jodit HTML) 작성 방식 확인 및 사이트 공개 이미지 URL 검증 (`CNAME`·`upwise_logo.png` 로 커스텀 도메인 호스팅 경로 확정)
+- 인프런 인기 강의 9개 소개 페이지 PDF 를 good/soso/bad 로 분류해 PyMuPDF 로 폰트 크기·줄간격·여백·칼럼 폭·이미지 비중 측정, `6.design_refs_260927.md` / `6.design_refs_260927.csv` 작성
+- 측정 결과로 good 그룹 디자인 기준 도출 (제목1/본문 비율 1.87, 줄간격 1.56, 블록 간 여백 등) 및 그룹별 중앙값 비교표 정리
+- 소개 페이지용 PNG 렌더 파이프라인 구축: `render_png.py` 와 `banner.html` · `section_header.html` · `feature_cards.html` 템플릿 신규 추가
+- `inflearn-course-page` SKILL.md 에 §6-1 이미지 렌더 절차와 함정 3줄 추가 (168→209행)
+- QGIS MCP 강의 소개 페이지 v2 개편: 본문 분량 v1 대비 40.8% 로 축약, 표 4개→1개, 색 11→5개(네이비·오렌지 체계), 이미지 7장 전부 실물 생성
+- v2 미리보기 렌더 후 2쪽 캡처로 타이포·색감·이미지 세로 비중(0.326) 육안 검증
+
+## 2026-09-30
+
+- `04.lectures/05.inflearn_qgis_mcp/plugin_repo` 중첩 git 저장소의 원격(`upwise-edu/qgis-mcp-course`)·브랜치 추적 상태 점검 (이외에는 조회 작업만으로 기록할 변경 없음)
+
+## 2026-10-01
+
+- upwise 저장소 git 이력에서 휴대전화 번호 표기 2종(`+82-10-8455-xxxx` 18건·`010-8455-xxxx` 15건)을 전수 탐색하고 커밋 메시지 3건까지 출현 위치 확정
+- `purge_upwise_history_261001.sh` / `upwise_phone_expressions.txt` 작성하여 filter-repo 기반 번호 치환 스크립트와 표기 목록 정리
+- 임시 클론에서 purge 드라이런 실행 — 잔존 0건·현재 파일 바이트 불변·사이트 빌드 3/3 성공 검증
+- shleeclay·upwise 양쪽 저장소 `LICENSE` 를 MIT → All rights reserved 로 교체하고 커밋·푸시(원격 해시 일치 확인)
+- `reference_git_filter_repo_pitfalls.md` 메모리 신규 작성 — filter-repo already_ran 중단·PDF 텍스트 치환·origin 재설정 함정 기록
+- `update_memory_purge.py` 로 `project_shleeclay.md`·`project_upwise_edu.md` 갱신 및 MEMORY.md 인덱스 추가(한글 인라인 Python 인코딩 오류 우회)
+- 양쪽 사이트 배포 상태 확인 — upwise·shleeclay 모두 completed success
+
+## 2026-10-09
+
+- 채팅창에 upwise 로고와 홈페이지 이동 링크를 넣기로 하고, `upwise_logo.png` 등 보유 로고 자산을 확인
+- `global.css` 의 브랜드 색상 정의를 조회해 로고 삽입 시 적용할 색 체계(오렌지 `#f7931e` 계열) 파악
+
+## 2026-10-10
+
+- 커스텀 도메인(CNAME) 설정 확인 후 QGIS 플러그인 저장소 `plugins.xml` 을 upwise.co.kr 에서 서빙하는 경로 점검 — 404 원인 추적
+- `deploy.yml` 워크플로 점검으로 플러그인 저장소 배포 경로 확인
+- 02.projects/28 README·PROGRESS 에 자체 배포 채널(QGIS 사용자 저장소) 검토 결과와 호스팅 위치 결정 대기 항목 기록
+- C1 회차 한정 처리 후 17개 하네스 전체 재실행 — V1 버전 일치 PASS, N2 아이콘 경로 WARN, C1 SKIP 확인
+- 0.2.0 배포 시점을 S9c 완료 후 릴리스로 결정
+
+## 2026-10-11
+
+- site.json / site.en.json에 2026-07-16 한국종합기술 "QGIS × MCP 환경영향평가 활용 방안 특강"(50명·3시간) 출강 이력 추가
+- 온라인 강의 수강생 수 갱신(대선개표지도 340·스타터팩 220·파이썬 자동화 350, 시각화는 표시값 동일로 기존값 유지)
+- partners의 "현대모비스" → "현대오토에버" 정정 및 `Hyundai_AutoEver_logo.svg`를 `hyundai_autoever.svg`로 복사·연결(모비스 로고는 삭제 없이 보관)
+- CourseCard.astro에 누락된 "분석" 카테고리의 표시명·색(sky)·아이콘(📊)·그라데이션 추가하여 칩 하이라이트 복구, 빌드로 양 언어 확인
+- UPWISE Chat for QGIS 0.2.1~0.2.4 배포본(zip)과 `plugins.xml` 버전 갱신분을 웹 리포에 순차 커밋·푸시, 원격 해시 대조로 검증
+- 한종 특강 등록에 필요한 입력 항목표(날짜·기관명·제목·대상·인원·시간·로고 국영문) 정리해 안내
+- 공공데이터포털·SGIS 등 공공 API 제공자 카탈로그 조사 위임 — 공식 목록 API 부재·API별 활용신청·스키마 비균일·상업적 이용 조건 미확정 확인
+- 세션 비용 안내 및 메일 작업·연구 작업용 새 세션 분리 문구 작성
+
+## 2026-10-13
+
+- `plugins.xml` 등 public/plugins 산출물 해시를 대조해 배포본 무결성 확인
+- public/plugins 경로만 지정 커밋·푸시하고 원격 해시(f868f18) 대조로 반영 검증
+- 다른 세션 작업 파일이 섞이지 않도록 스테이징 초기화 후 경로 한정 커밋 수행
+- 연계 작업으로 02.projects/28 UPWISE QGIS 제품군 0.3.1 패치 커밋 반영
+
+## 2026-10-22
+
+* metadata.txt에서 file_name과 download_url 제외한 메타데이터 추출
+* QGIS 플러그인 배포 관련 파일 다운로드 URL 및 저장소 크기 확인
+* ZIP 파일 첨부 시 장점 탐색
+
