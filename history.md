@@ -351,3 +351,10 @@
 * QGIS 플러그인 배포 관련 파일 다운로드 URL 및 저장소 크기 확인
 * ZIP 파일 첨부 시 장점 탐색
 
+## 2026-10-25
+
+* 105_verify_queue_wiring.py와 106_verify_queue_ui.py에서 큐 연결 관련 로직 검토
+* changelog.astro에서 QGIS 플러그인 릴리스 노트 관련 한국어 설명 작성 및 관리
+* changelog.astro에서 릴리스 버전 정보 및 변경 사항 데이터 구조 정의
+* changelog.astro 파일에 새로운 릴리스 항목 추가 및 관리
+
