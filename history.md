@@ -362,3 +362,14 @@
 
 * `site.en.json`에서 코스 통계를 읽어왔습니다.
 
+## 2026-11-08
+
+- `site.json`과 `site.en.json`에 최상위 `projects` 키를 신설하고 데이터를 추가했습니다.
+- `index.ts`에 `Project` 타입을 추가하고 `projects` 상수를 정의했습니다.
+- `HomePage.astro`에 프로젝트 섹션을 추가하고 기존 콘텐츠 사이에 삽입했습니다.
+- `SideBarMenu.astro`를 수정하여 새로운 프로젝트 섹션을 포함하도록 했습니다.
+- 프로젝트 섹션의 내용을 익명화하기 위해 `site.json` 및 `site.en.json` 파일에 대한 Python 스크립트를 실행하여 변경 사항을 확인했습니다.
+- 프로젝트 관련 콘텐츠를 위한 `upwise_projects_light.png` 및 `upwise_projects_dark.png` 이미지를 생성했습니다.
+- `_docs` 폴더가 `.gitignore`에 의해 무시되는지 확인했습니다.
+- 프로젝트 관련 콘텐츠 작성을 위한 템플릿 파일 `projects_form.md`를 생성했습니다.
+
