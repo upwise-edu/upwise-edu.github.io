@@ -10,6 +10,8 @@ const { data, lang = "ko" } = Astro.props as { data: any; lang?: "ko" | "en" };
 const courses = data.courses.items;
 const offlineLectures = data.lectures.items;
 const collaborations = data.partners.items;
+const projects = data.projects.items;
+const projectCategoryMeta = data.projects.categoryMeta as Record<string, string>;
 
 const lecturesByYear = groupLecturesByYear(offlineLectures);
 const lectStats = lectureStats(offlineLectures);
@@ -238,6 +240,33 @@ const categoryKeys = Object.keys(categoryMeta);
     <a href="#contact" class="inline-flex items-center gap-1 type-link text-primary hover:underline">
       {data.customRequest.ctaText}
     </a>
+  </div>
+</section>
+
+<!-- ───────── PROJECTS ───────── -->
+<section id="projects" class="scroll-section pb-24 border-t border-base-300 pt-16 scroll-mt-12">
+  <p class="type-caption text-primary mb-4">{data.projects.eyebrow}</p>
+  <h2 class="type-display-lg mb-4">{data.projects.heading}</h2>
+  <p class="type-body-lg text-base-content/75 max-w-2xl mb-8 whitespace-pre-line" style="word-break:keep-all;">{data.projects.sub}</p>
+
+  <!-- 1열 간결 목록: 머리줄(칩 · 기간 · 상태) / 제목 / 한 줄 요약 -->
+  <div class="max-w-3xl divide-y divide-base-300/40 border-t border-base-300/40">
+    {projects.map((p: any) => (
+      <div class="py-4">
+        <div class="flex flex-wrap items-center gap-2 mb-1">
+          <span class="shrink-0 type-body-sm px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20" style="font-weight:500;">
+            {projectCategoryMeta[p.category]}
+          </span>
+          <span class="type-body-sm text-base-content/55 whitespace-nowrap">{p.period}</span>
+          {p.status && (
+            <span class="type-body-sm text-base-content/55 whitespace-nowrap">· {p.status}</span>
+          )}
+        </div>
+
+        <h3 class="type-body text-base-content" style="font-weight:600;word-break:keep-all;">{p.title}</h3>
+        <p class="type-body-sm text-base-content/70 leading-relaxed" style="word-break:keep-all;">{p.summary}</p>
+      </div>
+    ))}
   </div>
 </section>
 

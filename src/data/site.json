@@ -197,6 +197,36 @@
     ]
   },
 
+  "projects": {
+    "_help": "각 항목 필수: id, category(map|analysis|tool), period(표시 문자열), title, summary(한 문장). 선택: status(진행 중이면 \"진행 중\", 아니면 null). 연구용역 성격의 건은 여기에 싣지 않습니다 (연구자 사이트 몫). 발주처·기관명·지역명·금액·계약조건 등 식별 정보는 넣지 않습니다.",
+    "eyebrow": "PROJECTS",
+    "heading": "프로젝트",
+    "sub": "강의 외에 지도 제작과 GIS 분석 작업도 수행합니다.",
+    "categoryMeta": {
+      "map": "지도 제작",
+      "analysis": "공간 분석",
+      "tool": "도구 개발"
+    },
+    "items": [
+      {
+        "id": "admin-map",
+        "category": "map",
+        "period": "2026",
+        "status": "진행 중",
+        "title": "지자체 행정지도 제작",
+        "summary": "지자체 행정지도 신판을 인쇄용 양면 접지 판형에 맞춰 조판하고 범례와 라벨을 정비한다."
+      },
+      {
+        "id": "wildfire-seeding",
+        "category": "analysis",
+        "period": "2026",
+        "status": null,
+        "title": "산불 피해지 드론 파종 지원 분석",
+        "summary": "드론 파종을 위해 지형을 분석해 살포 구역을 가르고 비행계획을 설계했다."
+      }
+    ]
+  },
+
   "customRequest": {
     "title": "맞춤 강의 · 멘토링 요청",
     "description": "기관·기업·대학의 GIS 교육 의뢰, 1:1 온라인 멘토링,\n공간분석 컨설팅 등 다양한 형태로 함께 일할 수 있습니다.",

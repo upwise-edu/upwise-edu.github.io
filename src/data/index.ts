@@ -70,6 +70,15 @@ export type OfflineLecture = {
   hours?: number | null;       // 진행 시간 (선택)
 };
 
+export type Project = {
+  id: string;
+  category: 'map' | 'analysis' | 'tool';   // 라벨은 site.json projects.categoryMeta 에 있음
+  period: string;                          // 표시용 문자열 (예: "2026")
+  status?: string | null;                  // 진행 중이면 표시 문자열, 아니면 null
+  title: string;
+  summary: string;                         // 한 문장
+};
+
 export type Collaboration = {
   name: string;
   nameEn?: string;
@@ -81,6 +90,7 @@ export type Collaboration = {
 
 export const courses = site.courses.items as Course[];
 export const offlineLectures = site.lectures.items as OfflineLecture[];
+export const projects = site.projects.items as Project[];
 export const collaborations = site.partners.items as Collaboration[];
 
 // ───────── Helpers ─────────

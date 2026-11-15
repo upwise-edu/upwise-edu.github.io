@@ -181,6 +181,36 @@
     ]
   },
 
+  "projects": {
+    "_help": "English mirror of the projects block in site.json. Keep id / category / period / status semantics identical; translate title, summary and the categoryMeta labels only. Research-commission work is not listed here (it belongs on the researcher site). Never add client, institution, place names, fees or contract terms.",
+    "eyebrow": "PROJECTS",
+    "heading": "Projects",
+    "sub": "Alongside teaching, we also take on map production and GIS analysis work.",
+    "categoryMeta": {
+      "map": "Map Production",
+      "analysis": "Spatial Analysis",
+      "tool": "Tool Development"
+    },
+    "items": [
+      {
+        "id": "admin-map",
+        "category": "map",
+        "period": "2026",
+        "status": "In progress",
+        "title": "Municipal Administrative Map Production",
+        "summary": "Typesetting a new edition of a municipal administrative map for a double-sided folded print format, with the legend and labels reworked."
+      },
+      {
+        "id": "wildfire-seeding",
+        "category": "analysis",
+        "period": "2026",
+        "status": null,
+        "title": "Drone Seeding Support Analysis for a Burned Forest Area",
+        "summary": "Analysed the terrain to delineate seeding zones and designed the flight plan for drone seeding."
+      }
+    ]
+  },
+
   "customRequest": {
     "title": "Custom Training · Mentoring",
     "description": "From GIS training for institutions, companies, and universities to 1:1 online mentoring and\nspatial-analysis consulting — there are many ways we can work together.",
