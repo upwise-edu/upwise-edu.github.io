@@ -60,5 +60,14 @@ const posts = (await getCollection("blog", ({ id }) => id.startsWith("ko/"))).so
     {posts.length === 0 && (
       <p class="type-body text-base-content/55">글이 없습니다.</p>
     )}
+
+    <p class="mt-10">
+      <a
+        href={`/preview/${token}/projects/`}
+        class="type-body-sm text-base-content/55 hover:text-primary hover:underline"
+      >
+        프로젝트 목록 미리보기 →
+      </a>
+    </p>
   </section>
 </BaseLayout>

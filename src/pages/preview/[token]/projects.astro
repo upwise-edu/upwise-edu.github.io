@@ -1,0 +1,63 @@
+---
+// 비공개 프로젝트 목록 — 공개 홈에서 내린 projects 섹션을 토큰 미리보기로만 노출.
+// 데이터 정본은 site.json 의 projects 키 (en 판은 site.en.json 에 유지, 이 페이지는 ko만).
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import site from "../../../data/site.json";
+
+export async function getStaticPaths() {
+  const token = import.meta.env.PREVIEW_TOKEN;
+  if (!token) return [];
+  return [{ params: { token } }];
+}
+
+const { token } = Astro.params;
+const projects = site.projects.items;
+const projectCategoryMeta = site.projects.categoryMeta as Record<string, string>;
+---
+
+<BaseLayout
+  lang="ko"
+  title="프로젝트 미리보기 | UPWISE"
+  description="비공개 프로젝트 목록 미리보기"
+  noindex={true}
+>
+  <section class="pt-10 pb-16 animate-fade-up max-w-3xl">
+    <div class="mb-8 rounded-xl border-2 border-warning bg-warning/15 px-4 py-3">
+      <p class="type-body font-bold text-base-content">
+        비공개 미리보기 — 이 주소를 공유하지 마세요
+      </p>
+      <p class="type-body-sm text-base-content/70 mt-1">
+        공개 전 프로젝트 목록입니다. 검색엔진 색인에서 제외됩니다.
+      </p>
+    </div>
+
+    <p class="type-caption text-primary mb-4">{site.projects.eyebrow}</p>
+    <h1 class="type-display-lg mb-4">{site.projects.heading}</h1>
+    <p class="type-body-lg text-base-content/75 max-w-2xl mb-8 whitespace-pre-line" style="word-break:keep-all;">{site.projects.sub}</p>
+
+    <div class="divide-y divide-base-300/40 border-t border-base-300/40">
+      {projects.map((p: any) => (
+        <div class="py-4">
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span class="shrink-0 type-body-sm px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20" style="font-weight:500;">
+              {projectCategoryMeta[p.category]}
+            </span>
+            <span class="type-body-sm text-base-content/55 whitespace-nowrap">{p.period}</span>
+            {p.status && (
+              <span class="type-body-sm text-base-content/55 whitespace-nowrap">· {p.status}</span>
+            )}
+          </div>
+
+          <h2 class="type-body text-base-content" style="font-weight:600;word-break:keep-all;">{p.title}</h2>
+          <p class="type-body-sm text-base-content/70 leading-relaxed" style="word-break:keep-all;">{p.summary}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-10">
+      <a href={`/preview/${token}/`} class="type-body-sm text-base-content/55 hover:text-primary hover:underline">
+        ← 초안 미리보기 목록
+      </a>
+    </p>
+  </section>
+</BaseLayout>
