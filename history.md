@@ -373,3 +373,14 @@
 - `_docs` 폴더가 `.gitignore`에 의해 무시되는지 확인했습니다.
 - 프로젝트 관련 콘텐츠 작성을 위한 템플릿 파일 `projects_form.md`를 생성했습니다.
 
+## 2026-11-15
+
+- `site.json` 및 `site.en.json` 파일에서 프로젝트 항목을 2건(`admin-map`, `wildfire-seeding`)으로 축소하고 상세 정보를 간결하게 정리했습니다.
+- `HomePage.astro` 파일의 프로젝트 섹션을 카드 그리드에서 1열 간결 목록으로 변경했습니다.
+- `index.ts` 파일에서 `Project` 타입에서 `clientType`, `scope` 필드를 제거했습니다.
+- `PROGRESS.md` 파일을 업데이트하여 프로젝트 탭 신설 및 변경 사항을 기록했습니다.
+- `projects_inventory.md` 파일을 생성하여 용역 폴더 구조를 목록화했습니다.
+- `upwise.co.kr`의 프로젝트 섹션을 비공개 미리보기 페이지(`preview/<token>/projects/`)로 전환하고, 해당 페이지를 GitHub Pages에 배포했습니다.
+- `site.json` 파일의 프로젝트 정보를 익명화하여 비공개 미리보기 페이지에 반영했습니다.
+- 비공개 미리보기 페이지에 지역명 포함 제목, 분석 도구 개발 카테고리, 드론 파종 프로젝트 삭제를 반영하여 재게시했습니다.
+
